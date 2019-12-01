@@ -6,13 +6,13 @@ Most of these I don't modify.
 See my list of modified files below.
 
 ## Modified dotfiles
-.config/vim
-.config/i3
-.config/zsh/.zshrc
-.tmux.conf
+.config/vim  
+.config/i3  
+.config/zsh/.zshrc  
+.tmux.conf  
 
 ## Todo
 
-[] Add a installer shell script.
+[ ] Add a installer shell script.
 
 
