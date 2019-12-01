@@ -3,4 +3,5 @@
 .config/discord/
 .tmux/plugins/
 .tmux/resurrect/
+.config/pulse/
 .CLion2019.3/system/
