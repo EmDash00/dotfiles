@@ -1,0 +1,27 @@
+La extensión «LaTeX» no se ha cargado porque no se cumplió una dependencia.
+Dependencia:
+  tipo: executable
+  localización: trayecto
+  cadena: pstoedit
+
+La extensión «Sketch Input» no se ha cargado porque no se cumplió una dependencia.
+Dependencia:
+  tipo: executable
+  localización: trayecto
+  cadena: skconvert
+
+La extensión «Win32 Vector Print» no se ha cargado porque la extensión está diseñada solo para Windows. La causa de esto es un archivo .inx incorrecto para esta extensión. Un archivo inx incorrecto puede ser el resultado de una instalación defectuosa de Inkscape.
+La extensión «Dia Input» no se ha cargado porque no se cumplió una dependencia.
+Dependencia:
+  tipo: executable
+  localización: trayecto
+  cadena: dia
+  descripción: Para poder importar archivos Dia, éste debe estar instalado. Puede obtener Dia en http://live.gnome.org/Dia
+
+La extensión «DXF Output» no se ha cargado porque no se cumplió una dependencia.
+Dependencia:
+  tipo: executable
+  localización: trayecto
+  cadena: pstoedit
+  descripción: pstoedit debe estar instalado, infórmese en: http://www.pstoedit.net/pstoedit
+

@@ -1,0 +1,6 @@
+2019-07-07T01:01:23.257Z verbose: Found Java Home Version: 11 at /home/emdash00/frc2019/jdk
+2019-07-07T01:01:23.428Z verbose: no vendor examples found {"0":"/home/emdash00/frc2019/vendorexamples"}
+2019-07-07T01:01:23.429Z verbose: Local GradleRIO Version 2019.4.1
+2019-07-07T01:01:23.435Z verbose: Congratulations, your extension "vscode-wpilib" is now active!
+2019-07-07T01:01:23.437Z verbose: executing command in workspace {"0":{"_commandLine":"./gradlew build   -Dorg.gradle.java.home=\"/home/emdash00/frc2019/jdk\"","_options":{"cwd":"/home/emdash00/sim/TestSim","env":{"JAVA_HOME":"/home/emdash00/frc2019/jdk"}}},"1":"/home/emdash00/sim/TestSim"}
+2019-07-07T01:02:18.933Z verbose: 0

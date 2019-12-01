@@ -1,0 +1,10 @@
+[user]
+	email = drasonchow@gmail.com
+	name = DC Lenovo
+[diff]
+	submodule = log
+[core]
+	editor = vim
+	autocrlf = input
+[alias]
+	stash-unapply = !git stash show -p | git apply -R

@@ -1,0 +1,51 @@
+[2019-07-06 20:55:55.241] [sharedprocess] [info] main {"machineId":"cf8066c27a34841b7ae6d2860e78fb1c579664547639fbd3d572fb745c907b6c"}
+[2019-07-06 20:56:33.506] [sharedprocess] [info] Installing the extension: ms-vscode.cpptools
+[2019-07-06 20:56:34.465] [sharedprocess] [info] Extracted extension to /home/emdash00/.vscode/extensions/.ms-vscode.cpptools-0.21.0: ms-vscode.cpptools
+[2019-07-06 20:56:34.465] [sharedprocess] [info] Renamed to /home/emdash00/.vscode/extensions/ms-vscode.cpptools-0.21.0
+[2019-07-06 20:56:34.466] [sharedprocess] [info] Installation completed. ms-vscode.cpptools
+[2019-07-06 20:56:34.512] [sharedprocess] [info] Successfully installed the extension: ms-vscode.cpptools
+[2019-07-06 20:56:35.223] [sharedprocess] [info] Starting to clean up unused language packs.
+[2019-07-06 20:57:04.925] [sharedprocess] [info] Installing the extension: wpilibsuite.vscode-wpilib
+[2019-07-06 20:57:05.181] [sharedprocess] [info] Extracted extension to /home/emdash00/.vscode/extensions/.wpilibsuite.vscode-wpilib-2019.4.1: wpilibsuite.vscode-wpilib
+[2019-07-06 20:57:05.181] [sharedprocess] [info] Renamed to /home/emdash00/.vscode/extensions/wpilibsuite.vscode-wpilib-2019.4.1
+[2019-07-06 20:57:05.182] [sharedprocess] [info] Installation completed. wpilibsuite.vscode-wpilib
+[2019-07-06 20:57:05.206] [sharedprocess] [info] Successfully installed the extension: wpilibsuite.vscode-wpilib
+[2019-07-06 20:57:31.415] [sharedprocess] [info] Installing the extension: redhat.java
+[2019-07-06 20:57:32.014] [sharedprocess] [info] Extracted extension to /home/emdash00/.vscode/extensions/.redhat.java-0.35.0: redhat.java
+[2019-07-06 20:57:32.015] [sharedprocess] [info] Renamed to /home/emdash00/.vscode/extensions/redhat.java-0.35.0
+[2019-07-06 20:57:32.015] [sharedprocess] [info] Installation completed. redhat.java
+[2019-07-06 20:57:32.022] [sharedprocess] [info] Successfully installed the extension: redhat.java
+[2019-07-06 20:57:45.379] [sharedprocess] [info] Installing the extension: vscjava.vscode-java-dependency
+[2019-07-06 20:57:45.781] [sharedprocess] [info] Extracted extension to /home/emdash00/.vscode/extensions/.vscjava.vscode-java-dependency-0.2.0: vscjava.vscode-java-dependency
+[2019-07-06 20:57:45.781] [sharedprocess] [info] Renamed to /home/emdash00/.vscode/extensions/vscjava.vscode-java-dependency-0.2.0
+[2019-07-06 20:57:45.782] [sharedprocess] [info] Installation completed. vscjava.vscode-java-dependency
+[2019-07-06 20:57:45.814] [sharedprocess] [info] Successfully installed the extension: vscjava.vscode-java-dependency
+[2019-07-06 20:57:59.689] [sharedprocess] [info] Installing the extension: vscjava.vscode-java-debug
+[2019-07-06 20:58:00.536] [sharedprocess] [info] Extracted extension to /home/emdash00/.vscode/extensions/.vscjava.vscode-java-debug-0.16.0: vscjava.vscode-java-debug
+[2019-07-06 20:58:00.536] [sharedprocess] [info] Renamed to /home/emdash00/.vscode/extensions/vscjava.vscode-java-debug-0.16.0
+[2019-07-06 20:58:00.537] [sharedprocess] [info] Installation completed. vscjava.vscode-java-debug
+[2019-07-06 20:58:00.645] [sharedprocess] [info] Successfully installed the extension: vscjava.vscode-java-debug
+[2019-07-06 20:58:33.774] [sharedprocess] [info] Installing extension: ms-vscode.cpptools
+[2019-07-06 20:58:33.775] [sharedprocess] [info] Installing extension: redhat.java
+[2019-07-06 20:58:33.775] [sharedprocess] [info] Installing extension: vscjava.vscode-java-debug
+[2019-07-06 20:58:33.776] [sharedprocess] [info] Installing extension: vscjava.vscode-java-dependency
+[2019-07-06 20:58:36.285] [sharedprocess] [info] Downloaded extension: vscjava.vscode-java-dependency /tmp/366ba470-304a-4851-92ad-e7f4a7189974
+[2019-07-06 20:58:36.371] [sharedprocess] [info] Extracted extension to /home/emdash00/.vscode/extensions/.vscjava.vscode-java-dependency-0.5.1: vscjava.vscode-java-dependency
+[2019-07-06 20:58:36.371] [sharedprocess] [info] Renamed to /home/emdash00/.vscode/extensions/vscjava.vscode-java-dependency-0.5.1
+[2019-07-06 20:58:36.372] [sharedprocess] [info] Installation completed. vscjava.vscode-java-dependency
+[2019-07-06 20:58:36.411] [sharedprocess] [info] Extensions installed successfully: vscjava.vscode-java-dependency
+[2019-07-06 20:58:36.652] [sharedprocess] [info] Downloaded extension: ms-vscode.cpptools /tmp/905f6c1c-6748-4633-9192-bcea5865e23b
+[2019-07-06 20:58:36.834] [sharedprocess] [info] Downloaded extension: vscjava.vscode-java-debug /tmp/eb511ca1-823b-4d17-bba7-6ea8192cf32b
+[2019-07-06 20:58:36.883] [sharedprocess] [info] Extracted extension to /home/emdash00/.vscode/extensions/.vscjava.vscode-java-debug-0.20.0: vscjava.vscode-java-debug
+[2019-07-06 20:58:36.883] [sharedprocess] [info] Renamed to /home/emdash00/.vscode/extensions/vscjava.vscode-java-debug-0.20.0
+[2019-07-06 20:58:36.885] [sharedprocess] [info] Installation completed. vscjava.vscode-java-debug
+[2019-07-06 20:58:36.922] [sharedprocess] [info] Extensions installed successfully: vscjava.vscode-java-debug
+[2019-07-06 20:58:37.064] [sharedprocess] [info] Extracted extension to /home/emdash00/.vscode/extensions/.ms-vscode.cpptools-0.24.0: ms-vscode.cpptools
+[2019-07-06 20:58:37.064] [sharedprocess] [info] Renamed to /home/emdash00/.vscode/extensions/ms-vscode.cpptools-0.24.0
+[2019-07-06 20:58:37.065] [sharedprocess] [info] Installation completed. ms-vscode.cpptools
+[2019-07-06 20:58:37.094] [sharedprocess] [info] Extensions installed successfully: ms-vscode.cpptools
+[2019-07-06 20:58:48.287] [sharedprocess] [info] Downloaded extension: redhat.java /tmp/fe527b8b-f1fa-444f-97f2-e2bbf54480c4
+[2019-07-06 20:58:48.747] [sharedprocess] [info] Extracted extension to /home/emdash00/.vscode/extensions/.redhat.java-0.46.0: redhat.java
+[2019-07-06 20:58:48.747] [sharedprocess] [info] Renamed to /home/emdash00/.vscode/extensions/redhat.java-0.46.0
+[2019-07-06 20:58:48.748] [sharedprocess] [info] Installation completed. redhat.java
+[2019-07-06 20:58:48.810] [sharedprocess] [info] Extensions installed successfully: redhat.java

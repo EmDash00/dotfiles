@@ -1,0 +1,3 @@
+2019-07-07T00:57:05.452Z verbose: Found Java Home Version: 11 at /home/emdash00/frc2019/jdk
+2019-07-07T00:57:05.454Z verbose: Could not find java extension. Debugging is disabled.
+2019-07-07T00:57:05.466Z verbose: Congratulations, your extension "vscode-wpilib" is now active!

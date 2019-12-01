@@ -1,0 +1,14 @@
+[Default Applications]
+application/x-shellscript=vim.desktop
+text/x-arduino=arduino-arduinoide.desktop
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop
+
+[Added Associations]
+application/x-shellscript=vim.desktop;
+application/octet-stream=org.gnome.gedit.desktop;
+application/x-wine-extension-inf=org.gnome.gedit.desktop;wine-extension-txt.desktop;
+text/x-arduino=org.gnome.gedit.desktop;
+application/x-wine-extension-ini=org.gnome.gedit.desktop;
+application/pdf=firefox.desktop;org.pwmt.zathura-pdf-poppler.desktop;
+text/csv=org.gnome.gedit.desktop;
+application/x-ms-dos-executable=wine.desktop;

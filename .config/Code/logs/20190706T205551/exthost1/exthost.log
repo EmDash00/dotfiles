@@ -1,0 +1,105 @@
+[2019-07-06 20:55:54.473] [exthost] [info] extension host started
+[2019-07-06 20:55:54.484] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:55:54.484] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-07-06 20:55:54.487] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:55:54.487] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/emmet/dist/extension
+[2019-07-06 20:55:54.501] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:55:54.501] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/git/dist/main
+[2019-07-06 20:55:54.608] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:55:54.608] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2019-07-06 20:55:54.613] [exthost] [info] eager extensions activated
+[2019-07-06 20:56:34.766] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.cpptools {"startup":false,"activationEvent":"*"}
+[2019-07-06 20:56:34.766] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/ms-vscode.cpptools-0.21.0/out/src/main
+[2019-07-06 20:57:05.292] [exthost] [info] ExtensionService#_doActivateExtension wpilibsuite.vscode-wpilib {"startup":false,"activationEvent":"workspaceContains:.wpilib/wpilib_preferences.json"}
+[2019-07-06 20:57:05.292] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/wpilibsuite.vscode-wpilib-2019.4.1/out/extension
+[2019-07-06 20:57:32.083] [exthost] [info] ExtensionService#_doActivateExtension redhat.java {"startup":false,"activationEvent":"workspaceContains:pom.xml"}
+[2019-07-06 20:57:32.083] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/redhat.java-0.35.0/out/src/extension
+[2019-07-06 20:57:45.862] [exthost] [info] ExtensionService#_doActivateExtension vscjava.vscode-java-dependency {"startup":false,"activationEvent":"workspaceContains:pom.xml"}
+[2019-07-06 20:57:45.862] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/vscjava.vscode-java-dependency-0.2.0/out/src/extension
+[2019-07-06 20:58:27.910] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-07-06 20:58:27.910] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/configuration-editing/dist/extension
+[2019-07-06 20:58:27.916] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-07-06 20:58:27.916] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/json-language-features/client/dist/jsonMain
+[2019-07-06 20:58:27.976] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-07-06 20:58:27.976] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/typescript-language-features/dist/extension
+[2019-07-06 20:58:32.810] [exthost] [info] extension host started
+[2019-07-06 20:58:32.817] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:58:32.817] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-07-06 20:58:32.819] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:58:32.819] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/emmet/dist/extension
+[2019-07-06 20:58:32.830] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:58:32.830] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/git/dist/main
+[2019-07-06 20:58:32.896] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:58:32.896] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2019-07-06 20:58:32.904] [exthost] [info] eager extensions activated
+[2019-07-06 20:59:23.136] [exthost] [info] extension host started
+[2019-07-06 20:59:23.143] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:59:23.143] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-07-06 20:59:23.145] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:59:23.145] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/emmet/dist/extension
+[2019-07-06 20:59:23.158] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:59:23.158] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/git/dist/main
+[2019-07-06 20:59:23.229] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:59:23.229] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2019-07-06 20:59:23.234] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.cpptools {"startup":true,"activationEvent":"*"}
+[2019-07-06 20:59:23.234] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/ms-vscode.cpptools-0.24.0/dist/main
+[2019-07-06 20:59:23.345] [exthost] [info] eager extensions activated
+[2019-07-06 20:59:49.182] [exthost] [info] ExtensionService#_doActivateExtension wpilibsuite.vscode-wpilib {"startup":false,"activationEvent":"onCommand:wpilibcore.openCommandPalette"}
+[2019-07-06 20:59:49.182] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/wpilibsuite.vscode-wpilib-2019.4.1/out/extension
+[2019-07-06 21:01:02.570] [exthost] [info] extension host started
+[2019-07-06 21:01:02.581] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-07-06 21:01:02.581] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-07-06 21:01:02.584] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-07-06 21:01:02.584] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/emmet/dist/extension
+[2019-07-06 21:01:02.594] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-07-06 21:01:02.594] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/git/dist/main
+[2019-07-06 21:01:02.660] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-07-06 21:01:02.660] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2019-07-06 21:01:02.665] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.cpptools {"startup":true,"activationEvent":"*"}
+[2019-07-06 21:01:02.665] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/ms-vscode.cpptools-0.24.0/dist/main
+[2019-07-06 21:01:02.778] [exthost] [info] ExtensionService#_doActivateExtension redhat.java {"startup":true,"activationEvent":"workspaceContains:build.gradle"}
+[2019-07-06 21:01:02.778] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/redhat.java-0.46.0/dist/extension
+[2019-07-06 21:01:02.815] [exthost] [info] ExtensionService#_doActivateExtension wpilibsuite.vscode-wpilib {"startup":true,"activationEvent":"workspaceContains:.wpilib/wpilib_preferences.json"}
+[2019-07-06 21:01:02.815] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/wpilibsuite.vscode-wpilib-2019.4.1/out/extension
+[2019-07-06 21:01:03.126] [exthost] [info] ExtensionService#_doActivateExtension vscode.grunt {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-06 21:01:03.126] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/grunt/dist/main
+[2019-07-06 21:01:03.131] [exthost] [info] ExtensionService#_doActivateExtension vscode.gulp {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-06 21:01:03.131] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/gulp/dist/main
+[2019-07-06 21:01:03.137] [exthost] [info] ExtensionService#_doActivateExtension vscode.jake {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-06 21:01:03.137] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/jake/dist/main
+[2019-07-06 21:01:03.144] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-06 21:01:03.144] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/npm/dist/main
+[2019-07-06 21:01:03.170] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-06 21:01:03.170] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/typescript-language-features/dist/extension
+[2019-07-06 21:01:20.695] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-07-06 21:01:20.695] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/configuration-editing/dist/extension
+[2019-07-06 21:01:20.702] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-07-06 21:01:20.702] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/json-language-features/client/dist/jsonMain
+[2019-07-06 21:01:22.872] [exthost] [info] extension host started
+[2019-07-06 21:01:22.883] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-07-06 21:01:22.883] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-07-06 21:01:22.886] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-07-06 21:01:22.886] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/emmet/dist/extension
+[2019-07-06 21:01:22.899] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-07-06 21:01:22.899] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/git/dist/main
+[2019-07-06 21:01:22.970] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-07-06 21:01:22.970] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2019-07-06 21:01:22.977] [exthost] [info] ExtensionService#_doActivateExtension redhat.java {"startup":true,"activationEvent":"workspaceContains:build.gradle"}
+[2019-07-06 21:01:22.977] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/redhat.java-0.46.0/dist/extension
+[2019-07-06 21:01:23.014] [exthost] [info] ExtensionService#_doActivateExtension wpilibsuite.vscode-wpilib {"startup":true,"activationEvent":"workspaceContains:.wpilib/wpilib_preferences.json"}
+[2019-07-06 21:01:23.014] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/wpilibsuite.vscode-wpilib-2019.4.1/out/extension
+[2019-07-06 21:01:23.258] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.cpptools {"startup":false}
+[2019-07-06 21:01:23.258] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/ms-vscode.cpptools-0.24.0/dist/main
+[2019-07-06 21:01:23.443] [exthost] [info] ExtensionService#_doActivateExtension vscode.grunt {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-06 21:01:23.443] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/grunt/dist/main
+[2019-07-06 21:01:23.447] [exthost] [info] ExtensionService#_doActivateExtension vscode.gulp {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-06 21:01:23.447] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/gulp/dist/main
+[2019-07-06 21:01:23.451] [exthost] [info] ExtensionService#_doActivateExtension vscode.jake {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-06 21:01:23.451] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/jake/dist/main
+[2019-07-06 21:01:23.455] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-06 21:01:23.455] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/npm/dist/main
+[2019-07-06 21:01:23.475] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-06 21:01:23.475] [exthost] [info] ExtensionService#loadCommonJSModule /snap/code/10/usr/share/code/resources/app/extensions/typescript-language-features/dist/extension
+[2019-07-06 21:02:16.149] [exthost] [info] ExtensionService#_doActivateExtension vscjava.vscode-java-dependency {"startup":true,"activationEvent":"workspaceContains:build.gradle"}
+[2019-07-06 21:02:16.149] [exthost] [info] ExtensionService#loadCommonJSModule /home/emdash00/.vscode/extensions/vscjava.vscode-java-dependency-0.5.1/dist/extension
+[2019-07-06 21:02:16.305] [exthost] [info] eager extensions activated

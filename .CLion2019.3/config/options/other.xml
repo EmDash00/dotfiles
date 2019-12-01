@@ -1,0 +1,32 @@
+<application>
+  <component name="NodeJsLocalInterpreters">
+    <local-interpreter path="/bin/node" />
+    <local-interpreter path="/usr/bin/node" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.6042781" />
+    <property name="Copy.OpenInEditor" value="true" />
+    <property name="Default.SavedEditorTheme" value="_@user_Default" />
+    <property name="ExpandBeforeRunStepsPanel" value="true" />
+    <property name="ExpandRunDashboardTypesPanel" value="false" />
+    <property name="InstalledPluginsSearchHistory" value="ardu&#10;arduino" />
+    <property name="KEYMAP" value="jump" />
+    <property name="PluginConfigurable.selectionTab" value="1" />
+    <property name="SerialMonitorDuplexConsoleViewState" value="true" />
+    <property name="SettingsSearchHistory" value="ardu&#10;problems&#10;system settings&#10;shortcuts&#10;braces" />
+    <property name="TrendingPluginsSearchHistory" value="file watchers&#10;file wa&#10;idea&#10;arduino&#10;serial" />
+    <property name="evlsprt3.191" value="14" />
+    <property name="evlsprt3.192" value="17" />
+    <property name="evlsprt3.193" value="15" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/CLionProjects/Pendulum&#10;/home/emdash00/CLionProjects/ArduinoTemplate&#10;/home/emdash00/CLionProjects/CircularBuffer&#10;/home/emdash00/tmp&#10;/home/emdash00/CLionProjects/untitled&#10;/home/emdash00/CLionProjects/HapticPrototype&#10;/home/emdash00/CLionProjects/Hapkit-Prototype&#10;/home/emdash00/CLionProjects/HapKit-Prototype&#10;/home/emdash00/Documents/Rothlab/projects/hapkit/tmp2&#10;/home/emdash00/CLionProjects/Pendulum (copy)&#10;/home/emdash00/CLionProjects/untitled1&#10;/home/emdash00/CLionProjects/TestAsync&#10;/home/emdash00/CLionProjects/ArduinoThread&#10;/home/emdash00/CLionProjects/test&#10;/home/emdash00/CLionProjects/Pendulum/test&#10;/home/emdash00/CLionProjects/TestBLA&#10;/home/emdash00/CLionProjects/Test&#10;/home/emdash00/Arduino/pendulum" />
+    <property name="file.gist.reindex.count" value="3247" />
+    <property name="fileTypeChangedCounter" value="124" />
+    <property name="ideavim.statistics.timestamp" value="1575138122623" />
+    <property name="last.imported.location" value="$USER_HOME$/Arduino/pendulum" />
+    <property name="lastTip" value="1" />
+    <property name="selected.color.option.type" value="OC.BRACES" />
+    <property name="settings.code.style.selected.tab.ObjectiveC" value="Wrapping and Braces" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+    <property name="ts.lib.d.ts.version" value="3.7.2" />
+  </component>
+</application>

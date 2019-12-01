@@ -1,0 +1,6 @@
+.config/vim/bundle/
+.config/oh-my-zsh/
+.config/discord/
+.tmux/plugins/
+.tmux/resurrect/
+.CLion2019.3/system/

@@ -1,0 +1,124 @@
+!SESSION 2019-07-06 21:01:03.281 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -data /home/emdash00/.config/Code/User/workspaceStorage/9c1df8f340c009c39d23e538a4e0ea65/redhat.java/jdt_ws
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:05.304
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:05.441
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:05.463
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:05.464
+!MESSAGE Initializing Java Language Server 0.40.0.201906051852
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:05.473
+!MESSAGE Installed reference:file:/home/emdash00/.vscode/extensions/vscjava.vscode-java-debug-0.20.0/server/com.microsoft.java.debug.plugin-0.20.0.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:05.474
+!MESSAGE Installed reference:file:/home/emdash00/.vscode/extensions/vscjava.vscode-java-dependency-0.5.1/server/com.microsoft.jdtls.ext.core-0.5.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:05.520
+!MESSAGE Creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:05.549
+!MESSAGE Started reference:file:/home/emdash00/.vscode/extensions/vscjava.vscode-java-debug-0.20.0/server/com.microsoft.java.debug.plugin-0.20.0.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:05.559
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:05.590
+!MESSAGE Finished creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:06.011
+!MESSAGE Importing Gradle project(s)
+!SESSION 2019-07-06 21:01:23.394 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -data /home/emdash00/.config/Code/User/workspaceStorage/9c1df8f340c009c39d23e538a4e0ea65/redhat.java/jdt_ws
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:25.292
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:25.402
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:25.425
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:25.426
+!MESSAGE Initializing Java Language Server 0.40.0.201906051852
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:25.434
+!MESSAGE Installed reference:file:/home/emdash00/.vscode/extensions/vscjava.vscode-java-debug-0.20.0/server/com.microsoft.java.debug.plugin-0.20.0.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:25.436
+!MESSAGE Installed reference:file:/home/emdash00/.vscode/extensions/vscjava.vscode-java-dependency-0.5.1/server/com.microsoft.jdtls.ext.core-0.5.1.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:25.475
+!MESSAGE Started reference:file:/home/emdash00/.vscode/extensions/vscjava.vscode-java-debug-0.20.0/server/com.microsoft.java.debug.plugin-0.20.0.jar
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:25.481
+!MESSAGE Creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:25.486
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:25.542
+!MESSAGE Finished creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:25.895
+!MESSAGE Importing Gradle project(s)
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:45.413
+!MESSAGE Parent process stopped running, forcing server exit
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:45.414
+!MESSAGE Shutdown received... waking up main thread
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:01:45.421
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is stopping:
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-07-06 21:01:55.101
+!MESSAGE An internal error occurred during: "Initialize workspace".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin.getProjectsManager(JavaLanguageServerPlugin.java:380)
+	at org.eclipse.jdt.ls.core.internal.handlers.WorkspaceDiagnosticsHandler.getProblemMarkers(WorkspaceDiagnosticsHandler.java:201)
+	at org.eclipse.jdt.ls.core.internal.handlers.WorkspaceDiagnosticsHandler.publishDiagnostics(WorkspaceDiagnosticsHandler.java:189)
+	at org.eclipse.jdt.ls.core.internal.handlers.JDTLanguageServer$1.run(JDTLanguageServer.java:247)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-07-06 21:01:55.594
+!MESSAGE The workspace will exit with unsaved changes in this session.
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:02:16.147
+!MESSAGE Workspace initialized in 50714ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:02:16.225
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:02:16.238
+!MESSAGE >> workspace/didChangeConfiguration
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:02:16.287
+!MESSAGE >>New configuration: {java={home=/home/emdash00/frc2019/jdk, jdt={ls={vmargs=-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication}}, errors={incompleteClasspath={severity=warning}}, configuration={checkProjectSettingsExclusions=false, updateBuildConfiguration=automatic, maven={userSettings=null}}, trace={server=off}, import={maven={enabled=true}, gradle={enabled=true, wrapper={enabled=true}, version=null}, exclusions=[**/node_modules/**, **/.metadata/**, **/archetype-resources/**, **/META-INF/maven/**]}, maven={downloadSources=false}, referencesCodeLens={enabled=false}, signatureHelp={enabled=false}, implementationsCodeLens={enabled=false}, format={enabled=true, settings={url=null, profile=null}, comments={enabled=true}, onType={enabled=true}}, saveActions={organizeImports=false}, contentProvider={preferred=null}, autobuild={enabled=true}, maxConcurrentBuilds=1.0, completion={enabled=true, overwrite=true, guessMethodArguments=false, favoriteStaticMembers=[org.junit.Assert.*, org.junit.Assume.*, org.junit.jupiter.api.Assertions.*, org.junit.jupiter.api.Assumptions.*, org.junit.jupiter.api.DynamicContainer.*, org.junit.jupiter.api.DynamicTest.*, org.mockito.Mockito.*, org.mockito.ArgumentMatchers.*, org.mockito.Answers.*], importOrder=[java, javax, com, org]}, foldingRange={enabled=true}, progressReports={enabled=true}, codeGeneration={hashCodeEquals={useJava7Objects=false, useInstanceof=false}, useBlocks=false, generateComments=false, toString={template=${object.className} [${member.name()}=${member.value}, ${otherMembers}], codeStyle=STRING_CONCATENATION, skipNullValues=false, listArrayContents=true, limitElements=0.0}}, debug={logLevel=warn, settings={showHex=false, showStaticVariables=false, showQualifiedNames=false, showLogicalStructure=true, showToString=true, maxStringLength=0.0, hotCodeReplace=manual, enableRunDebugCodeLens=true, forceBuildBeforeLaunch=true, console=internalConsole}}, dependency={showOutline=true, syncWithFolderExplorer=true, autoRefresh=true, packagePresentation=flat}}}
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:02:17.634
+!MESSAGE >> build jobs finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:02:17.695
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:02:17.696
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2019-07-06 21:02:17.701
+!MESSAGE >> watchers registered
