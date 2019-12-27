@@ -58,17 +58,6 @@
             </RecentProjectMetaInfo>
           </value>
         </entry>
-        <entry key="$USER_HOME$/CLionProjects/CircularBuffer">
-          <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1T5OpGNwjURtVtHPevWbgrOGYUB">
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="build" value="CL-193.5233.103" />
-              <option name="buildTimestamp" value="1574895099302" />
-              <option name="productionCode" value="CL" />
-              <option name="projectOpenTimestamp" value="1575138622318" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
         <entry key="$USER_HOME$/CLionProjects/ArduinoTemplate">
           <value>
             <RecentProjectMetaInfo projectWorkspaceId="1QtJzrrUdNlxAHOT3w29dzSsf2x">
@@ -83,7 +72,7 @@
         </entry>
         <entry key="$FILE_PATH$">
           <value>
-            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1QtJzrrUdNlxAHOT3w29dzSsf2x">
+            <RecentProjectMetaInfo projectWorkspaceId="1QtJzrrUdNlxAHOT3w29dzSsf2x">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="CL-193.5233.103" />
               <option name="buildTimestamp" value="1574895099302" />
@@ -93,14 +82,38 @@
             </RecentProjectMetaInfo>
           </value>
         </entry>
+        <entry key="$USER_HOME$/CLionProjects/CircularBuffer">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1T5OpGNwjURtVtHPevWbgrOGYUB">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-193.5233.103" />
+              <option name="buildTimestamp" value="1574895098506" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1575378342849" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/CLionProjects/test">
+          <value>
+            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1UTR0M9zTS58MjVgAMFhkjXlwEE">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-193.5233.103" />
+              <option name="buildTimestamp" value="1574895109712" />
+              <frame x="960" y="0" width="960" height="1061" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1575392325214" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="lastProjectLocation" value="$USER_HOME$/CLionProjects" />
     <option name="recentPaths">
       <list>
+        <option value="$USER_HOME$/CLionProjects/test" />
+        <option value="$USER_HOME$/CLionProjects/CircularBuffer" />
         <option value="$FILE_PATH$" />
         <option value="$USER_HOME$/CLionProjects/ArduinoTemplate" />
-        <option value="$USER_HOME$/CLionProjects/CircularBuffer" />
         <option value="$USER_HOME$/tmp" />
         <option value="$USER_HOME$/CLionProjects/untitled" />
         <option value="$USER_HOME$/CLionProjects/MutexLocking" />

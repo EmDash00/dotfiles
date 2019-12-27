@@ -1,0 +1,12 @@
+[2019-12-22 23:35:04.502] [exthost] [info] extension host started
+[2019-12-22 23:35:04.512] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2019-12-22 23:35:04.512] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/23/usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-12-22 23:35:04.514] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2019-12-22 23:35:04.514] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/23/usr/share/code/resources/app/extensions/emmet/dist/extension
+[2019-12-22 23:35:04.524] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.git","_lower":"vscode.git"},"activationEvent":"*"}
+[2019-12-22 23:35:04.524] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/23/usr/share/code/resources/app/extensions/git/dist/main
+[2019-12-22 23:35:04.536] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2019-12-22 23:35:04.537] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/23/usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2019-12-22 23:35:04.538] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2019-12-22 23:35:04.538] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/23/usr/share/code/resources/app/extensions/search-result/dist/extension.js
+[2019-12-22 23:35:04.539] [exthost] [info] eager extensions activated

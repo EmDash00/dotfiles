@@ -1,6 +1,7 @@
 .config/vim/bundle/
 .config/oh-my-zsh/
 .config/discord/
+.config/fzf
 .tmux/plugins/
 .tmux/resurrect/
 .config/pulse/

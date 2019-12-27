@@ -42,12 +42,16 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Set sink to the one that's running
+set $sink `pactl list short sinks | grep RUNNING | cut -f1`
+
 # Change brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume $sink +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume $sink -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink toggle # mute sound
 
 # change focus
 bindsym $mod+h focus left
@@ -62,9 +66,9 @@ bindsym $mod+l focus right
 #bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 bindsym $mod+Shift+h move right
 
 # alternatively, you can use the cursor keys:
@@ -155,9 +159,9 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym l resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
         bindsym h resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
@@ -177,5 +181,13 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+	 #i3bar_command ~/.config/i3/i3-lemonbar/i3_lemonbar.sh
+	status_command i3status
 }
+
+
+# exec powerline-globmenu
+# exec "powerline-lemonbar --height 16 -- -b -f 'DejaVu Sans Mono-11' -f 'PowerlineSymbols-12' -f 'FontAwesome-11'"
+
+# start flux when I login
+exec fluxgui  

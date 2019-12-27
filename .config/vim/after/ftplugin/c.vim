@@ -11,6 +11,7 @@ setl colorcolumn=81
 setl comments=sl:/*,mb:\ *,elx:\ */
 setl noshowmode
 
-inoremap { {<CR>}<Esc>O
+inoremap {{ {<CR>}<Esc>O
 inoremap " ""<Left>
+
 let g:ycm_global_ycm_extra_conf="/home/emdash00/.config/vim/ycm/.ycm_extra_conf.py"

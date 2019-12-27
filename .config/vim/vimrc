@@ -7,7 +7,8 @@ set backupdir=$XDG_CACHE_HOME/vim,/tmp
 set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
 
 set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIMRUNTIME
-set runtimepath+=~/.config/vim/bundle/Vundle.vim
+set runtimepath+=$XDG_CONFIG_HOME/vim/bundle/Vundle.vim
+set runtimepath+=$XDG_CONFIG_HOME/fzf/
 
 let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 
@@ -26,7 +27,6 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'termhn/i3-vim-nav'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'honza/vim-snippets'
 Plugin 'tmhedberg/SimpylFold'
@@ -40,6 +40,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'w0rp/ale'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'freitass/todo.txt-vim.git'
+Plugin 'Sirsireesh/vim-dlang-phobos-highlighter'
 
 "Colorschemes 
 Plugin 'ayu-theme/ayu-vim'
@@ -50,6 +51,7 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'rakr/vim-one'
 
 Plugin 'JesseKPhillips/d.vim'
+Plugin 'vdanarye/vim-dutyl'
 
 Bundle 'edkolev/tmuxline.vim'
 call vundle#end()
@@ -77,9 +79,6 @@ set background=dark
 colorscheme one
 
 "Ale
-let b:ale_linters = ['flake8']
-let b:ale_fixers = ['autopep8', 'yapf']
-
 let b:ale_open_list = 1
 let b:ale_list_window_size = 5
 
@@ -155,12 +154,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-u>"
 "Vim Setup
 syntax on
 set number
-set relativenumber
 set noshowmode
 set backspace=2
 set laststatus=2
-set tabstop=3
-set shiftwidth=3
+set tabstop=4
+set shiftwidth=4
 
 set clipboard=unnamedplus
 

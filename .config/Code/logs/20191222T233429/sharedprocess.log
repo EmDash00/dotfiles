@@ -1,0 +1,14 @@
+[2019-12-22 23:34:32.835] [sharedprocess] [info] main {"machineId":"cf8066c27a34841b7ae6d2860e78fb1c579664547639fbd3d572fb745c907b6c","windowId":2}
+[2019-12-22 23:34:53.459] [sharedprocess] [info] Installing extension: dlang-vscode.dlang
+[2019-12-22 23:34:54.078] [sharedprocess] [info] Downloaded extension: dlang-vscode.dlang /tmp/7667ff5c-3b71-487b-931a-d794b6c5eebf
+[2019-12-22 23:34:54.770] [sharedprocess] [info] Extracted extension to /home/emdash00/.vscode/extensions/.dlang-vscode.dlang-0.9.0: dlang-vscode.dlang
+[2019-12-22 23:34:54.770] [sharedprocess] [info] Renamed to /home/emdash00/.vscode/extensions/dlang-vscode.dlang-0.9.0
+[2019-12-22 23:34:54.771] [sharedprocess] [info] Installation completed. dlang-vscode.dlang
+[2019-12-22 23:34:54.888] [sharedprocess] [info] Extensions installed successfully: dlang-vscode.dlang
+[2019-12-22 23:34:55.971] [sharedprocess] [info] Installing extension: dlang-vscode.dlang
+[2019-12-22 23:34:56.785] [sharedprocess] [info] Downloaded extension: dlang-vscode.dlang /tmp/15b85f10-ac52-43ca-9a14-90bf82ec2cc1
+[2019-12-22 23:34:57.308] [sharedprocess] [info] Extracted extension to /home/emdash00/.vscode/extensions/.dlang-vscode.dlang-0.10.0: dlang-vscode.dlang
+[2019-12-22 23:34:57.308] [sharedprocess] [info] Renamed to /home/emdash00/.vscode/extensions/dlang-vscode.dlang-0.10.0
+[2019-12-22 23:34:57.309] [sharedprocess] [info] Installation completed. dlang-vscode.dlang
+[2019-12-22 23:34:57.453] [sharedprocess] [info] Extensions installed successfully: dlang-vscode.dlang
+[2019-12-22 23:35:12.848] [sharedprocess] [info] Starting to clean up unused language packs.

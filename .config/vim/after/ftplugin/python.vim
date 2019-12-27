@@ -11,3 +11,5 @@ inoremap " ""<Esc>i
 inoremap <C-b> """
 let g:ycm_global_ycm_extra_conf="/home/emdash00/.config/vim/ycm/python_conf.py"
 
+let b:ale_linters = ['flake8']
+let b:ale_fixers = {'python' : ['autopep8', 'yapf']}

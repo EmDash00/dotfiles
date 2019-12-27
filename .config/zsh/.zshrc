@@ -1,21 +1,13 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$XDG_CONFIG_HOME/vim-i3wm-tmux-navigator:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$DUB/dcd-0.12.0/dcd/bin:$DUB/dscanner-0.8.0/dscanner/bin:$DUB/dfmt-0.11.0/dfmt/bin/:$DUB/dfix-0.3.5/dfix:$HOME/bin:/usr/local/bin:$PATH
+
+export DUB="${HOME}/.dub/packages"
 export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Rothlab/projects/SILKWORM"
+export APPS="$HOME/Apps"
+
 export XDG_CONFIG_HOME='/home/emdash00/.config'
-export XDG_CACHE_HOME='/home/emdash00/.cache'
 export XDG_DATA_HOME='/usr/local/share'
 export LD_LIBRARY_PATH='/usr/local/lib'
-
-setopt INC_APPEND_HISTORY
-
-#if [ -s "${XDG_CONFIG_HOME}/ssh/config" ]
-#then
-    #SSH_CONFIG="-F ${XDG_CONFIG_HOME}/ssh/config"
-#fi
-#if [ -s "${XDG_CONFIG_HOME}/ssh/id_dsa" ]
-#then
-    #SSH_ID="-i ${XDG_CONFIG_HOME}/ssh/id_dsa"
-#fi
 
 alias ssh="ssh $SSH_CONFIG $SSH_ID "
 alias ssh-copy-id="ssh-copy-id $SSH_ID"
@@ -28,6 +20,13 @@ export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 export ZSH_CUSTOM=/home/emdash00/.config/oh-my-zsh/custom
 export ZSH_CACHE_DIR=/home/emdash00/.config/oh-my-zsh/cache
 
+export HISTFILE="$XDG_CACHE_HOME/zsh_history"
+
+setopt append_history # append rather then overwrite
+setopt extended_history # save timestamp
+setopt inc_append_history # add history immediately after typing a command
+export HISTSIZE=1000
+export SAVEHIST=10000
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -61,7 +60,6 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
 # ZSH_TMUX_AUTOSTART=true
 # ZSH_TMUX_AUTOSTART_ONCE=false
 
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -79,7 +77,7 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -133,22 +131,25 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source ~/Apps/git-apps/todo.txt-cli/todo_completion
-# User configuration
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+	export EDITOR='vim'
+else
+   export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+
+autoload -Uz compinit
+compinit
 
 
 source ~/.fonts/*.sh
@@ -180,8 +181,24 @@ else
     start_agent;
 fi
 
+if [ -n "$GTK_MODULES" ]; then
+    GTK_MODULES="${GTK_MODULES}:appmenu-gtk-module"
+else
+    GTK_MODULES="appmenu-gtk-module"
+fi
+
+if [ -z "$UBUNTU_MENUPROXY" ]; then
+    UBUNTU_MENUPROXY=1
+fi
+
+export GTK_MODULES
+export UBUNTU_MENUPROXY
+
 
 alias gwd='pwd | head -c -1 | xclip -selection clipboard'
 alias reload='source $XDG_CONFIG_HOME/zsh/.zshrc'
+alias zconf='vim /home/emdash00/.config/zsh/.zshrc'
+alias vconf='vim /home/emdash00/.config/vim/vimrc'
+alias iconf='vim /home/emdash00/.config/i3/config'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -92,7 +92,7 @@
     <size key="#com.intellij.fileTypes.FileTypeChooser.0.0.1920.1080" width="593" height="379" />
   </component>
   <component name="WindowManager">
-    <frame x="260" y="53" width="1400" height="1000" />
+    <frame x="960" y="0" width="960" height="1061" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -109,14 +109,19 @@
     </layout>
   </component>
   <component name="WindowStateApplicationService">
-    <state x="742" y="230" width="424" height="491" key="FileChooserDialogImpl" timestamp="1575138119638">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="740" y="190" width="424" height="491" key="FileChooserDialogImpl" timestamp="1575392324280">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="740" y="190" key="FileChooserDialogImpl/0.0.1920.1080" timestamp="1575392324280" />
     <state x="742" y="230" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053" timestamp="1575138119638" />
-    <state x="959" y="472" key="WELCOME_SCREEN" timestamp="1575141177121">
+    <state x="188" y="40" key="SettingsEditor" timestamp="1575392298898">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="188" y="40" key="SettingsEditor/0.0.1920.1080" timestamp="1575392298898" />
+    <state x="959" y="472" key="WELCOME_SCREEN" timestamp="1577073677374">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="959" y="472" key="WELCOME_SCREEN/0.27.1920.1053" timestamp="1575141177121" />
+    <state x="959" y="472" key="WELCOME_SCREEN/0.27.1920.1053" timestamp="1577073677374" />
     <state x="2187" y="427" width="1406" height="1034" key="dock-window-1" timestamp="1575138100735" />
     <state x="45" y="282" width="1622" height="1007" key="dock-window-1/1920.1080" timestamp="1575138100736" />
     <state x="2187" y="427" width="1406" height="1034" key="dock-window-1/1920.1080/1920.1080" timestamp="1575138100736" />

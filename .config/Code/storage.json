@@ -2,7 +2,7 @@
     "telemetry.machineId": "cf8066c27a34841b7ae6d2860e78fb1c579664547639fbd3d572fb745c907b6c",
     "openedPathsList": {
         "workspaces3": [
-            "file:///home/emdash00/sim/TestSim"
+            "file:///home/emdash00/tmp/proj"
         ],
         "files2": []
     },
@@ -49,13 +49,13 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "fsPath": "/home/emdash00/sim/TestSim",
-                                        "external": "file:///home/emdash00/sim/TestSim",
-                                        "path": "/home/emdash00/sim/TestSim",
+                                        "fsPath": "/home/emdash00/tmp/proj",
+                                        "external": "file:///home/emdash00/tmp/proj",
+                                        "path": "/home/emdash00/tmp/proj",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "~/sim/TestSim"
+                                    "label": "~/tmp/proj"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -98,7 +98,8 @@
                     },
                     {
                         "id": "workbench.action.files.saveAll",
-                        "label": "Save A&&ll"
+                        "label": "Save A&&ll",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -286,6 +287,10 @@
                         "label": "Move &&Line Down"
                     },
                     {
+                        "id": "editor.action.duplicateSelection",
+                        "label": "&&Duplicate Selection"
+                    },
+                    {
                         "id": "vscode.menubar.separator"
                     },
                     {
@@ -372,9 +377,13 @@
                                     "checked": true
                                 },
                                 {
-                                    "id": "workbench.action.togglePanel",
-                                    "label": "Show &&Panel",
+                                    "id": "workbench.action.toggleEditorVisibility",
+                                    "label": "Show &&Editor Area",
                                     "checked": true
+                                },
+                                {
+                                    "id": "workbench.action.togglePanel",
+                                    "label": "Show &&Panel"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -544,7 +553,8 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back"
+                        "label": "&&Back",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -553,8 +563,7 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location",
-                        "enabled": false
+                        "label": "&&Last Edit Location"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -663,8 +672,12 @@
                         "label": "Go to &&Symbol in File..."
                     },
                     {
-                        "id": "editor.action.goToDeclaration",
+                        "id": "editor.action.revealDefinition",
                         "label": "Go to &&Definition"
+                    },
+                    {
+                        "id": "editor.action.revealDeclaration",
+                        "label": "Go to &&Declaration"
                     },
                     {
                         "id": "editor.action.goToTypeDefinition",
@@ -672,7 +685,11 @@
                     },
                     {
                         "id": "editor.action.goToImplementation",
-                        "label": "Go to &&Implementation"
+                        "label": "Go to &&Implementations"
+                    },
+                    {
+                        "id": "editor.action.goToReferences",
+                        "label": "Go to &&References"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -717,7 +734,7 @@
                     },
                     {
                         "id": "workbench.action.debug.run",
-                        "label": "Start &&Without Debugging"
+                        "label": "Run &&Without Debugging"
                     },
                     {
                         "id": "workbench.action.debug.stop",
@@ -826,7 +843,8 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal"
+                        "label": "&&Split Terminal",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -994,7 +1012,6 @@
             },
             "workbench.action.openSettings": {
                 "label": "Ctrl+,",
-                "isNative": false,
                 "userSettingsLabel": "ctrl+,"
             },
             "workbench.view.extensions": {
@@ -1026,8 +1043,8 @@
                 "userSettingsLabel": "ctrl+k f"
             },
             "workbench.action.closeWindow": {
-                "label": "Ctrl+Shift+W",
-                "userSettingsLabel": "ctrl+shift+w"
+                "label": "Ctrl+W",
+                "userSettingsLabel": "ctrl+w"
             },
             "workbench.action.quit": {
                 "label": "Ctrl+Q",
@@ -1071,7 +1088,6 @@
             },
             "editor.action.commentLine": {
                 "label": "Ctrl+/",
-                "isNative": false,
                 "userSettingsLabel": "ctrl+/"
             },
             "editor.action.blockComment": {
@@ -1153,12 +1169,10 @@
             },
             "workbench.action.zoomIn": {
                 "label": "Ctrl+=",
-                "isNative": false,
                 "userSettingsLabel": "ctrl+="
             },
             "workbench.action.zoomOut": {
                 "label": "Ctrl+-",
-                "isNative": false,
                 "userSettingsLabel": "ctrl+-"
             },
             "workbench.action.zoomReset": {
@@ -1197,7 +1211,6 @@
             },
             "workbench.action.terminal.toggleTerminal": {
                 "label": "Ctrl+`",
-                "isNative": false,
                 "userSettingsLabel": "ctrl+`"
             },
             "workbench.actions.view.problems": {
@@ -1210,12 +1223,10 @@
             },
             "workbench.action.navigateBack": {
                 "label": "Ctrl+Alt+-",
-                "isNative": false,
                 "userSettingsLabel": "ctrl+alt+-"
             },
             "workbench.action.navigateForward": {
                 "label": "Ctrl+Shift+-",
-                "isNative": false,
                 "userSettingsLabel": "ctrl+shift+-"
             },
             "workbench.action.navigateToLastEditLocation": {
@@ -1291,9 +1302,17 @@
                 "label": "Ctrl+Shift+O",
                 "userSettingsLabel": "ctrl+shift+o"
             },
+            "editor.action.revealDefinition": {
+                "label": "F12",
+                "userSettingsLabel": "f12"
+            },
             "editor.action.goToImplementation": {
                 "label": "Ctrl+F12",
                 "userSettingsLabel": "ctrl+f12"
+            },
+            "editor.action.goToReferences": {
+                "label": "Shift+F12",
+                "userSettingsLabel": "shift+f12"
             },
             "workbench.action.gotoLine": {
                 "label": "Ctrl+G",
@@ -1301,7 +1320,6 @@
             },
             "editor.action.jumpToBracket": {
                 "label": "Ctrl+Shift+\\",
-                "isNative": false,
                 "userSettingsLabel": "ctrl+shift+\\"
             },
             "editor.action.marker.nextInFiles": {
@@ -1327,6 +1345,10 @@
             "workbench.action.debug.run": {
                 "label": "Ctrl+F5",
                 "userSettingsLabel": "ctrl+f5"
+            },
+            "workbench.action.debug.stop": {
+                "label": "Shift+F5",
+                "userSettingsLabel": "shift+f5"
             },
             "workbench.action.debug.restart": {
                 "label": "Ctrl+Shift+F5",
@@ -1358,7 +1380,6 @@
             },
             "workbench.action.terminal.new": {
                 "label": "Ctrl+Shift+`",
-                "isNative": false,
                 "userSettingsLabel": "ctrl+shift+`"
             },
             "workbench.action.terminal.split": {
@@ -1384,8 +1405,8 @@
     "themeBackground": "#1e1e1e",
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/emdash00/sim/TestSim",
-            "backupPath": "/home/emdash00/.config/Code/Backups/4418b626307ec39f4c0076d85adb52ec",
+            "folder": "file:///home/emdash00/tmp/proj",
+            "backupPath": "/home/emdash00/.config/Code/Backups/bab3b192d1a2ded8a42499dc8c1663f5",
             "uiState": {
                 "mode": 0,
                 "x": 0,
@@ -1395,5 +1416,6 @@
             }
         },
         "openedWindows": []
-    }
+    },
+    "pickerWorkingDir": "/home/emdash00/tmp"
 }

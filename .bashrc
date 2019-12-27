@@ -115,7 +115,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export TERM="xterm-256color"
 
@@ -124,3 +123,6 @@ bind '"\t":menu-complete'
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

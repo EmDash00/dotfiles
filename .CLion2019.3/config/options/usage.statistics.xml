@@ -21,7 +21,7 @@
     <feature id="codeassists.parameterInfo" count="1443" last-shown="0" last-used="1575139404746" shown-count="0" />
     <feature id="refactoring.inlineParameter" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="codeassists.quickdefinition" count="0" last-shown="0" last-used="0" shown-count="0" />
-    <feature id="editing.completion.basic" count="3962" last-shown="0" last-used="1575139408688" shown-count="0" />
+    <feature id="editing.completion.basic" count="3966" last-shown="0" last-used="1575390802340" shown-count="0" />
     <feature id="refactoring.inlineConst" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="tag.name.completion" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="generate.definitions" count="0" last-shown="0" last-used="0" shown-count="0" />
