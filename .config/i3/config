@@ -185,8 +185,9 @@ bar {
 	status_command i3status
 }
 
-
 # exec powerline-globmenu
+exec --no-startup-id feh --bg-fill ~/Pictures/Wallpaper.jpg
+
 # exec "powerline-lemonbar --height 16 -- -b -f 'DejaVu Sans Mono-11' -f 'PowerlineSymbols-12' -f 'FontAwesome-11'"
 
 # start flux when I login

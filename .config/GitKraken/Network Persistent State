@@ -1,1 +1,0 @@
-{"net":{"http_server_properties":{"servers":[{"https://release.gitkraken.com":{"supports_spdy":true}},{"https://release.axocdn.com":{"supports_spdy":true}},{"https://redirector.gvt1.com":{"supports_spdy":true}}],"version":5}}}

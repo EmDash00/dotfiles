@@ -6,14 +6,19 @@ export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Rothlab/projects/SILKW
 export APPS="$HOME/Apps"
 
 export XDG_CONFIG_HOME='/home/emdash00/.config'
-export XDG_DATA_HOME='/usr/local/share'
+export XDG_DATA_HOME='/home/emdash00/.local/share'
 export LD_LIBRARY_PATH='/usr/local/lib'
 
 alias ssh="ssh $SSH_CONFIG $SSH_ID "
 alias ssh-copy-id="ssh-copy-id $SSH_ID"
 
 export TERM="xterm-256color"
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+export VIMINIT='if !has("nvim") 
+		   let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC 
+		else
+		   let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim" | source $MYVIMRC
+		endif'
+		
 
 # Path to your oh-my-zsh installation.
 export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
@@ -92,7 +97,7 @@ DISABLE_UPDATE_PROMPT="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -113,7 +118,6 @@ DISABLE_UPDATE_PROMPT="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -135,9 +139,6 @@ source ~/Apps/git-apps/todo.txt-cli/todo_completion
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 if [[ -n $SSH_CONNECTION ]]; then
 	export EDITOR='vim'
 else
@@ -147,10 +148,8 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-
 autoload -Uz compinit
 compinit
-
 
 source ~/.fonts/*.sh
 
@@ -181,24 +180,12 @@ else
     start_agent;
 fi
 
-if [ -n "$GTK_MODULES" ]; then
-    GTK_MODULES="${GTK_MODULES}:appmenu-gtk-module"
-else
-    GTK_MODULES="appmenu-gtk-module"
-fi
-
-if [ -z "$UBUNTU_MENUPROXY" ]; then
-    UBUNTU_MENUPROXY=1
-fi
-
-export GTK_MODULES
-export UBUNTU_MENUPROXY
-
-
 alias gwd='pwd | head -c -1 | xclip -selection clipboard'
 alias reload='source $XDG_CONFIG_HOME/zsh/.zshrc'
+
 alias zconf='vim /home/emdash00/.config/zsh/.zshrc'
 alias vconf='vim /home/emdash00/.config/vim/vimrc'
+alias nconf='nvim /home/emdash00/.config/nvim/init.vim'
 alias iconf='vim /home/emdash00/.config/i3/config'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
