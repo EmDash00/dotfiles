@@ -114,13 +114,14 @@
     </state>
     <state x="740" y="190" key="FileChooserDialogImpl/0.0.1920.1080" timestamp="1575392324280" />
     <state x="742" y="230" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053" timestamp="1575138119638" />
-    <state x="188" y="40" key="SettingsEditor" timestamp="1575392298898">
+    <state x="186" y="22" key="SettingsEditor" timestamp="1577599779773">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="188" y="40" key="SettingsEditor/0.0.1920.1080" timestamp="1575392298898" />
-    <state x="959" y="472" key="WELCOME_SCREEN" timestamp="1577073677374">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="186" y="22" key="SettingsEditor/0.0.1920.1080" timestamp="1577599779773" />
+    <state x="957" y="410" key="WELCOME_SCREEN" timestamp="1577599786716">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="957" y="410" key="WELCOME_SCREEN/0.0.1920.1080" timestamp="1577599786716" />
     <state x="959" y="472" key="WELCOME_SCREEN/0.27.1920.1053" timestamp="1577073677374" />
     <state x="2187" y="427" width="1406" height="1034" key="dock-window-1" timestamp="1575138100735" />
     <state x="45" y="282" width="1622" height="1007" key="dock-window-1/1920.1080" timestamp="1575138100736" />
