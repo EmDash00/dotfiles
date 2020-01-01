@@ -21,6 +21,10 @@ augroup CloseLoclistWindowGroup
    autocmd QuitPre * if empty(&buftype) | lclose | endif
 augroup END
 
+"--------------------------------------------
+"Autoclose neovim completion tips when done with completion
+"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 "--------------------------------------------
 "Autostrip trailing whitespace

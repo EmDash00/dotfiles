@@ -13,18 +13,37 @@ set background=dark
 set clipboard=unnamedplus
 
 call plug#begin(stdpath('data') . '/plugged')
-   "-----------------Utility-----------------
+   "----------------Completion---------------
+   
    Plug 'w0rp/ale'
+   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+      Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+      Plug 'Shougo/deoplete-clangx'
+      Plug 'landaire/deoplete-d'
+      Plug 'autozimu/LanguageClient-neovim'
+      Plug 'deoplete-plugins/deoplete-tag'
+      Plug 'Shougo/neco-syntax'
+      Plug 'deoplete-plugins/deoplete-jedi'
+      Plug 'Shougo/neco-vim'
+      Plug 'Shougo/neoinclude.vim'
+      Plug 'deoplete-plugins/deoplete-zsh'
+
+      
    Plug 'junegunn/fzf.vim'
+      Plug 'SirVer/ultisnips'
+      Plug 'honza/vim-snippets'
+
+   "Plug 'Valloric/YouCompleteMe' "Depracated. TODO: Replace with deoplete
+
+   
+   "-----------------Utility-----------------
+   Plug 'smitajit/bufutils.vim'
    Plug 'tpope/vim-fugitive'
    Plug 'tpope/vim-eunuch'
    Plug 'scrooloose/nerdcommenter'
    Plug 'terryma/vim-multiple-cursors'
    Plug 'christoomey/vim-tmux-navigator'
    Plug 'scrooloose/nerdtree'
-   Plug 'SirVer/ultisnips'
-      Plug 'honza/vim-snippets'
-   Plug 'Valloric/YouCompleteMe' "Depracated. TODO: Replace with deoplete
    Plug 'godlygeek/tabular'
 
    
@@ -56,7 +75,6 @@ call plug#end()
 
 colorscheme one
 
-
 if filereadable(stdpath('config') . '/keybinds.vim') 
    source $XDG_CONFIG_HOME/nvim/keybinds.vim
 endif
@@ -69,6 +87,6 @@ if filereadable(stdpath('config') . '/plugopts.vim')
    source $XDG_CONFIG_HOME/nvim/plugopts.vim
 endif
 
-if filereadable(stdpath('config') . '/functions.vim')
+if filereadable(stdpath('config') . '/autofuncs.vim')
    source $XDG_CONFIG_HOME/nvim/autofuncs.vim
 endif

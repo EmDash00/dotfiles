@@ -2,7 +2,7 @@
 export PATH=$DUB/dcd-0.12.0/dcd/bin:$DUB/dscanner-0.8.0/dscanner/bin:$DUB/dfmt-0.11.0/dfmt/bin/:$DUB/dfix-0.3.5/dfix:$HOME/bin:/usr/local/bin:$PATH
 
 export DUB="${HOME}/.dub/packages"
-export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Rothlab/projects/SILKWORM"
+export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/projects/SILKWORM"
 export APPS="$HOME/Apps"
 
 export XDG_CONFIG_HOME='/home/emdash00/.config'

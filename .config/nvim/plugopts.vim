@@ -1,7 +1,6 @@
 "-----------------------------NERDTree--------------------------------
 let g:NERDTreeWinPos = 'right'
 let g:NERDTreeShowHidden=1
-
 "----------------------------UtiliSnips-------------------------------
 let g:UltiSnipsSnippetsDir = "~/.config/vim/UltiSnips"
 let g:UltiSnipsExpandTrigger="<leader>e"
@@ -12,6 +11,13 @@ let g:UltiSnipsJumpBackwardTrigger="<c-u>"
 "-------------------------------Ale-----------------------------------
 let b:ale_open_list = 1
 let b:ale_list_window_size = 5
+
+"-------------------------Completion Opts-----------------------------
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#d#dcd_server_autostart = 1
+let g:deoplete#sources#jedi#show_docstring = 1
+
 
 
 "-----------------------------Markdown--------------------------------
@@ -54,9 +60,13 @@ set statusline=%{LinterStatus()}
 let g:python_highlight_spaces_errors = 1
 
 
-"-----------------------------YCM------------------------------------
+"------------------------------YCM-----------------------------------
 let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+
+"----------------------------Deoplete--------------------------------
+let g:deoplete#enable_at_startup = 1
 
 
 "----------------------------SimpylFold------------------------------
