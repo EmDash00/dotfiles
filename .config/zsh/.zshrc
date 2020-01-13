@@ -1,7 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$DUB/dcd-0.12.0/dcd/bin:$DUB/dscanner-0.8.0/dscanner/bin:$DUB/dfmt-0.11.0/dfmt/bin/:$DUB/dfix-0.3.5/dfix:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export DUB="${HOME}/.dub/packages"
+export DUB_HOME="/home/emdash00/.dub/packages"
+export PATH=$APPS/git-apps/DCD/bin:$DUB_HOME/dfix-0.3.5/dfix:$DUB_HOME/dfmt-0.11.0/dfmt/bin:$DUB_HOME/dscanner-0.8.0/dscanner/bin:$PATH
+
 export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/projects/SILKWORM"
 export APPS="$HOME/Apps"
 

@@ -12,15 +12,21 @@ let g:UltiSnipsJumpBackwardTrigger="<c-u>"
 let b:ale_open_list = 1
 let b:ale_list_window_size = 5
 
+"let b:ale_linters = ['flake8']
+"let b:ale_fixers = {'python' : ['autopep8', 'yapf'], 'd' : ['dfmt']}
+
 "-------------------------Completion Opts-----------------------------
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#d#dcd_server_autostart = 1
 let g:deoplete#sources#jedi#show_docstring = 1
 
+let g:LanguageClient_autoStart = 1
+"let g:LanguageClient_diagnosticsEnable = 1
+let g:LanguageClient_serverCommands = {
+       \ 'd': ['/home/emdash00/.dub/packages/.bin/dls-latest/dls']
+    \ }
 
-
-"-----------------------------Markdown--------------------------------
+"------------------------------------------------------------
 let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_math = 1
 

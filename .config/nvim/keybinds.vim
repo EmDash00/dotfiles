@@ -26,5 +26,5 @@ map <C-d> :NERDTreeToggle<CR>
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 
 inoremap  <c-space> <c-x><c-o>
-inoremap <tab> <c-n>
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <s-tab> <c-p>

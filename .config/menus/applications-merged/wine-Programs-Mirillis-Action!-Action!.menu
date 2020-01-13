@@ -1,0 +1,24 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+"http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd">
+<Menu>
+  <Name>Applications</Name>
+  <Menu>
+    <Name>wine-wine</Name>
+    <Directory>wine-wine.directory</Directory>
+  <Menu>
+    <Name>wine-Programs</Name>
+    <Directory>wine-Programs.directory</Directory>
+  <Menu>
+    <Name>wine-Programs-Mirillis</Name>
+    <Directory>wine-Programs-Mirillis.directory</Directory>
+  <Menu>
+    <Name>wine-Programs-Mirillis-Action!</Name>
+    <Directory>wine-Programs-Mirillis-Action!.directory</Directory>
+    <Include>
+      <Filename>wine-Programs-Mirillis-Action!-Action!.desktop</Filename>
+    </Include>
+  </Menu>
+  </Menu>
+  </Menu>
+  </Menu>
+</Menu>

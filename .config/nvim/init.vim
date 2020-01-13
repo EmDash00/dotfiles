@@ -10,17 +10,24 @@ set shiftwidth=3
 set termguicolors
 set background=dark
 
+"Vim clipboard is the system clipboard
 set clipboard=unnamedplus
+
+"Blinking cursor
+let NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+set guicursor=a:blinkwait700-blinkon400-blinkoff250
 
 call plug#begin(stdpath('data') . '/plugged')
    "----------------Completion---------------
    
    Plug 'w0rp/ale'
    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-      Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+      "Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
       Plug 'Shougo/deoplete-clangx'
-      Plug 'landaire/deoplete-d'
-      Plug 'autozimu/LanguageClient-neovim'
+      Plug 'autozimu/LanguageClient-neovim', {
+       \ 'branch': 'next',
+       \ 'do': 'bash install.sh',
+       \ }
       Plug 'deoplete-plugins/deoplete-tag'
       Plug 'Shougo/neco-syntax'
       Plug 'deoplete-plugins/deoplete-jedi'
@@ -28,14 +35,10 @@ call plug#begin(stdpath('data') . '/plugged')
       Plug 'Shougo/neoinclude.vim'
       Plug 'deoplete-plugins/deoplete-zsh'
 
-      
    Plug 'junegunn/fzf.vim'
       Plug 'SirVer/ultisnips'
       Plug 'honza/vim-snippets'
 
-   "Plug 'Valloric/YouCompleteMe' "Depracated. TODO: Replace with deoplete
-
-   
    "-----------------Utility-----------------
    Plug 'smitajit/bufutils.vim'
    Plug 'tpope/vim-fugitive'
@@ -59,6 +62,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
    "---------------Syntatical---------------
    Plug 'PotatoesMaster/i3-vim-syntax'
+   Plug 'scarface-one/vim-dlang-phobos-highlighter'
 
    Plug 'dbeniamine/todo.txt-vim'
    Plug 'plasticboy/vim-markdown'
