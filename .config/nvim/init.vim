@@ -18,7 +18,7 @@ let NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set guicursor=a:blinkwait500-blinkon300-blinkoff200
 
 
-  call plug#begin(stdpath('data') . '/plugged')
+call plug#begin(stdpath('data') . '/plugged')
    "----------------Completion---------------
    
    Plug 'w0rp/ale'
@@ -37,8 +37,10 @@ set guicursor=a:blinkwait500-blinkon300-blinkoff200
       Plug 'Shougo/neoinclude.vim'
       Plug 'deoplete-plugins/deoplete-zsh'
 
-   Plug 'junegunn/fzf.vim'
-      Plug 'SirVer/ultisnips'
+   Plug '/home/emdash00/Apps/git-apps/skim'
+      Plug 'lotabout/skim.vim'
+
+   Plug 'SirVer/ultisnips'
       Plug 'honza/vim-snippets'
 
    "-----------------Utility-----------------

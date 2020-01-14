@@ -4,6 +4,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export DUB_HOME="/home/emdash00/.dub/packages"
 export PATH=$APPS/git-apps/DCD/bin:$DUB_HOME/dfix-0.3.5/dfix:$DUB_HOME/dfmt-0.11.0/dfmt/bin:$DUB_HOME/dscanner-0.8.0/dscanner/bin:$PATH
 
+export PATH="$PATH:$HOME/Apps/git-apps/skim/bin"
 export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/projects/SILKWORM"
 export APPS="$HOME/Apps"
 
@@ -185,9 +186,7 @@ fi
 alias gwd='pwd | head -c -1 | xclip -selection clipboard'
 alias reload='source $XDG_CONFIG_HOME/zsh/.zshrc'
 
-alias zconf='vim /home/emdash00/.config/zsh/.zshrc'
+alias zconf='nvim /home/emdash00/.config/zsh/.zshrc'
 alias vconf='vim /home/emdash00/.config/vim/vimrc'
 alias nconf='nvim /home/emdash00/.config/nvim/init.vim'
-alias iconf='vim /home/emdash00/.config/i3/config'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias iconf='nvim /home/emdash00/.config/i3/config'
