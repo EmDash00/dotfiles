@@ -15,15 +15,17 @@ set clipboard=unnamedplus
 
 "Blinking cursor
 let NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-set guicursor=a:blinkwait700-blinkon400-blinkoff250
+set guicursor=a:blinkwait500-blinkon300-blinkoff200
 
-call plug#begin(stdpath('data') . '/plugged')
+
+  call plug#begin(stdpath('data') . '/plugged')
    "----------------Completion---------------
    
    Plug 'w0rp/ale'
    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-      "Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+      Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
       Plug 'Shougo/deoplete-clangx'
+      Plug 'Shougo/echodoc.vim'
       Plug 'autozimu/LanguageClient-neovim', {
        \ 'branch': 'next',
        \ 'do': 'bash install.sh',
@@ -41,6 +43,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
    "-----------------Utility-----------------
    Plug 'smitajit/bufutils.vim'
+   Plug 'pseewald/vim-anyfold'
    Plug 'tpope/vim-fugitive'
    Plug 'tpope/vim-eunuch'
    Plug 'scrooloose/nerdcommenter'
@@ -58,7 +61,7 @@ call plug#begin(stdpath('data') . '/plugged')
    "---------------Appearance---------------
    Plug 'vim-airline/vim-airline'
       Plug 'vim-airline/vim-airline-themes'
-
+   Plug 'kshenoy/vim-signature'
 
    "---------------Syntatical---------------
    Plug 'PotatoesMaster/i3-vim-syntax'
@@ -78,6 +81,7 @@ call plug#begin(stdpath('data') . '/plugged')
 call plug#end()
 
 colorscheme one
+"hi LineNr term=bold cterm=bold ctermfg=2 guifg=#c6c6c6 guibg=#292f3d
 
 if filereadable(stdpath('config') . '/keybinds.vim') 
    source $XDG_CONFIG_HOME/nvim/keybinds.vim

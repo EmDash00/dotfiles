@@ -1,6 +1,8 @@
 "-----------------------------NERDTree--------------------------------
 let g:NERDTreeWinPos = 'right'
 let g:NERDTreeShowHidden=1
+
+
 "----------------------------UtiliSnips-------------------------------
 let g:UltiSnipsSnippetsDir = "~/.config/vim/UltiSnips"
 let g:UltiSnipsExpandTrigger="<leader>e"
@@ -12,8 +14,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-u>"
 let b:ale_open_list = 1
 let b:ale_list_window_size = 5
 
-"let b:ale_linters = ['flake8']
-"let b:ale_fixers = {'python' : ['autopep8', 'yapf'], 'd' : ['dfmt']}
+let g:ale_linters = {
+                    \'python' : ['flake8']
+                   \}
+
+let g:ale_fixers = {
+                   \ 'python' : ['autopep8', 'yapf'], 
+                   \ 'd' : ['dfmt']
+                  \}
 
 "-------------------------Completion Opts-----------------------------
 
@@ -77,4 +85,9 @@ let g:deoplete#enable_at_startup = 1
 
 "----------------------------SimpylFold------------------------------
 let g:SimpylFold_docstring_preview = 1
+set foldlevel=99
 
+"---------------------------Vim Anyfold------------------------------
+autocmd FileType c,cpp,d,java,php,ruby AnyFoldActivate
+let g:anyfold_fold_comments=1
+hi Folded term=NONE cterm=NONE

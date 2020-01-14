@@ -23,7 +23,7 @@ nmap <silent> <leader>j <Plug>(ale_next_wrap)
 
 map <C-d> :NERDTreeToggle<CR>
 
-nnoremap <leader>g :YcmCompleter GoTo<CR>
+"nnoremap <leader>g :YcmCompleter GoTo<CR>
 
 inoremap  <c-space> <c-x><c-o>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
