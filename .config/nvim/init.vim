@@ -17,13 +17,12 @@ set clipboard=unnamedplus
 let NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set guicursor=a:blinkwait500-blinkon300-blinkoff200
 
-
 call plug#begin(stdpath('data') . '/plugged')
    "----------------Completion---------------
    
    Plug 'w0rp/ale'
    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-      Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+      "Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
       Plug 'Shougo/deoplete-clangx'
       Plug 'Shougo/echodoc.vim'
       Plug 'autozimu/LanguageClient-neovim', {
@@ -36,6 +35,8 @@ call plug#begin(stdpath('data') . '/plugged')
       Plug 'Shougo/neco-vim'
       Plug 'Shougo/neoinclude.vim'
       Plug 'deoplete-plugins/deoplete-zsh'
+
+   Plug 'mattn/emmet-vim'
 
    Plug '/home/emdash00/Apps/git-apps/skim'
       Plug 'lotabout/skim.vim'
@@ -52,6 +53,8 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'terryma/vim-multiple-cursors'
    Plug 'christoomey/vim-tmux-navigator'
    Plug 'scrooloose/nerdtree'
+   Plug 'lambdalisue/suda.vim'
+
    Plug 'godlygeek/tabular'
 
    
@@ -75,6 +78,9 @@ call plug#begin(stdpath('data') . '/plugged')
 
    "--------------Colorschemes--------------
    Plug 'ayu-theme/ayu-vim'
+   Plug 'arzg/vim-colors-xcode'
+   Plug 'wadackel/vim-dogrun'
+   Plug 'sainnhe/edge'
    Plug 'fatih/molokai'
    Plug 'kristijanhusak/vim-hybrid-material'
    Plug 'sickill/vim-monokai'

@@ -24,7 +24,8 @@ augroup END
 "--------------------------------------------
 "Autoclose neovim completion tips when done with completion
 "autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+autocmd InsertLeave * silent! pclose
 
 "--------------------------------------------
 "Autostrip trailing whitespace

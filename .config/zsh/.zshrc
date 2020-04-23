@@ -1,27 +1,31 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export DUB_HOME="/home/emdash00/.dub/packages"
-export PATH=$APPS/git-apps/DCD/bin:$DUB_HOME/dfix-0.3.5/dfix:$DUB_HOME/dfmt-0.11.0/dfmt/bin:$DUB_HOME/dscanner-0.8.0/dscanner/bin:$PATH
+#export DUB_HOME="/home/emdash00/.dub/packages"
 
-export PATH="$PATH:$HOME/Apps/git-apps/skim/bin"
-export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/projects/SILKWORM"
-export APPS="$HOME/Apps"
+#export PATH=$DUB_HOME/dcd-0.12.0/dcd/bin/:$DUB_HOME/dfix-0.3.5/dfix:$DUB_HOME/dfmt-0.11.0/dfmt/bin:$DUB_HOME/dscanner-0.8.0/dscanner/bin:$PATH
 
-export XDG_CONFIG_HOME='/home/emdash00/.config'
-export XDG_DATA_HOME='/home/emdash00/.local/share'
-export LD_LIBRARY_PATH='/usr/local/lib'
 
+#export PATH="$PATH:$HOME/Apps/git-apps/skim/bin"
+#export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/SILKOWRM"
+#export APPS="$HOME/Apps"
+
+#export XDG_CONFIG_HOME='/home/emdash00/.config'
+#export XDG_DATA_HOME='/home/emdash00/.local/share'
+#export LD_LIBRARY_PATH='/usr/local/lib'
+#export PROBUDS='D0:FB:E1:F6:A5:12'
+
+alias todo="todo.sh"
 alias ssh="ssh $SSH_CONFIG $SSH_ID "
 alias ssh-copy-id="ssh-copy-id $SSH_ID"
 
 export TERM="xterm-256color"
 export VIMINIT='if !has("nvim") 
-		   let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC 
-		else
-		   let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim" | source $MYVIMRC
-		endif'
-		
+                  let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC 
+               else
+                  let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim" | source $MYVIMRC
+               endif'
+               
 
 # Path to your oh-my-zsh installation.
 export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
@@ -30,11 +34,23 @@ export ZSH_CACHE_DIR=/home/emdash00/.config/oh-my-zsh/cache
 
 export HISTFILE="$XDG_CACHE_HOME/zsh_history"
 
+export PROBUDS='D0:FB:E1:F6:A5:12'
+
+export REF="$HOME/Documents/Notes"
+export LIB="$HOME/Documents/Library"
+export RL="$HOME/Documents/Work/Rothlab"
+
+export WORKON_HOME=$HOME/.virtualenvs   # Optional
+export PROJECT_HOME=$HOME/projects      # Optional
+
+
+export HISTSIZE=1000
+export SAVEHIST=10000
+
 setopt append_history # append rather then overwrite
 setopt extended_history # save timestamp
 setopt inc_append_history # add history immediately after typing a command
-export HISTSIZE=1000
-export SAVEHIST=10000
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -100,7 +116,7 @@ DISABLE_UPDATE_PROMPT="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -143,7 +159,7 @@ source ~/Apps/git-apps/todo.txt-cli/todo_completion
 # export MANPATH="/usr/local/man:$MANPATH"
 
 if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='vim'
+	export EDITOR='nvim'
 else
    export EDITOR='vim'
 fi
@@ -183,10 +199,15 @@ else
     start_agent;
 fi
 
+
 alias gwd='pwd | head -c -1 | xclip -selection clipboard'
+alias clip='xclip -selection clipboard'
 alias reload='source $XDG_CONFIG_HOME/zsh/.zshrc'
 
+alias tconf='nvim /home/emdash00/.config/termite/config'
 alias zconf='nvim /home/emdash00/.config/zsh/.zshrc'
-alias vconf='vim /home/emdash00/.config/vim/vimrc'
-alias nconf='nvim /home/emdash00/.config/nvim/init.vim'
+alias nconf='nvim /home/emdash00/.config/nvim/' 
 alias iconf='nvim /home/emdash00/.config/i3/config'
+
+source /home/emdash00/.local/bin/virtualenvwrapper.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
