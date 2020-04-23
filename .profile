@@ -26,6 +26,28 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export PATH=$PATH:~/.platformio/penv/bin
+if [ -n $IMPORTED ]; then
+   export PATH=$PATH:~/.platformio/penv/bin
+
+
+   export PATH=$PATH:/usr/local/bin
+
+   export DUB_HOME="/home/emdash00/.dub/packages"
+
+   export PATH=$PATH:$DUB_HOME/dcd-0.12.0/dcd/bin/:$DUB_HOME/dfix-0.3.5/dfix:$DUB_HOME/dfmt-0.11.0/dfmt/bin:$DUB_HOME/dscanner-0.8.0/dscanner/bin
+
+
+   export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/SILKOWRM"
+   export APPS="$HOME/Apps"
+
+   export XDG_CONFIG_HOME='/home/emdash00/.config'
+   export XDG_DATA_HOME='/home/emdash00/.local/share'
+   export LD_LIBRARY_PATH='/usr/local/lib'
+   export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+
+   export IMPORTED="true"
+
+fi
+
 
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)

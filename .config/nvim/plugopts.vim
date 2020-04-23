@@ -49,7 +49,7 @@ let g:vim_markdown_math = 1
 
 
 "-----------------------------Airline---------------------------------
-"let g:airline_theme = 'deus'
+let g:airline_theme = 'deus'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1 

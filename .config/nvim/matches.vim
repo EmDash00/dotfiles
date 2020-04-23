@@ -1,8 +1,9 @@
 inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
-inoremap {<CR> {<CR><CR>}<UP><TAB>
+inoremap {<CR> {}<LEFT><CR><CR><UP><TAB>
 inoremap ' ''<Left>
+
 
 inoremap <leader>' '
 inoremap <leader>" "

@@ -1,0 +1,4 @@
+2020/02/16-16:20:18.673 4d30 Reusing MANIFEST leveldb/MANIFEST-000001
+2020/02/16-16:21:18.675 4d31 Level-0 table #5: started
+2020/02/16-16:21:18.706 4d31 Level-0 table #5: 51060 bytes OK
+2020/02/16-16:21:18.716 4d31 Delete type=0 #3

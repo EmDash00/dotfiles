@@ -11,5 +11,5 @@ text/x-arduino=org.gnome.gedit.desktop;
 application/x-wine-extension-ini=org.gnome.gedit.desktop;
 application/pdf=firefox.desktop;org.pwmt.zathura-pdf-poppler.desktop;
 text/csv=org.gnome.gedit.desktop;
-application/x-ms-dos-executable=wine.desktop;
+application/x-ms-dos-executable=wine-extension-vbs.desktop;wine.desktop;
 text/plain=vim.desktop;
