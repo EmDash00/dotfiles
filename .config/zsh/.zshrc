@@ -36,12 +36,16 @@ export HISTFILE="$XDG_CACHE_HOME/zsh_history"
 
 export PROBUDS='D0:FB:E1:F6:A5:12'
 
+export NOVINT_DEVICE_SUPPORT="/usr/local/"
+
+
 export REF="$HOME/Documents/Notes"
 export LIB="$HOME/Documents/Library"
 export RL="$HOME/Documents/Work/Rothlab"
 
 export WORKON_HOME=$HOME/.virtualenvs   # Optional
 export PROJECT_HOME=$HOME/projects      # Optional
+
 
 
 export HISTSIZE=1000
