@@ -22,6 +22,7 @@
 *.bak
 .config/libreoffice/4/user
 !.config/libreoffice/4/user/config
+.config/dconf
 
 
 .CLion*/config/workspace
@@ -43,6 +44,10 @@
 
 *cache*
 *Cache*
+*logs*
+*Logs*
+*log*
+*Log*
 
 .tmux/resurrect/
 .config/discord/
