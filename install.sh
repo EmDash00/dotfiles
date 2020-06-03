@@ -102,5 +102,12 @@ fi
 for file in `ls -p --group-directories-first --color=auto -d \
              $(git ls-tree $(git branch | grep \* | cut -d " " -f2) --name-only) | \
              grep -v "/" | grep -v "$IGNORE_LIST"` ;  do 
-   echo "Hi"
+   if [ -f "$DEST/$file" ] ; then
+      if [ -n $RM ] ; then
+         `rm --preserve-root "$DEST/$file"`
+      else
+         `trash-put "$DEST/$file"`
+      fi
+   fi
+   `ln -s $file -t $DEST`
 done

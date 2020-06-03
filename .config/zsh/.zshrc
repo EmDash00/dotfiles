@@ -213,6 +213,7 @@ alias zconf='nvim /home/emdash00/.config/zsh/.zshrc'
 alias nconf='nvim /home/emdash00/.config/nvim/' 
 alias iconf='nvim /home/emdash00/.config/i3/config'
 alias standby='systemctl suspend'
+alias rm='rm --preserve-root -I'
 
 git() {
    if [[ $@ == "ls" ]] ; then
