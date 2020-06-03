@@ -23,6 +23,7 @@
 .config/libreoffice/4/user
 !.config/libreoffice/4/user/config
 .config/dconf
+.config/Code
 
 
 .CLion*/config/workspace
@@ -37,6 +38,8 @@
 *History*
 *.db
 
+*Cookie*
+*cookie*
 *session*
 *Session*
 *database*
