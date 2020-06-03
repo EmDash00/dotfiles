@@ -214,6 +214,18 @@ alias nconf='nvim /home/emdash00/.config/nvim/'
 alias iconf='nvim /home/emdash00/.config/i3/config'
 alias standby='systemctl suspend'
 
+git() {
+   if [[ $@ == "ls" ]] ; then
+      command ls --group-directories-first --color=auto \
+              -d $(git ls-tree $(git branch | grep \* | cut -d " " -f2) --name-only)
+   elif [[ $@ == "ls -p" ]]; then
+       command ls -p --group-directories-first --color=auto \
+              -d $(git ls-tree $(git branch | grep \* | cut -d " " -f2) --name-only)
+   else
+       command git "$@"
+   fi
+}
+
 source /home/emdash00/.local/bin/virtualenvwrapper.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
