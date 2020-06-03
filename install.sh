@@ -47,7 +47,7 @@ while true ; do
          shift 1 ;;
       --version)
          if [ -z ${FIRST+x} ] ; then
-            printf "\nEmDash00 Dotfile Installer\nversion 1.0\n" ; exit ;
+            printf "EmDash00 Dotfile Installer\nversion 1.0 2020-06-01\n" ; exit ;
          fi 
          shift 1 ;;
       -d|--dest)
@@ -77,11 +77,11 @@ else
 fi
 
 if [ -z ${RM+x} ] ; then
-   if `command -v asdf 2>/dev/null`; then
-      NOTRASH="NOTRASH"
-      RM="RM"
-      printf "Warning, \`trash-put' but is not installed. Conflicting directories will be DELETED PERMENANTLY!\n"
-   fi
+   command -v foo >/dev/null 2>&1 || { 
+      NOTRASH="NOTRASH" ;
+      RM="RM" ;
+      printf "\n\nWarning: \`trash-put' but is not installed.\nConflicting directories will be DELETED PERMENANTLY!\n\n" ;
+   }
 fi
 
 if [ -z ${YES+x} ] && [ -n ${NOTRASH+x} ]; then
