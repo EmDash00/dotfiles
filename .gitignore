@@ -6,12 +6,13 @@
 .config/transmission/torrents
 .config/transmission/resume
 
-
 .config/pulse/
 .CLion*/system/
 
-# config specified resources 
+
+# resources 
 .tmux/plugins/
+*.so*
 
 
 
