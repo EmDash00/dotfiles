@@ -1,7 +1,0 @@
-[2019-07-06 20:59:43.073] [renderer1] [error] Invalid guestInstanceId: null: Error: Invalid guestInstanceId: null
-    at Object.getGuestForWebContents (/snap/code/10/usr/share/code/resources/electron.asar/browser/guest-view-manager.js:430:11)
-    at /snap/code/10/usr/share/code/resources/electron.asar/browser/rpc-server.js:449:34
-    at EventEmitter.ipcMain.on.args (/snap/code/10/usr/share/code/resources/electron.asar/browser/rpc-server.js:278:21)
-    at EventEmitter.emit (events.js:182:13)
-    at WebContents.<anonymous> (/snap/code/10/usr/share/code/resources/electron.asar/browser/api/web-contents.js:370:21)
-    at WebContents.emit (events.js:182:13)

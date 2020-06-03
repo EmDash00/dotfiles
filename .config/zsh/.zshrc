@@ -212,6 +212,8 @@ alias tconf='nvim /home/emdash00/.config/termite/config'
 alias zconf='nvim /home/emdash00/.config/zsh/.zshrc'
 alias nconf='nvim /home/emdash00/.config/nvim/' 
 alias iconf='nvim /home/emdash00/.config/i3/config'
+alias standby='systemctl suspend'
 
 source /home/emdash00/.local/bin/virtualenvwrapper.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
