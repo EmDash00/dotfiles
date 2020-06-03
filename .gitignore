@@ -24,6 +24,8 @@
 !.config/libreoffice/4/user/config
 .config/dconf
 .config/Code
+.config/monitors.xml
+.config/pavucontrol.ini
 
 
 .CLion*/config/workspace
