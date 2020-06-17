@@ -31,8 +31,19 @@ if [ -n $IMPORTED ]; then
 
 
    export PATH=$PATH:/usr/local/bin
+   export PATH="$HOME/.pyenv/bin:$PATH"
+   export PATH="$PYENV_ROOT/bin:$PATH"
 
+   export PYENV_ROOT="$HOME/.pyenv"
+   
    export DUB_HOME="/home/emdash00/.dub/packages"
+
+
+   #export PATH="$HOME/.pyenv/bin:$PATH"
+	#eval "$(pyenv init -)"
+	#eval "$(pyenv virtualenv-init -)"
+
+
 
    export PATH=$PATH:$DUB_HOME/dcd-0.12.0/dcd/bin/:$DUB_HOME/dfix-0.3.5/dfix:$DUB_HOME/dfmt-0.11.0/dfmt/bin:$DUB_HOME/dscanner-0.8.0/dscanner/bin
 
@@ -49,5 +60,3 @@ if [ -n $IMPORTED ]; then
 
 fi
 
-
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)

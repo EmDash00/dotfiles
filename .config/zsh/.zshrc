@@ -37,11 +37,15 @@ export HISTFILE="$XDG_CACHE_HOME/zsh_history"
 export PROBUDS='D0:FB:E1:F6:A5:12'
 
 export NOVINT_DEVICE_SUPPORT="/usr/local/"
+export EIGEN3_ROOT_DIR="/usr/local/include/eigen3/"
+export SOFA_INSTALL_DIR="/home/emdash00/Apps/git-apps/sofa/src/"
 
 
 export REF="$HOME/Documents/Notes"
 export LIB="$HOME/Documents/Library"
 export RL="$HOME/Documents/Work/Rothlab"
+
+export REG_LOC="^(\~|(?:\$\w+)?\.{0,2}\/)([\.\/\w]+)?"
 
 export WORKON_HOME=$HOME/.virtualenvs   # Optional
 export PROJECT_HOME=$HOME/projects      # Optional
@@ -203,6 +207,10 @@ else
     start_agent;
 fi
 
+if command -v pyenv 1>/dev/null 2>&1; then  
+   eval "$(pyenv init -)" 
+fi
+
 
 alias gwd='pwd | head -c -1 | xclip -selection clipboard'
 alias clip='xclip -selection clipboard'
@@ -214,6 +222,9 @@ alias nconf='nvim /home/emdash00/.config/nvim/'
 alias iconf='nvim /home/emdash00/.config/i3/config'
 alias standby='systemctl suspend'
 alias rm='rm --preserve-root -I'
+alias feed='flatpak run org.gnome.FeedReader' 
+alias feedstop='flatpak kill org.gnome.FeedReader'
+alias grep='grep -P'
 
 git() {
    if [[ $@ == "ls" ]] ; then
@@ -229,4 +240,10 @@ git() {
 
 source /home/emdash00/.local/bin/virtualenvwrapper.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 
