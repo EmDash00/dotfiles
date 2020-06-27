@@ -16,47 +16,52 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+# Append variables to path if they're not already in it and if they're valid directories
+path_append()
+{
+   if [ "$#" -eq 0 ]; then
+      echo "usage: path_append DIR1 DIR2 DIR3"
+      return 1
+   else
+      for arg in "$@"; do
+         if [ -d "${arg:+$arg/}" ] ; then
+            if [[ ! ${PATH} =~ ${arg} ]] ; then
+               PATH="${PATH}:${arg}" 
+            fi
+         else
+            echo "Path $arg does not exist. Skipping..."
+         fi
+      done
+   fi
+}
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+path_append "/usr/local/bin"
+path_append "$HOME/.local/bin"
+#path_append "$HOME/bin"
 
-if [ -n $IMPORTED ]; then
-   export PATH=$PATH:~/.platformio/penv/bin
+export PYENV_ROOT="$HOME/.pyenv"
+export DUB_HOME="$HOME/.dub/packages"
+export APPS="$HOME/Apps"
+
+export H3D_ROOT="/usr/local/share/h3dapi"
+
+export LD_LIBRARY_PATH='/usr/local/lib'
+
+export XDG_CONFIG_HOME='/home/emdash00/.config'
+export XDG_DATA_HOME='/home/emdash00/.local/share'
+
+export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/SILKOWRM"
+export VIRTUALENVWRAPPER_PYTHON=`which python3`
+
+#path_append "$HOME/.platformio/penv/bin"
+path_append "$HOME/.pyenv/bin"
+path_append "$PYENV_ROOT/bin"
+path_append "$DUB_HOME/dcd-0.12.0/dcd/bin"
+path_append "$DUB_HOME/dfix-0.3.5/dfix"
+path_append "$DUB_HOME/dfmt-0.11.0/dfmt/bin"
+path_append "$DUB_HOME/dscanner-0.8.0/dscanner/bin"
+
+export PATH="$PATH"
 
 
-   export PATH=$PATH:/usr/local/bin
-   export PATH="$HOME/.pyenv/bin:$PATH"
-   export PATH="$PYENV_ROOT/bin:$PATH"
-
-   export PYENV_ROOT="$HOME/.pyenv"
-   
-   export DUB_HOME="/home/emdash00/.dub/packages"
-
-
-   #export PATH="$HOME/.pyenv/bin:$PATH"
-	#eval "$(pyenv init -)"
-	#eval "$(pyenv virtualenv-init -)"
-
-
-
-   export PATH=$PATH:$DUB_HOME/dcd-0.12.0/dcd/bin/:$DUB_HOME/dfix-0.3.5/dfix:$DUB_HOME/dfmt-0.11.0/dfmt/bin:$DUB_HOME/dscanner-0.8.0/dscanner/bin
-
-
-   export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/SILKOWRM"
-   export APPS="$HOME/Apps"
-
-   export XDG_CONFIG_HOME='/home/emdash00/.config'
-   export XDG_DATA_HOME='/home/emdash00/.local/share'
-   export LD_LIBRARY_PATH='/usr/local/lib'
-   export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-
-   export IMPORTED="true"
-
-fi
 
