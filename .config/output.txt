@@ -1,0 +1,14 @@
+
+drwxr-xr-x  13 emdash00 emdash00  4096 Jun 13 01:41 /home/emdash00/.config/oh-my-zsh
+drwxr-xr-x 282 emdash00 emdash00 12288 May 30 19:28 /home/emdash00/.config/oh-my-zsh/plugins
+drwxr-xr-x   2 emdash00 emdash00  4096 May 30 19:28 /home/emdash00/.config/oh-my-zsh/plugins/git
+drwxr-xr-x   2 emdash00 emdash00  4096 Sep 21  2019 /home/emdash00/.config/oh-my-zsh/plugins/pep8
+-rw-r--r--   1 emdash00 emdash00  2034 Sep 21  2019 /home/emdash00/.config/oh-my-zsh/plugins/pep8/_pep8
+drwxr-xr-x   2 emdash00 emdash00  4096 Mar 10 23:48 /home/emdash00/.config/oh-my-zsh/plugins/pip
+-rw-r--r--   1 emdash00 emdash00  4480 Mar 10 23:48 /home/emdash00/.config/oh-my-zsh/plugins/pip/_pip
+drwxr-xr-x   2 emdash00 emdash00  4096 May 30 19:28 /home/emdash00/.config/oh-my-zsh/plugins/python
+drwxr-xr-x   2 emdash00 emdash00  4096 Apr 22 23:49 /home/emdash00/.config/oh-my-zsh/plugins/tmux
+drwxr-xr-x   2 emdash00 emdash00  4096 Sep 21  2019 /home/emdash00/.config/oh-my-zsh/plugins/vi-mode
+drwxr-xr-x   2 emdash00 emdash00  4096 Jun 13 01:41 /home/emdash00/.config/oh-my-zsh/plugins/wd
+-rw-r--r--   1 emdash00 emdash00  2630 Jun 13 01:41 /home/emdash00/.config/oh-my-zsh/plugins/wd/_wd.sh
+drwxr-xr-x   2 emdash00 emdash00  4096 Apr 22 23:49 /home/emdash00/.config/oh-my-zsh/plugins/z
