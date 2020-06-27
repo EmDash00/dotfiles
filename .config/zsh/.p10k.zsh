@@ -423,11 +423,11 @@
   # Untracked files icon. It's really a question mark, your font isn't broken.
   # Change the value of this parameter to show a different icon.
   typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='\uF29C '
-  typeset -g POWERLEVEL9K_VCS_AHEAD_ICON='\uF01A '
-  typeset -g POWERLEVEL9K_VCS_BEHIND_ICON='\uF01B '
+  typeset -g POWERLEVEL9K_VCS_AHEAD_ICON='\uF01B '
+  typeset -g POWERLEVEL9K_VCS_BEHIND_ICON='\uF01A '
 
-  typeset -g POWERLEVEL9K_VCS_PUSH_BEHIND_ICON='\uF0ED '
   typeset -g POWERLEVEL9K_VCS_PUSH_AHEAD_ICON='\uF0EE '
+  typeset -g POWERLEVEL9K_VCS_PUSH_BEHIND_ICON='\uF0ED '
 
   typeset -g POWERLEVEL9K_VCS_STASHES_ICON='\uF01C '
   typeset -g POWERLEVEL9K_VCS_CONFLICTS_ICON='\uF071 '
