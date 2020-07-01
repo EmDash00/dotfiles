@@ -41,7 +41,9 @@ start_agent() {
 
 source $APPS/git-apps/todo.txt-cli/todo_completion
 source ~/.local/bin/virtualenvwrapper.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ $- == *i* ]] && source "$APPS/git-apps/skim/shell/completion.zsh" 2> /dev/null
+source "$APPS/git-apps/skim/shell/key-bindings.zsh"
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 declare -f path_append > /dev/null 
 if [ $? -eq 1 ] ; then
