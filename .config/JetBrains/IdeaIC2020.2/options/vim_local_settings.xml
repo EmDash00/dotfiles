@@ -1,0 +1,321 @@
+<application>
+  <component name="VimLocalSettings">
+    <state version="5" />
+    <globalmarks />
+    <filemarks>
+      <file name="/GDB" timestamp="1574277015215">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/start_script.py" timestamp="1575391449451">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/IdeaProjects/test4/hi" timestamp="1575394390124">
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="0" column="0" />
+        <mark key="." line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/IdeaProjects/Stuff/source/Stuff" timestamp="1575395316886">
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="0" column="0" />
+        <mark key="." line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/CLionProjects/untitled/main.cpp" timestamp="1574367151492">
+        <mark key="[" line="6" column="12" />
+        <mark key="]" line="6" column="13" />
+        <mark key="." line="6" column="13" />
+        <mark key="^" line="6" column="13" />
+      </file>
+      <file name="$USER_HOME$/CLionProjects/CircularBuffer/main.cpp" timestamp="1575139034899">
+        <mark key="[" line="19" column="0" />
+        <mark key="]" line="19" column="0" />
+        <mark key="." line="19" column="0" />
+      </file>
+      <file name="$USER_HOME$/tmp/src/main.cpp" timestamp="1575138210440">
+        <mark key="[" line="7" column="1" />
+        <mark key="]" line="8" column="22" />
+        <mark key="^" line="8" column="22" />
+        <mark key="." line="8" column="22" />
+      </file>
+      <file name="$USER_HOME$/CLionProjects/untitled/A.hpp" timestamp="1574367128959">
+        <mark key="'" line="10" column="17" />
+        <mark key="[" line="24" column="17" />
+        <mark key="]" line="24" column="17" />
+        <mark key="^" line="24" column="16" />
+        <mark key="." line="24" column="17" />
+      </file>
+      <file name="$USER_HOME$/Documents/Projects/FRC/2020/3494_2020_repo/src/main/java/frc/robot/subsystems/Climber.java" timestamp="1582587205495">
+        <mark key="[" line="24" column="0" />
+        <mark key="]" line="24" column="0" />
+        <mark key="." line="24" column="0" />
+      </file>
+      <file name="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_queue.hpp" timestamp="1574275389254">
+        <mark key="'" line="1" column="0" />
+        <mark key="k" line="81" column="0" />
+        <mark key="[" line="120" column="26" />
+        <mark key="]" line="120" column="29" />
+        <mark key="." line="120" column="29" />
+        <mark key="^" line="120" column="29" />
+      </file>
+      <file name="$USER_HOME$/IdeaProjects/test4/source/test.d" timestamp="1575394488497">
+        <mark key="[" line="5" column="0" />
+        <mark key="]" line="5" column="3" />
+        <mark key="." line="5" column="3" />
+        <mark key="^" line="5" column="3" />
+      </file>
+      <file name="$USER_HOME$/IdeaProjects/Stuff/source/hi.d" timestamp="1575398452812">
+        <mark key="[" line="25" column="8" />
+        <mark key="]" line="25" column="8" />
+        <mark key="." line="25" column="8" />
+        <mark key="^" line="25" column="8" />
+      </file>
+      <file name="$FILE_PATH$/lib/Commands/SpeedTune/SpeedTune.cpp" timestamp="1575139426833">
+        <mark key="'" line="45" column="0" />
+        <mark key="[" line="45" column="0" />
+        <mark key="]" line="45" column="0" />
+        <mark key="." line="45" column="0" />
+      </file>
+      <file name="$USER_HOME$/IdeaProjects/test4/source/test" timestamp="1575394375795">
+        <mark key="[" line="6" column="0" />
+      </file>
+      <file name="$USER_HOME$/CLionProjects/CircularBuffer/src/static_circular_buffer.hpp" timestamp="1574373538394">
+        <mark key="'" line="98" column="1" />
+        <mark key="[" line="7" column="19" />
+        <mark key="]" line="8" column="18" />
+        <mark key="^" line="8" column="18" />
+        <mark key="." line="8" column="18" />
+      </file>
+      <file name="$USER_HOME$/CLionProjects/untitled/B.hpp" timestamp="1574358490015">
+        <mark key="[" line="15" column="0" />
+        <mark key="]" line="15" column="0" />
+        <mark key="." line="15" column="0" />
+      </file>
+      <file name="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" timestamp="1575138674215">
+        <mark key="'" line="99" column="0" />
+        <mark key="[" line="46" column="9" />
+        <mark key="]" line="46" column="9" />
+        <mark key="." line="46" column="9" />
+        <mark key="^" line="45" column="22" />
+      </file>
+      <file name="$USER_HOME$/CLionProjects/test/src/app.d" timestamp="1575391932316">
+        <mark key="[" line="5" column="0" />
+        <mark key="]" line="5" column="0" />
+        <mark key="." line="5" column="0" />
+      </file>
+      <file name="$USER_HOME$/CLionProjects/untitled/B.cpp" timestamp="1574358425811">
+        <mark key="[" line="9" column="7" />
+        <mark key="]" line="9" column="48" />
+        <mark key="^" line="9" column="48" />
+        <mark key="." line="9" column="48" />
+      </file>
+      <file name="$USER_HOME$/IdeaProjects/test5/source/test5.d" timestamp="1575395128245">
+        <mark key="[" line="6" column="40" />
+        <mark key="]" line="7" column="6" />
+        <mark key="^" line="7" column="6" />
+        <mark key="." line="7" column="6" />
+      </file>
+    </filemarks>
+    <jumps>
+      <jump line="163" column="20" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="165" column="20" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="275" column="23" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="7" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="154" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/static_circular_buffer.hpp" />
+      <jump line="162" column="23" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/static_circular_buffer.hpp" />
+      <jump line="46" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/static_circular_buffer.hpp" />
+      <jump line="56" column="16" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="42" column="28" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="118" column="67" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="17" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="2" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="43" column="4" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="6" column="7" filename="$USER_HOME$/CLionProjects/untitled/main.cpp" />
+      <jump line="115" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="123" column="18" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="19" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="212" column="8" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="139" column="32" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="161" column="27" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="222" column="16" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="256" column="9" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="51" column="4" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/static_circular_buffer.hpp" />
+      <jump line="512" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="515" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="17" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="1013" column="23" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="267" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="261" column="23" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="170" column="1" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/static_circular_buffer.hpp" />
+      <jump line="169" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/static_circular_buffer.hpp" />
+      <jump line="15" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/static_circular_buffer.hpp" />
+      <jump line="223" column="1" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="171" column="1" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="178" column="34" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="134" column="23" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/static_circular_buffer.hpp" />
+      <jump line="97" column="1" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/static_circular_buffer.hpp" />
+      <jump line="173" column="25" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="22" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="405" column="4" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="134" column="12" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="132" column="9" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="8" column="0" filename="$USER_HOME$/CLionProjects/untitled/A.hpp" />
+      <jump line="40" column="11" filename="$USER_HOME$/CLionProjects/untitled/A.hpp" />
+      <jump line="42" column="17" filename="$USER_HOME$/CLionProjects/untitled/A.hpp" />
+      <jump line="6" column="0" filename="$USER_HOME$/CLionProjects/untitled/A.hpp" />
+      <jump line="10" column="17" filename="$USER_HOME$/CLionProjects/untitled/A.hpp" />
+      <jump line="172" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="15" column="19" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="420" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="16" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="57" column="4" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="263" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="11" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="61" column="32" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="48" column="25" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="9" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="0" column="1" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="27" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="130" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="32" column="11" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="114" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="10" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="29" column="59" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="277" column="4" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="113" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="281" column="34" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="30" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="252" column="66" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="262" column="52" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="245" column="19" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="3" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="12" column="40" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="265" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="13" column="1" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="294" column="1" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="53" column="9" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer_iterator.hpp" />
+      <jump line="259" column="8" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="17" column="26" filename="$USER_HOME$/CLionProjects/CircularBuffer/main.cpp" />
+      <jump line="215" column="4" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="1" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="255" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="40" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="266" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="140" column="15" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="149" column="14" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="224" column="16" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="258" column="9" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="142" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="248" column="24" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="73" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="244" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="98" column="14" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="62" column="21" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="268" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="58" column="23" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="76" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="69" column="57" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="89" column="0" filename="$USER_HOME$/CLionProjects/CircularBuffer/src/circular_buffer.hpp" />
+      <jump line="46" column="0" filename="$FILE_PATH$/lib/Commands/SpeedTune/SpeedTune.cpp" />
+    </jumps>
+    <registers>
+      <register name="&quot;" type="2">
+        <text encoding="base64">CQlSb2JvdE1hcC4K</text>
+      </register>
+      <register name="-" type="4">
+        <text>[5]</text>
+      </register>
+      <register name="/" type="4">
+        <text>m_full</text>
+      </register>
+      <register name="0" type="4">
+        <text>arr[] * Mat[]</text>
+      </register>
+      <register name="1" type="2">
+        <text encoding="base64">CQlSb2JvdE1hcC4K</text>
+      </register>
+      <register name="2" type="2">
+        <text encoding="base64">ICAgIGludCBtdWx0aXBsaWVkOwo=</text>
+      </register>
+      <register name="3" type="2">
+        <text encoding="base64">ICAgIG11bHRpcGxpZWQgPSBzdW0K</text>
+      </register>
+      <register name="4" type="2">
+        <text encoding="base64">ICAgIH0K</text>
+      </register>
+      <register name="5" type="2">
+        <text encoding="base64">ICAgICAgICBtdWx0aXBsaWVkW2ldID0gc3VtKGFycltdICogTWF0W2ldKTsK</text>
+      </register>
+      <register name="6" type="2">
+        <text encoding="base64">ICAgIHsK</text>
+      </register>
+      <register name="7" type="2">
+        <text encoding="base64">ICAgIGZvciAoaW50IGkgPSAwOyBpIDwgNTsgaSsrKQo=</text>
+      </register>
+      <register name="8" type="2">
+        <text encoding="base64">ICAgIH0K</text>
+      </register>
+      <register name="9" type="2">
+        <text encoding="base64">ICAgICAgICBpW10gKj0gMjsK</text>
+      </register>
+      <register name=":" type="4">
+        <text>w</text>
+      </register>
+    </registers>
+    <search>
+      <last-search>m_full</last-search>
+      <last-offset />
+      <last-pattern>m_full</last-pattern>
+      <last-replace>logical_capacity</last-replace>
+      <last-substitute>logical_size</last-substitute>
+      <last-dir>1</last-dir>
+      <show-last>false</show-last>
+    </search>
+    <history>
+      <history-search>
+        <entry>reserve</entry>
+        <entry>resize</entry>
+        <entry>iterator</entry>
+        <entry>friend</entry>
+        <entry>other</entry>
+        <entry>cbuf</entry>
+        <entry>cbuf_type</entry>
+        <entry>==</entry>
+        <entry>m_empty</entry>
+        <entry>empty</entry>
+        <entry>push-back</entry>
+        <entry>push_back</entry>
+        <entry>logical_size</entry>
+        <entry>end</entry>
+        <entry encoding="base64">XDxyZXR1cm5cPg==</entry>
+        <entry encoding="base64">XDxpdGVyYXRvclw+</entry>
+        <entry>increment_head</entry>
+        <entry>std::</entry>
+        <entry encoding="base64">XDw7XD4=</entry>
+        <entry>m_full</entry>
+      </history-search>
+      <history-cmd>
+        <entry>57</entry>
+        <entry>%s/long/uint8_t/g</entry>
+        <entry>%s/unsigned long/uint8_t/g</entry>
+        <entry encoding="base64">JXMvbWF4X3NpemVfL3RoaXMtPm1fbWF4U2l6ZS9n</entry>
+        <entry encoding="base64">JXMvaGVhZF8vdGhpcy0+bV9oZWFkL2c=</entry>
+        <entry encoding="base64">JXMvdGFpbF8vdGhpcy0+bV90YWlsL2c=</entry>
+        <entry>%s/full_/m_full/g</entry>
+        <entry>%s/size_t/size_type/g</entry>
+        <entry>wa</entry>
+        <entry>qa</entry>
+        <entry>38</entry>
+        <entry>66</entry>
+        <entry>e</entry>
+        <entry>s</entry>
+        <entry>43</entry>
+        <entry>W</entry>
+        <entry>%s/logical_size/logical_capacity/g</entry>
+        <entry>wq</entry>
+        <entry>q</entry>
+        <entry>w</entry>
+      </history-cmd>
+      <history-expr />
+      <history-input />
+    </history>
+  </component>
+</application>

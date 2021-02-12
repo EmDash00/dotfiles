@@ -1,0 +1,125 @@
+<application>
+  <component name="RecentDirectoryProjectsManager">
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/CLionProjects/ArduinoThread">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-192.6817.32" />
+              <option name="buildTimestamp" value="1570625666350" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1571144245374" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/CLionProjects/HapticPrototype">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-192.7142.39" />
+              <option name="buildTimestamp" value="1572368287125" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1573074853039" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/CLionProjects/MutexLocking">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-192.7142.39" />
+              <option name="buildTimestamp" value="1572368303224" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1573057066842" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/CLionProjects/untitled">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-192.7142.39" />
+              <option name="buildTimestamp" value="1572368297204" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1574364720145" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/tmp">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1ULa2I2qDYgEPmDTBhtMnSw0bhx">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-193.5233.103" />
+              <option name="buildTimestamp" value="1574895099302" />
+              <frame x="0" y="27" width="1920" height="1053" extendedState="6" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1575138121738" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/CLionProjects/ArduinoTemplate">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1QtJzrrUdNlxAHOT3w29dzSsf2x">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-193.5233.103" />
+              <option name="buildTimestamp" value="1574895099302" />
+              <frame extendedState="6" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1575139133001" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$FILE_PATH$">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1QtJzrrUdNlxAHOT3w29dzSsf2x">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-193.5233.103" />
+              <option name="buildTimestamp" value="1574895099302" />
+              <frame x="260" y="53" width="1400" height="1000" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1575139218366" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/CLionProjects/CircularBuffer">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1T5OpGNwjURtVtHPevWbgrOGYUB">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-193.5233.103" />
+              <option name="buildTimestamp" value="1574895098506" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1575378342849" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/CLionProjects/test">
+          <value>
+            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1UTR0M9zTS58MjVgAMFhkjXlwEE">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="CL-193.5233.103" />
+              <option name="buildTimestamp" value="1574895109712" />
+              <frame x="960" y="0" width="960" height="1061" />
+              <option name="productionCode" value="CL" />
+              <option name="projectOpenTimestamp" value="1575392325214" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastProjectLocation" value="$USER_HOME$/CLionProjects" />
+    <option name="recentPaths">
+      <list>
+        <option value="$USER_HOME$/CLionProjects/test" />
+        <option value="$USER_HOME$/CLionProjects/CircularBuffer" />
+        <option value="$FILE_PATH$" />
+        <option value="$USER_HOME$/CLionProjects/ArduinoTemplate" />
+        <option value="$USER_HOME$/tmp" />
+        <option value="$USER_HOME$/CLionProjects/untitled" />
+        <option value="$USER_HOME$/CLionProjects/MutexLocking" />
+        <option value="$USER_HOME$/CLionProjects/HapticPrototype" />
+        <option value="$USER_HOME$/CLionProjects/ArduinoThread" />
+      </list>
+    </option>
+  </component>
+</application>

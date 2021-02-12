@@ -1,4 +1,4 @@
-#files: 947	version: 5.7.1
+#files: 948	version: 5.7.1
 
 _comps=(
 '-' '_torsocks'
@@ -1279,6 +1279,7 @@ _comps=(
 'smbstatus' '_samba'
 'smit' '_smit'
 'smitty' '_smit'
+'snap' '_snap'
 'snoop' '_snoop'
 'soa' '_hosts'
 'socket' '_socket'
@@ -1824,3 +1825,4 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
+autoload -Uz _wd.sh _pip _pep8 _bootctl

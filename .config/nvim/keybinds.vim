@@ -24,7 +24,15 @@ nmap <silent> <leader>j <Plug>(ale_next_wrap)
 map <C-d> :NERDTreeToggle<CR>
 
 "nnoremap <leader>g :YcmCompleter GoTo<CR>
-"
+
+nmap <leader>sp :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
 vnoremap < <gv
 vnoremap > >gv
 

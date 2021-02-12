@@ -24,6 +24,7 @@ setopt BASH_REMATCH
 
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_AUTOSUGGEST_USE_ASYNC="True"
 
 # ZSH_TMUX_AUTOSTART=true
 # ZSH_TMUX_AUTOSTART_ONCE=false
@@ -53,6 +54,10 @@ plugins=(
 	git
 	tmux
 	vi-mode
+   #zsh-vimode-visual
+   zsh-completions
+   zsh-autosuggestions
+   fast-syntax-highlighting
 	pep8
 	pip
 	python

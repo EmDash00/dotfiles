@@ -35,8 +35,25 @@ path_append()
    fi
 }
 
-path_append "/usr/local/bin"
-path_append "$HOME/.local/bin"
+path_prepend()
+{
+   if [ "$#" -eq 0 ]; then
+      echo "usage: path_append DIR1 DIR2 DIR3"
+      return 1
+   else
+      for arg in "$@"; do
+         if [ -d "${arg:+$arg/}" ] ; then
+            if [[ ! ${PATH} =~ ${arg} ]] ; then
+               PATH="${arg}:${PATH}" 
+            fi
+         else
+            echo "Path $arg does not exist. Skipping..."
+         fi
+      done
+   fi
+}
+
+
 #path_append "$HOME/bin"
 
 export PYENV_ROOT="$HOME/.pyenv"
@@ -51,19 +68,27 @@ export XDG_CONFIG_HOME='/home/emdash00/.config'
 export XDG_DATA_HOME='/home/emdash00/.local/share'
 
 export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/SILKOWRM"
+export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/forcedimension-python"
 export VIRTUALENVWRAPPER_PYTHON=`which python3`
+export SUDO_ASKPASS='/usr/lib/ssh/x11-ssh-askpass'
 
 #path_append "$HOME/.platformio/penv/bin"
-path_append "$HOME/.pyenv/bin"
-path_append "$PYENV_ROOT/bin"
+path_prepend "$PYENV_ROOT/bin"
+path_prepend "$PYENV_ROOT/shims"
+
+
+path_append "/usr/local/bin"
+path_append "$HOME/.local/bin"
+path_append "$HOME/Apps/AppImage"
+path_append "$HOME/Apps/source/pplatex-pplatex-1.0-rc2/build/src"
+
+
 path_append "$DUB_HOME/dcd-0.12.0/dcd/bin"
 path_append "$DUB_HOME/dfix-0.3.5/dfix"
 path_append "$DUB_HOME/dfmt-0.11.0/dfmt/bin"
 path_append "$DUB_HOME/dscanner-0.8.0/dscanner/bin"
 
+
 path_append "$APPS/git-apps/skim/bin"
 
 export PATH="$PATH"
-
-
-

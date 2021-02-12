@@ -1,0 +1,259 @@
+<project version="4">
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platformio.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#101#121#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-66" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/BetterEncoder/RotarySensor.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/BetterEncoder/RotarySensor.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="e#113#133#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/lib/BetterEncoder/BetterEncoder.hpp" />
+        <option value="$PROJECT_DIR$/lib/BetterEncoder/BetterEncoder.cpp" />
+        <option value="$PROJECT_DIR$/lib/BetterEncoder/RotarySensor.cpp" />
+        <option value="$PROJECT_DIR$/lib/Motor/Motor.hpp" />
+        <option value="$PROJECT_DIR$/lib/Motor/Motor.cpp" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
+        <option value="$PROJECT_DIR$/src/main.h" />
+        <option value="$PROJECT_DIR$/lib/BetterEncoder/RotarySensor.hpp" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="27" />
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Pendulum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pendulum" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pendulum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pendulum" type="462c0819:PsiDirectoryNode" />
+              <item name=".pio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pendulum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pendulum" type="462c0819:PsiDirectoryNode" />
+              <item name=".pio" type="462c0819:PsiDirectoryNode" />
+              <item name="libdeps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pendulum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pendulum" type="462c0819:PsiDirectoryNode" />
+              <item name=".pio" type="462c0819:PsiDirectoryNode" />
+              <item name="libdeps" type="462c0819:PsiDirectoryNode" />
+              <item name="uno" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pendulum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pendulum" type="462c0819:PsiDirectoryNode" />
+              <item name=".pio" type="462c0819:PsiDirectoryNode" />
+              <item name="libdeps" type="462c0819:PsiDirectoryNode" />
+              <item name="uno" type="462c0819:PsiDirectoryNode" />
+              <item name="arduino-boost" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pendulum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pendulum" type="462c0819:PsiDirectoryNode" />
+              <item name=".pio" type="462c0819:PsiDirectoryNode" />
+              <item name="libdeps" type="462c0819:PsiDirectoryNode" />
+              <item name="uno" type="462c0819:PsiDirectoryNode" />
+              <item name="Encoder_ID129" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pendulum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pendulum" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pendulum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pendulum" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="BetterEncoder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pendulum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pendulum" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="Motor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pendulum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pendulum" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pendulum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pendulum" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="20936000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" id="Project" order="0" visible="true" weight="0.13927428" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Project" order="0" visible="true" weight="0.13607258" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Messages" order="0" visible="true" weight="0.3297062" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Database Changes" order="2" />
+      <window_info anchor="bottom" id="CMake" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Serial Monitor" order="6" weight="0.3297062" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="right" id="Database" order="0" />
+    </layout-to-restore>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/LowpassFilter/LowpassFilter.cpp" />
+    <entry file="file://$PROJECT_DIR$/lib/LowpassFilter/LowpassFilter.hpp" />
+    <entry file="file://$PROJECT_DIR$/../Test/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Motor/Motor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platformio.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Motor/Motor.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="e#108#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#101#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BetterEncoder/RotarySensor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.pio/libdeps/uno/arduino-boost/boost_1_51_0.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.pio/libdeps/uno/arduino-boost/boost/bind/bind.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#168#181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.pio/libdeps/uno/arduino-boost/README.mkd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/BetterEncoder/RotarySensor.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#113#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,6 @@
+2021/02/08-16:33:34.194 1515 Reusing MANIFEST /home/emdash00/dotfiles/.config/Slack/Local Storage/leveldb/MANIFEST-000001
+2021/02/08-16:33:34.195 1515 Recovering log #58
+2021/02/08-16:33:34.195 1515 Reusing old log /home/emdash00/dotfiles/.config/Slack/Local Storage/leveldb/000058.log 
+2021/02/08-20:39:28.600 ced9 Level-0 table #62: started
+2021/02/08-20:39:28.619 ced9 Level-0 table #62: 15281 bytes OK
+2021/02/08-20:39:28.623 ced9 Delete type=0 #58

@@ -2,6 +2,11 @@
 let g:NERDTreeWinPos = 'right'
 let g:NERDTreeShowHidden=1
 
+"------------------------vim-latex-preview----------------------------
+let g:livepreview_previewer = 'zathura'
+
+"------------------------------vimtex---------------------------------
+let g:tex_flavor = 'latex'
 
 "----------------------------UtiliSnips-------------------------------
 let g:UltiSnipsSnippetsDir = "~/.config/vim/UltiSnips"
@@ -15,7 +20,7 @@ let b:ale_open_list = 1
 let b:ale_list_window_size = 5
 
 let g:ale_linters = {
-                    \'python' : ['flake8']
+                    \'python' : ['flake8', 'mypy']
                    \}
 
 let g:ale_fixers = {
@@ -49,7 +54,7 @@ let g:vim_markdown_math = 1
 
 
 "-----------------------------Airline---------------------------------
-let g:airline_theme = 'deus'
+"let g:airline_theme = 'deus'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1 

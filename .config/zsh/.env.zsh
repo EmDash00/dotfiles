@@ -1,8 +1,8 @@
 export VIMINIT='if !has("nvim") 
-                  let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC 
-               else
-                  let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim" | source $MYVIMRC
-               endif'
+   let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC 
+else
+   let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim" | source $MYVIMRC
+endif'
 
 export TERM="xterm-256color"
 
@@ -17,9 +17,9 @@ export ZSH_CUSTOM="$ZSH/custom"
 export ZSH_CACHE_DIR="$ZSH/cache"
 
 if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='nvim'
+	export EDITOR='vim'
 else
-   export EDITOR='vim'
+   export EDITOR='nvim'
 fi
 
 #---------------------------------------------------

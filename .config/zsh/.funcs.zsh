@@ -108,6 +108,20 @@ patched_eval() {
    fi
 }
 
+mk_sympytex() {
+   `cp $HOME/Apps/git-apps/SympyTeX/sympytex.sty .`
+   `cp $HOME/Apps/git-apps/SympyTeX/sympytex.py .`
+}
+
+sympytex() {
+   command pplatex $@
+   if [ "$?" -eq 0 ]; then
+      for i in $@; do :; done
+      command python3 "${i/%.tex}.sympy"
+      command pdflatex $@ 
+   fi
+}
+
 if [ $USER != "root" ]; then
    patched_eval "$(pyenv init -)"
    patched_eval "$(pyenv virtualenv-init -)"

@@ -8,14 +8,14 @@ set tabstop=3
 set shiftwidth=3
 
 set termguicolors
-set background=dark
+
 
 "Vim clipboard is the system clipboard
 set clipboard=unnamedplus
 
 "Blinking cursor
-let NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-set guicursor=a:blinkwait500-blinkon300-blinkoff200
+set guicursor=a:blinkwait500-blinkon300-blinkoff200,i-ci:ver30-blinkwait500-blinkon300-blinkoff200
+
 
 call plug#begin(stdpath('data') . '/plugged')
    "----------------Completion---------------
@@ -68,17 +68,23 @@ call plug#begin(stdpath('data') . '/plugged')
       Plug 'vim-airline/vim-airline-themes'
    Plug 'kshenoy/vim-signature'
 
+   Plug 'b4b4r07/vim-sunset'
+
+   "Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+
    "---------------Syntatical---------------
    Plug 'PotatoesMaster/i3-vim-syntax'
    Plug 'scarface-one/vim-dlang-phobos-highlighter'
 
    Plug 'dbeniamine/todo.txt-vim'
+   Plug 'lervag/vimtex'
    Plug 'plasticboy/vim-markdown'
    Plug 'sheerun/vim-polyglot'
-
+   
    "--------------Colorschemes--------------
    Plug 'ayu-theme/ayu-vim'
    Plug 'arzg/vim-colors-xcode'
+   Plug 'morhetz/gruvbox'
    Plug 'wadackel/vim-dogrun'
    Plug 'sainnhe/edge'
    Plug 'fatih/molokai'
@@ -86,10 +92,20 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'sickill/vim-monokai'
    Plug 'joshdick/onedark.vim'
    Plug 'rakr/vim-one'
+   Plug 'romainl/flattened'
+   Plug 'overcache/NeoSolarized' 
+   Plug 'lifepillar/vim-solarized8'
+   Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
+"Reminder not to set your address but instead the nearest large city.
+let g:sunset_latitude = 41.675007
+let g:sunset_longitude = -86.253251
+let g:sunset_utc_offset = -5
+
+set background=dark
+set cursorline
 colorscheme one
-"hi LineNr term=bold cterm=bold ctermfg=2 guifg=#c6c6c6 guibg=#292f3d
 
 if filereadable(stdpath('config') . '/keybinds.vim') 
    source $XDG_CONFIG_HOME/nvim/keybinds.vim
