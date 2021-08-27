@@ -9,6 +9,8 @@
 .config/pulse/
 .CLion*/system/
 
+# Backups
+.bak
 
 # resources 
 .tmux/plugins/
@@ -16,7 +18,7 @@
 
 
 
-# system/sessesion specific
+# system/session specific
 *Stats*
 *stats*
 *.lock
@@ -40,6 +42,10 @@
 *history*
 *History*
 *.db
+*.ldb
+*.zcompdump*
+*log*
+*LOG*
 
 *Cookie*
 *cookie*
@@ -57,5 +63,6 @@
 
 .tmux/resurrect/
 .config/discord/
+.config/Slack/
 .config/skypeforlinux
 
