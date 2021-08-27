@@ -6,17 +6,20 @@
 .config/transmission/torrents
 .config/transmission/resume
 
+*.zip
+
 .config/pulse/
 .CLion*/system/
 
 # Backups
-.bak
+*.bak
+
+# Test
+*test*
 
 # resources 
 .tmux/plugins/
 *.so*
-
-
 
 # system/session specific
 *Stats*
@@ -29,6 +32,13 @@
 .config/Code
 .config/monitors.xml
 .config/pavucontrol.ini
+.config/JetBrains/*/options/usage.statistics.xml
+.config/JetBrains/*/workspace
+*lock*
+*Lock*
+*key*
+*Key*
+
 
 
 .CLion*/config/workspace
