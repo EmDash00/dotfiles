@@ -52,14 +52,14 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume $sink +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume $sink -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink toggle # mute sound
-bindsym XF86Sleep exec standby
+bindsym XF86Sleep exec i3lock-fancy && standby
 bindsym Mod4+l exec i3lock-fancy
 
 # change focus
-bindsym $mod+h focus left
+bindsym $mod+h focus right
 bindsym $mod+j focus down
 bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+l focus left
 
 # alternatively, you can use the cursor keys:
 #bindsym $mod+Left focus left
@@ -70,7 +70,7 @@ bindsym $mod+l focus right
 # move focused window
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+l move left
 bindsym $mod+Shift+h move right
 
 # alternatively, you can use the cursor keys:
@@ -189,6 +189,9 @@ bar {
 
 # exec powerline-globmenu
 exec --no-startup-id feh --bg-fill ~/Pictures/Wallpaper.jpg
+exec xinput -set-prop $(cut -d  "=" -f2 <<< "$(xinput list | grep "MX Ergo Mouse" | grep id=\\d+ -o)") 321 1
+exec xinput -set-prop $(cut -d  "=" -f2 <<< "$(xinput list | grep "SYNA2B31:00 06CB:CD3E Touchpad" | grep id=\\d+ -o)") 321 0.5
+exec ~/Apps/git-apps/i3-natural-scrolling-and-tap/tap-to-click.sh
 
 # exec "powerline-lemonbar --height 16 -- -b -f 'DejaVu Sans Mono-11' -f 'PowerlineSymbols-12' -f 'FontAwesome-11'"
 

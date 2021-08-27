@@ -9,9 +9,9 @@ alias tconf='nvim /home/emdash00/.config/termite/config'
 alias zconf='nvim /home/emdash00/.config/zsh/.zshrc'
 alias nconf='nvim /home/emdash00/.config/nvim/' 
 alias iconf='nvim /home/emdash00/.config/i3/config'
-alias standby='systemctl suspend'
+alias standby='i3lock-fancy && systemctl suspend'
 alias lock='i3lock-fancy'
-alias hibernate='systemctl hibernate'
+alias hibernate='i3lock-fancy && systemctl hibernate'
 alias rm='rm --preserve-root -I'
 alias feed='flatpak run org.gnome.FeedReader' 
 alias feedstop='flatpak kill org.gnome.FeedReader'
@@ -111,6 +111,11 @@ patched_eval() {
 mk_sympytex() {
    `cp $HOME/Apps/git-apps/SympyTeX/sympytex.sty .`
    `cp $HOME/Apps/git-apps/SympyTeX/sympytex.py .`
+}
+
+mkhotspot() {
+   command nmcli device wifi hotspot con-name hotspot ssid "Emmy's Ubuntu Hotspot" \
+      band bg password $@
 }
 
 sympytex() {

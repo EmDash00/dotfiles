@@ -26,27 +26,21 @@
 *stats*
 *.lock
 *.bak
-.config/libreoffice/4/user
+.config/libreoffice/4/user/*
 !.config/libreoffice/4/user/config
 .config/dconf
-.config/Code
+
 .config/monitors.xml
 .config/pavucontrol.ini
-.config/JetBrains/*/options/usage.statistics.xml
-.config/JetBrains/*/workspace
+
 *lock*
 *Lock*
 *key*
 *Key*
-
-
-
-.CLion*/config/workspace
-.config/Kitware
-.config/balena-etcher-electron
-.config/godot/projects
-.config/yelp
-
+*Reports*
+*reports*
+*Cache*
+*cache*
 
 # security and privacy
 *history*
@@ -56,6 +50,10 @@
 *.zcompdump*
 *log*
 *LOG*
+*Local*
+*local*
+*Storage*
+*storage*
 
 *Cookie*
 *cookie*
@@ -64,12 +62,55 @@
 *database*
 *Database*
 
+*Journal*
+*journal*
+
+*Security*
+*security*
+
 *cache*
 *Cache*
 *logs*
 *Logs*
 *log*
 *Log*
+*recover*
+*Recover*
+*license*
+*License*
+
+
+# Application Specific
+
+.config/configstore/update-notifier*
+.config/configstore/update-notifier*
+
+# VS Code
+.config/Code/*
+!.config/Code/storage.json
+!.config/Code/languagepacks.json
+
+
+# JetBrains
+.config/JetBrains/*/options/usage.statistics.xml
+.config/JetBrains/*/workspace
+.config/CLion*/workspace
+.config/CLion*/ssl
+.config/IdeaIC*/workspace
+.config/IdeaIC*/ssl
+
+
+# Typora
+.config/Typora/*
+!.config/Typora/Preferences
+!.config/Typora/conf
+
+.config/Kitware
+.config/balena-etcher-electron
+.config/godot/projects
+.config/yelp
+
+.config/Typora/typora-dictionaries
 
 .tmux/resurrect/
 .config/discord/

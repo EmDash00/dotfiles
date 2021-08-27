@@ -16,6 +16,7 @@ set clipboard=unnamedplus
 "Blinking cursor
 set guicursor=a:blinkwait500-blinkon300-blinkoff200,i-ci:ver30-blinkwait500-blinkon300-blinkoff200
 
+let g:loaded_python_provider = 0
 
 call plug#begin(stdpath('data') . '/plugged')
    "----------------Completion---------------
@@ -23,6 +24,7 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'w0rp/ale'
    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
       "Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+      "Plug 'racer-rust/vim-racer'
       Plug 'Shougo/deoplete-clangx'
       Plug 'Shougo/echodoc.vim'
       Plug 'autozimu/LanguageClient-neovim', {
@@ -59,6 +61,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
    
    "------------Language Specific-----------
+   "Plug 'rust-lang/rust.vim'
    Plug 'tmhedberg/SimpylFold'
    Plug 'vim-scripts/indentpython.vim'
 
@@ -80,6 +83,7 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'lervag/vimtex'
    Plug 'plasticboy/vim-markdown'
    Plug 'sheerun/vim-polyglot'
+   Plug 'vhda/verilog_systemverilog.vim'
    
    "--------------Colorschemes--------------
    Plug 'ayu-theme/ayu-vim'

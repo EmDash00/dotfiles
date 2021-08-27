@@ -12,7 +12,7 @@ fi
 
 eval set -- "$TEMP"
 
-declare -a BLACKLIST=("\.gitignore" "LICENSE" "$SELF" "README\.md")
+declare -a BLACKLIST=("\.gitignore" "LICENSE" "$SELF" "README\.md" "etc")
 
 LEN=${#BLACKLIST[@]}
 for (( i=0; i<$LEN - 1; i++ )) ; do

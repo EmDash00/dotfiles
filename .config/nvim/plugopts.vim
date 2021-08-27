@@ -20,12 +20,14 @@ let b:ale_open_list = 1
 let b:ale_list_window_size = 5
 
 let g:ale_linters = {
-                    \'python' : ['flake8', 'mypy']
-                   \}
+         \ 'python' : ['flake8', 'mypy'],
+         \ 'rust' : ['analyzer']
+         \ }
 
 let g:ale_fixers = {
                    \ 'python' : ['autopep8', 'yapf'], 
-                   \ 'd' : ['dfmt']
+                   \ 'd' : ['dfmt'],
+                   \ 'rust' : ['rustfmt']
                   \}
 
 "-------------------------Completion Opts-----------------------------
@@ -34,10 +36,13 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#jedi#show_docstring = 1
 
 let g:LanguageClient_autoStart = 1
-"let g:LanguageClient_diagnosticsEnable = 1
+let g:LanguageClient_diagnosticsEnable = 1
 let g:LanguageClient_serverCommands = {
-       \ 'd': ['/home/emdash00/.dub/packages/.bin/dls-latest/dls']
+       \ 'd' : ['/home/emdash00/.dub/packages/.bin/dls-latest/dls'],
+       \ 'rust' : ['rust-analyzer']
     \ }
+
+let g:LanguageClient_useVirtualText = "CodeLens"
 
 "------------------------------------------------------------
 let g:vim_markdown_strikethrough = 1
@@ -93,6 +98,6 @@ let g:SimpylFold_docstring_preview = 1
 set foldlevel=99
 
 "---------------------------Vim Anyfold------------------------------
-autocmd FileType c,cpp,d,java,php,ruby AnyFoldActivate
+autocmd FileType c,cpp,rs,d,java,php,ruby AnyFoldActivate
 let g:anyfold_fold_comments=1
 hi Folded term=NONE cterm=NONE

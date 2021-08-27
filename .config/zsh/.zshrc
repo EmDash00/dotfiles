@@ -22,7 +22,6 @@ setopt inc_append_history # add history immediately after typing a command
 setopt BASH_REMATCH
 
 
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_AUTOSUGGEST_USE_ASYNC="True"
 
@@ -53,7 +52,8 @@ ZSH_AUTOSUGGEST_USE_ASYNC="True"
 plugins=(
 	git
 	tmux
-	vi-mode
+   #zsh-vi-mode
+   vi-mode
    #zsh-vimode-visual
    zsh-completions
    zsh-autosuggestions

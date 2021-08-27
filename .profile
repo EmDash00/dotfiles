@@ -81,6 +81,9 @@ path_append "/usr/local/bin"
 path_append "$HOME/.local/bin"
 path_append "$HOME/Apps/AppImage"
 path_append "$HOME/Apps/source/pplatex-pplatex-1.0-rc2/build/src"
+#path_append "/tools/Xilinx/Vivado/2020.2/bin"
+path_append "$HOME/Apps/source/clion-2021.1.2/bin"
+path_append "$HOME/Apps/source/arduino-cli_0.18.3_Linux_64bit"
 
 
 path_append "$DUB_HOME/dcd-0.12.0/dcd/bin"
@@ -92,3 +95,4 @@ path_append "$DUB_HOME/dscanner-0.8.0/dscanner/bin"
 path_append "$APPS/git-apps/skim/bin"
 
 export PATH="$PATH"
+. "$HOME/.cargo/env"
