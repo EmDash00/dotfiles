@@ -67,6 +67,12 @@ export LD_LIBRARY_PATH='/usr/local/lib'
 export XDG_CONFIG_HOME='/home/emdash00/.config'
 export XDG_DATA_HOME='/home/emdash00/.local/share'
 
+export NVIM_CONF="${XDG_CONFIG_HOME}/nvim"
+export ZSH_CONF="${XDG_CONFIG_HOME}/zsh"
+export I3_CONF="${XDG_CONFIG_HOME}/i3"
+
+export ROS_HOME="$HOME/.config/ros"
+
 export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/SILKOWRM"
 export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/forcedimension-python"
 export VIRTUALENVWRAPPER_PYTHON=`which python3`

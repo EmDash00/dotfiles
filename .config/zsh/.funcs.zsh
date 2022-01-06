@@ -15,7 +15,6 @@ alias hibernate='i3lock-fancy && systemctl hibernate'
 alias rm='rm --preserve-root -I'
 alias feed='flatpak run org.gnome.FeedReader' 
 alias feedstop='flatpak kill org.gnome.FeedReader'
-alias grep='grep -P --color=auto'
 
 git() {
    if [[ $@ == "ls" ]] ; then
@@ -40,7 +39,7 @@ start_agent() {
 }
 
 source $APPS/git-apps/todo.txt-cli/todo_completion
-source ~/.local/bin/virtualenvwrapper.sh
+#source ~/.local/bin/virtualenvwrapper.sh
 [[ $- == *i* ]] && source "$APPS/git-apps/skim/shell/completion.zsh" 2> /dev/null
 source "$APPS/git-apps/skim/shell/key-bindings.zsh"
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -123,7 +122,9 @@ sympytex() {
    if [ "$?" -eq 0 ]; then
       for i in $@; do :; done
       command python3 "${i/%.tex}.sympy"
-      command pdflatex $@ 
+      if [ "$?" -eq 0 ]; then
+         command pdflatex $@ 
+      fi
    fi
 }
 

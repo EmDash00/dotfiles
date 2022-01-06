@@ -66,8 +66,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
 source $XDG_CONFIG_HOME/zsh/.funcs.zsh
+source /opt/ros/noetic/setup.zsh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

@@ -1,7 +1,10 @@
 "Uncomment these lines if you want NERDTree to open on start
 
 "autocmd vimenter * NERDTree | wincmd w
-autocmd StdinReadPre * let s:std_in = 1
+"
+" Open the existing NERDTree on each new tab.
+"autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
+"autocmd StdinReadPre * let s:std_in = 1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") |
    "\ exe 'NERDTree' argv()[0] |
@@ -59,3 +62,12 @@ function! Sunset_nighttime_callback()
    colorscheme one
    "hi LineNr term=bold cterm=bold ctermfg=2 guifg=#c6c6c6 
 endfunction
+
+
+lua << EOF
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = false
+    }
+)
+EOF

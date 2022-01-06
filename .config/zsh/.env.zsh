@@ -40,5 +40,3 @@ export REG_LOC="^(\~|(?:\$\w+)?\.{0,2}\/)([\.\/\w]+)?"
 
 export WORKON_HOME="~/.virtualenvs"   # Optional
 export PROJECT_HOME="~/projects"      # Optional
-
-

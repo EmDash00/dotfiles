@@ -23,8 +23,18 @@ call plug#begin(stdpath('data') . '/plugged')
    
    Plug 'w0rp/ale'
    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-      "Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+
+      "if has('win32') || has('win64')
+         "Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
+      "else
+         "Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+      "endif
+
       "Plug 'racer-rust/vim-racer'
+      "
+      Plug 'neovim/nvim-lspconfig'
+      Plug 'deoplete-plugins/deoplete-lsp'
+
       Plug 'Shougo/deoplete-clangx'
       Plug 'Shougo/echodoc.vim'
       Plug 'autozimu/LanguageClient-neovim', {
@@ -54,8 +64,9 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'scrooloose/nerdcommenter'
    Plug 'terryma/vim-multiple-cursors'
    Plug 'christoomey/vim-tmux-navigator'
-   Plug 'scrooloose/nerdtree'
+   Plug 'preservim/nerdtree'
    Plug 'lambdalisue/suda.vim'
+   Plug 'jamestthompson3/nvim-remote-containers'
 
    Plug 'godlygeek/tabular'
 
@@ -67,13 +78,14 @@ call plug#begin(stdpath('data') . '/plugged')
 
 
    "---------------Appearance---------------
+   Plug 'mhinz/vim-startify'
    Plug 'vim-airline/vim-airline'
       Plug 'vim-airline/vim-airline-themes'
    Plug 'kshenoy/vim-signature'
 
    Plug 'b4b4r07/vim-sunset'
 
-   "Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+   Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
    "---------------Syntatical---------------
    Plug 'PotatoesMaster/i3-vim-syntax'
@@ -81,9 +93,11 @@ call plug#begin(stdpath('data') . '/plugged')
 
    Plug 'dbeniamine/todo.txt-vim'
    Plug 'lervag/vimtex'
+   "Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
    Plug 'plasticboy/vim-markdown'
    Plug 'sheerun/vim-polyglot'
    Plug 'vhda/verilog_systemverilog.vim'
+
    
    "--------------Colorschemes--------------
    Plug 'ayu-theme/ayu-vim'

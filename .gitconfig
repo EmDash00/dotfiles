@@ -1,5 +1,7 @@
 [user]
 	email = emchow@iu.edu
-	name = Drason Chow
+	name = Emmy Chow
 [core]
 	editor = vim
+[init]
+	defaultBranch = main

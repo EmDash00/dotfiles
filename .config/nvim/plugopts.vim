@@ -4,6 +4,8 @@ let g:NERDTreeShowHidden=1
 
 "------------------------vim-latex-preview----------------------------
 let g:livepreview_previewer = 'zathura'
+let g:livepreview_engine = 'sympytex'
+let g:livepreview_cursorhold_recompile = 0
 
 "------------------------------vimtex---------------------------------
 let g:tex_flavor = 'latex'
@@ -21,19 +23,30 @@ let b:ale_list_window_size = 5
 
 let g:ale_linters = {
          \ 'python' : ['flake8', 'mypy'],
-         \ 'rust' : ['analyzer']
+         \ 'rust' : ['analyzer'],
+         \ 'tex': ['texlab']
          \ }
 
 let g:ale_fixers = {
-                   \ 'python' : ['autopep8', 'yapf'], 
+                   \ 'python' : ['autopep8', 'yapf', 'isort'], 
                    \ 'd' : ['dfmt'],
                    \ 'rust' : ['rustfmt']
                   \}
 
 "-------------------------Completion Opts-----------------------------
+lua << EOF
+require'lspconfig'.texlab.setup{}
+EOF
+
+let g:deoplete#lsp#use_icons_for_candidates=v:true
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#jedi#show_docstring = 1
+
+"call deoplete#custom#var('tabnine', {
+"\ 'line_limit': 1000,
+"\ 'max_num_results': 1,
+"\ })
 
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_diagnosticsEnable = 1
@@ -63,34 +76,18 @@ let g:vim_markdown_math = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1 
+"
 
-function! LinterStatus() abort
-   let l:counts = ale#statusline#Count(bufnr(''))
-
-   let l:all_errors = l:counts.error + l:counts.style_error
-   let l:all_non_errors = l:counts.total - l:all_errors
-
-   return l:counts.total == 0 ? 'OK' : printf(
-   \   '%dW %dE',
-   \   all_non_errors,
-   \   all_errors
-   \)
-endfunction
-
-set statusline=%{LinterStatus()}
-
+"hi Container guifg=#BADA55 guibg=Black
+"set statusline+=%#Container#%{g:currentContainer}
 
 "----------------------------Polyglot--------------------------------
 let g:python_highlight_spaces_errors = 1
 
-
-"------------------------------YCM-----------------------------------
-let g:ycm_autoclose_preview_window_after_completion = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-
 "----------------------------Deoplete--------------------------------
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('num_processes', 8)
+call deoplete#custom#option('max_list', 10)
 
 
 "----------------------------SimpylFold------------------------------
