@@ -12,7 +12,6 @@ export HISTSIZE=1000
 export SAVEHIST=10000
 
 # Path to your oh-my-zsh installation.
-export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 export ZSH_CUSTOM="$ZSH/custom"
 export ZSH_CACHE_DIR="$ZSH/cache"
 

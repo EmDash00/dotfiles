@@ -25,6 +25,7 @@ font pango:monospace 8
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
+default_border pixel
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -180,13 +181,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-	 #i3bar_command ~/.config/i3/i3-lemonbar/i3_lemonbar.sh
-	status_command i3status
-}
-
 # exec powerline-globmenu
 exec --no-startup-id feh --bg-fill ~/Pictures/Wallpaper.jpg
 exec xinput -set-prop $(cut -d  "=" -f2 <<< "$(xinput list | grep "MX Ergo Mouse" | grep id=\\d+ -o)") 321 1
@@ -196,4 +190,5 @@ exec ~/Apps/git-apps/i3-natural-scrolling-and-tap/tap-to-click.sh
 # exec "powerline-lemonbar --height 16 -- -b -f 'DejaVu Sans Mono-11' -f 'PowerlineSymbols-12' -f 'FontAwesome-11'"
 
 # start flux when I login
+exec --no-startup-id $HOME/.config/polybar/startup.sh
 exec fluxgui  

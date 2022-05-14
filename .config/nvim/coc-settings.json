@@ -1,0 +1,27 @@
+{
+    "languageserver": 
+    {
+      "clangd": 
+      {
+        "command": "clangd",
+        "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+        "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+      },
+      "dockerfile": 
+      {
+        "command": "docker-langserver",
+        "filetypes": ["dockerfile"],
+        "args": ["--stdio"]
+      },
+      "d": 
+      {
+        "command": "serve-d",
+        "filetypes": ["d"],
+        "trace.server": "on",
+        "rootPatterns": ["dub.json", "dub.sdl"],
+        "initializationOptions": {},
+        "settings": {}
+      }
+    },
+  "diagnostic.displayByAle": true
+}

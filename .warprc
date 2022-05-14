@@ -1,7 +1,9 @@
 2d-haptic:~/Documents/Work/Rothlab/projects/2d-haptic
-399:~/Documents/Classes/Semester 7/ENGR-E399_Robotics
+314:~/Documents/Classes/Semester 8/ENGR-E314/E314-Spring-2022/labs
+399:~/Documents/Classes/Semester 8/ENGR-E399
 ancb-docs:~/Documents/Work/Rothlab/doc/ancb-docs
 ancb:~/Documents/Work/Rothlab/lib/ancb
+cap:~/Documents/Classes/Capstone
 cls:~/Documents/Classes
 dhd:~/Documents/Work/Rothlab/lib/forcedimension-python/forcedimension/dhd
 dlang:~/Documents/Projects/Dlang
@@ -9,6 +11,7 @@ drd:~/Documents/Work/Rothlab/lib/forcedimension-python/forcedimension/drd
 e315:~/Documents/Classes/Semester 7/ENGR-E315
 e317:~/Documents/Classes/Semester 7/ENGR-E317
 forcedim:~/Apps/source/forcedimension-sdk-3.9.1
+frc:~/Documents/Work/FRC/2022
 libref:~/Documents/Library
 m303:~/Documents/Library/M303
 m471:~/Documents/Classes/Semester 7/MATH-M471
@@ -23,5 +26,6 @@ sem4:~/Documents/Classes/Semester 4
 sem5:~/Documents/Classes/Semester 5
 sem6:~/Documents/Classes/Semester 6
 sem7:~/Documents/Classes/Semester 7
+sem8:~/Documents/Classes/Semester 8
 silkdocs:~/Documents/Work/Rothlab/doc/SILKWORM-documentation
 silkworm:~/Documents/Work/Rothlab/lib/SILKOWRM

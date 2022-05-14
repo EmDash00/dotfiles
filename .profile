@@ -70,11 +70,13 @@ export XDG_DATA_HOME='/home/emdash00/.local/share'
 export NVIM_CONF="${XDG_CONFIG_HOME}/nvim"
 export ZSH_CONF="${XDG_CONFIG_HOME}/zsh"
 export I3_CONF="${XDG_CONFIG_HOME}/i3"
+export ZPLUG_HOME="${XDG_CONFIG_HOME}/zplug"
 
 export ROS_HOME="$HOME/.config/ros"
 
 export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/SILKOWRM"
 export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/forcedimension-python"
+export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/immutable"
 export VIRTUALENVWRAPPER_PYTHON=`which python3`
 export SUDO_ASKPASS='/usr/lib/ssh/x11-ssh-askpass'
 

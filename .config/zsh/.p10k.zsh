@@ -329,7 +329,7 @@
   typeset -g POWERLEVEL9K_DIR_HOME_SHORTENED_FOREGROUND=31
   typeset -g POWERLEVEL9K_DIR_HOME_ANCHOR_FOREGROUND=18
 
-  typeset -g POWERLEVEL9K_DIR_DESKTOP_VISUAL_IDENTIFIER_EXPANSION=' ' #\uF109
+  typeset -g POWERLEVEL9K_DIR_DESKTOP_VISUAL_IDENTIFIER_EXPANSION=' ' #\uF109
   typeset -g POWERLEVEL9K_DIR_DESKTOP_BACKGROUND=25
   typeset -g POWERLEVEL9K_DIR_DESKTOP_FOREGROUND=18
   typeset -g POWERLEVEL9K_DIR_DESKTOP_SHORTENED_FOREGROUND=31
@@ -422,17 +422,17 @@
 
   # Untracked files icon. It's really a question mark, your font isn't broken.
   # Change the value of this parameter to show a different icon.
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='\uF29C '
-  typeset -g POWERLEVEL9K_VCS_AHEAD_ICON='\uF01B '
-  typeset -g POWERLEVEL9K_VCS_BEHIND_ICON='\uF01A '
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='\uF059 ' # question mark circle
+  typeset -g POWERLEVEL9K_VCS_AHEAD_ICON='\uF35B ' # arrow alt circle up
+  typeset -g POWERLEVEL9K_VCS_BEHIND_ICON='\uF35A '  # arrow alt circle down
 
-  typeset -g POWERLEVEL9K_VCS_PUSH_AHEAD_ICON='\uF0EE '
-  typeset -g POWERLEVEL9K_VCS_PUSH_BEHIND_ICON='\uF0ED '
+  typeset -g POWERLEVEL9K_VCS_PUSH_AHEAD_ICON='\uF382 '  # cloud upload alt
+  typeset -g POWERLEVEL9K_VCS_PUSH_BEHIND_ICON='\uF381 ' # cloud download alt
 
-  typeset -g POWERLEVEL9K_VCS_STASHES_ICON='\uF01C '
-  typeset -g POWERLEVEL9K_VCS_CONFLICTS_ICON='\uF071 '
-  typeset -g POWERLEVEL9K_VCS_STAGED_ICON='\uF055 '
-  typeset -g POWERLEVEL9K_VCS_UNSTAGED_ICON='\uF06A '
+  typeset -g POWERLEVEL9K_VCS_STASHES_ICON='\uF01C '  # inbox
+  typeset -g POWERLEVEL9K_VCS_CONFLICTS_ICON='\uF071 ' # exclaimation triangle 
+  typeset -g POWERLEVEL9K_VCS_STAGED_ICON='\uF055 '  # plus circle
+  typeset -g POWERLEVEL9K_VCS_UNSTAGED_ICON='\uF06A ' # exclaimation circle
 
 
 

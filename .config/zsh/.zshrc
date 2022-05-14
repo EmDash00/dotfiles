@@ -1,8 +1,5 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-
 source $XDG_CONFIG_HOME/zsh/.env.zsh
+source $XDG_CONFIG_HOME/zsh/.funcs.zsh
 
 if [ $USER != "root" ] ; then
    if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
@@ -10,75 +7,12 @@ if [ $USER != "root" ] ; then
    fi
 fi
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-
-
 setopt append_history # append rather then overwrite
 setopt extended_history # save timestamp
 setopt inc_append_history # add history immediately after typing a command
 setopt BASH_REMATCH
 
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_AUTOSUGGEST_USE_ASYNC="True"
-
-# ZSH_TMUX_AUTOSTART=true
-# ZSH_TMUX_AUTOSTART_ONCE=false
-
-# DISABLE_AUTO_UPDATE="true"
-
-#DISABLE_UPDATE_PROMPT="true"
-
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-#ENABLE_CORRECTION="true"
-
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-plugins=(
-	git
-	tmux
-   #zsh-vi-mode
-   vi-mode
-   #zsh-vimode-visual
-   zsh-completions
-   zsh-autosuggestions
-   fast-syntax-highlighting
-	pep8
-	pip
-	python
-	wd
-	z
-)
-
-source $ZSH/oh-my-zsh.sh
-source $XDG_CONFIG_HOME/zsh/.funcs.zsh
-source /opt/ros/noetic/setup.zsh
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-autoload -Uz compinit
-compinit
-
-source /home/emdash00/.fonts/*.sh
-
-
- #Source SSH settings, if applicable
+# Source SSH settings, if applicable
 if [ -f "${SSH_ENV}" ]; then
     . "${SSH_ENV}" > /dev/null
     #ps ${SSH_AGENT_PID} doesn't work under cywgin
@@ -89,5 +23,51 @@ else
     start_agent;
 fi
 
- #To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+### End of Zinit's installer chunk
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+
+zinit snippet OMZL::completion.zsh
+zinit snippet OMZL::theme-and-appearance.zsh
+zinit snippet OMZL::directories.zsh
+zinit snippet OMZP::vi-mode
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+
+zinit ice wait"2" lucid; zinit light zsh-users/zsh-completions
+zinit ice wait"2" lucid; zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma-continuum/fast-syntax-highlighting
+
+zinit ice wait"2" lucid; zinit snippet OMZP::git
+zinit ice wait"2" lucid; zinit snippet OMZP::pip
+zinit ice wait"2" lucid; zinit snippet OMZP::python
+zinit ice wait"2" lucid; zinit snippet OMZP::tmux
+zinit ice wait"2" lucid; zinit light mfaerevaag/wd 
+zinit ice wait"2" lucid; zinit load agkozak/zsh-z
+
+
+# Fast Syntax Highlighting has to load last
+zinit wait lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
+
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+### End of Zinit's installer chunk
+
+## To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

@@ -1,1 +1,1 @@
-. "$HOME/.cargo/env"
+. "/home/emdash00/.cargo/env"

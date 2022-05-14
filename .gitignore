@@ -123,4 +123,7 @@
 .config/discord/
 .config/Slack/
 .config/skypeforlinux
-
+.config/wireshark
+.config/torbrowser
+.config/coc
+.config/arduino-cli

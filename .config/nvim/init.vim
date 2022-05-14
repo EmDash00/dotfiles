@@ -22,31 +22,13 @@ call plug#begin(stdpath('data') . '/plugged')
    "----------------Completion---------------
    
    Plug 'w0rp/ale'
-   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-      "if has('win32') || has('win64')
-         "Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
-      "else
-         "Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-      "endif
+   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-      "Plug 'racer-rust/vim-racer'
-      "
-      Plug 'neovim/nvim-lspconfig'
-      Plug 'deoplete-plugins/deoplete-lsp'
-
-      Plug 'Shougo/deoplete-clangx'
-      Plug 'Shougo/echodoc.vim'
-      Plug 'autozimu/LanguageClient-neovim', {
-       \ 'branch': 'next',
-       \ 'do': 'bash install.sh',
-       \ }
-      Plug 'deoplete-plugins/deoplete-tag'
-      Plug 'Shougo/neco-syntax'
-      Plug 'deoplete-plugins/deoplete-jedi'
-      Plug 'Shougo/neco-vim'
-      Plug 'Shougo/neoinclude.vim'
-      Plug 'deoplete-plugins/deoplete-zsh'
+   Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
    Plug 'mattn/emmet-vim'
 
@@ -90,6 +72,7 @@ call plug#begin(stdpath('data') . '/plugged')
    "---------------Syntatical---------------
    Plug 'PotatoesMaster/i3-vim-syntax'
    Plug 'scarface-one/vim-dlang-phobos-highlighter'
+   Plug 'kevinoid/vim-jsonc'
 
    Plug 'dbeniamine/todo.txt-vim'
    Plug 'lervag/vimtex'
