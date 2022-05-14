@@ -41,10 +41,12 @@ zinit snippet OMZL::theme-and-appearance.zsh
 zinit snippet OMZL::directories.zsh
 zinit snippet OMZL::history.zsh 
 zinit snippet OMZL::prompt_info_functions.zsh
+zinit snippet OMZP::vi-mode
+zinit snippet OMZP::fzf
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-zinit ice wait"2" lucid; zinit light zsh-users/zsh-completions
-zinit ice wait"2" lucid; zinit light zsh-users/zsh-autosuggestions
+zinit ice wait lucid; zinit light zsh-users/zsh-completions
+zinit ice wait lucid; zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 zinit ice wait"2" lucid; zinit snippet OMZP::git
@@ -55,7 +57,7 @@ zinit ice wait"2" lucid; zinit light mfaerevaag/wd
 zinit ice wait"2" lucid; zinit load agkozak/zsh-z
 
 
-# Fast Syntax Highlighting has to load last
+ #Fast Syntax Highlighting has to load last
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting \
