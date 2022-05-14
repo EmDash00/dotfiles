@@ -39,8 +39,10 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 zinit snippet OMZL::completion.zsh
 zinit snippet OMZL::theme-and-appearance.zsh
 zinit snippet OMZL::directories.zsh
-zinit snippet OMZP::vi-mode
+zinit snippet OMZL::history.zsh 
+zinit snippet OMZL::prompt_info_functions.zsh
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+
 
 
 zinit ice wait"2" lucid; zinit light zsh-users/zsh-completions
@@ -68,6 +70,11 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 ### End of Zinit's installer chunk
+#
+#
+TRAPWINCH() {
+  zle && { zle reset-prompt; zle -R }
+}
 
 ## To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
