@@ -43,8 +43,6 @@ zinit snippet OMZL::history.zsh
 zinit snippet OMZL::prompt_info_functions.zsh
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-
-
 zinit ice wait"2" lucid; zinit light zsh-users/zsh-completions
 zinit ice wait"2" lucid; zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
