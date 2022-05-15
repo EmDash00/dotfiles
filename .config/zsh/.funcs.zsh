@@ -13,6 +13,7 @@ alias standby='i3lock-fancy && systemctl suspend'
 alias lock='i3lock-fancy'
 alias hibernate='i3lock-fancy && systemctl hibernate'
 alias rm='rm --preserve-root -I'
+alias ex='exa --icons'
 alias feed='flatpak run org.gnome.FeedReader' 
 alias feedstop='flatpak kill org.gnome.FeedReader'
 
@@ -37,12 +38,6 @@ start_agent() {
     . "${SSH_ENV}" > /dev/null
     /usr/bin/ssh-add;
 }
-
-source $APPS/git-apps/todo.txt-cli/todo_completion
-#source ~/.local/bin/virtualenvwrapper.sh
-[[ $- == *i* ]] && source "$APPS/git-apps/skim/shell/completion.zsh" 2> /dev/null
-source "$APPS/git-apps/skim/shell/key-bindings.zsh"
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 declare -f path_append > /dev/null 
 if [ $? -eq 1 ] ; then

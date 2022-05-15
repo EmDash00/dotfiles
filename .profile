@@ -100,7 +100,5 @@ path_append "$DUB_HOME/dfmt-0.11.0/dfmt/bin"
 path_append "$DUB_HOME/dscanner-0.8.0/dscanner/bin"
 
 
-path_append "$APPS/git-apps/skim/bin"
-
 export PATH="$PATH"
 . "$HOME/.cargo/env"

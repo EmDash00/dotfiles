@@ -42,7 +42,13 @@ zinit snippet OMZL::directories.zsh
 zinit snippet OMZL::history.zsh 
 zinit snippet OMZL::prompt_info_functions.zsh
 zinit snippet OMZP::vi-mode
-zinit snippet OMZP::fzf
+
+zinit ice as"program" from"gh-r" pick"sk"; zinit light lotabout/skim
+zinit snippet 'https://github.com/lotabout/skim/blob/master/shell/key-bindings.zsh'
+zinit snippet 'https://github.com/lotabout/skim/blob/master/shell/completion.zsh'
+
+zinit ice as"program" from"gh-r" pick"bin/exa"; zinit light ogham/exa 
+
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 zinit ice wait lucid; zinit light zsh-users/zsh-completions
@@ -54,27 +60,23 @@ zinit ice wait"2" lucid; zinit snippet OMZP::pip
 zinit ice wait"2" lucid; zinit snippet OMZP::python
 zinit ice wait"2" lucid; zinit snippet OMZP::tmux
 zinit ice wait"2" lucid; zinit light mfaerevaag/wd 
-zinit ice wait"2" lucid; zinit load agkozak/zsh-z
+zinit ice wait"2" lucid; zinit light agkozak/zsh-z
 
-
- #Fast Syntax Highlighting has to load last
-zinit wait lucid for \
- atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    zdharma-continuum/fast-syntax-highlighting \
- blockf \
-    zsh-users/zsh-completions \
- atload"!_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions
+# Fast Syntax Highlighting has to load last
+#zinit wait lucid for \
+ #atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    #zdharma-continuum/fast-syntax-highlighting \
+ #blockf \
+    #zsh-users/zsh-completions \
+ #atload"!_zsh_autosuggest_start" \
+    #zsh-users/zsh-autosuggestions
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 ### End of Zinit's installer chunk
-#
-#
-TRAPWINCH() {
-  zle && { zle reset-prompt; zle -R }
-}
+
+source $APPS/git-apps/todo.txt-cli/todo_completion
 
 ## To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
