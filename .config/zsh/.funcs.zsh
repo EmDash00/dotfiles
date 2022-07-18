@@ -13,7 +13,7 @@ alias standby='i3lock-fancy && systemctl suspend'
 alias lock='i3lock-fancy'
 alias hibernate='i3lock-fancy && systemctl hibernate'
 alias rm='rm --preserve-root -I'
-alias ex='exa --icons'
+alias s='exa --icons -s extension'
 alias feed='flatpak run org.gnome.FeedReader' 
 alias feedstop='flatpak kill org.gnome.FeedReader'
 
@@ -128,3 +128,5 @@ if [ $USER != "root" ]; then
    patched_eval "$(pyenv virtualenv-init -)"
    patched_eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+
+gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}

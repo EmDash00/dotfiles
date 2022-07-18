@@ -34,6 +34,7 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{160} The clone has failed.%f%b"
 fi
 
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share/zinit}"
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 
 zinit snippet OMZL::completion.zsh
@@ -43,11 +44,11 @@ zinit snippet OMZL::history.zsh
 zinit snippet OMZL::prompt_info_functions.zsh
 zinit snippet OMZP::vi-mode
 
-zinit ice as"program" from"gh-r" pick"sk"; zinit light lotabout/skim
-zinit snippet 'https://github.com/lotabout/skim/blob/master/shell/key-bindings.zsh'
-zinit snippet 'https://github.com/lotabout/skim/blob/master/shell/completion.zsh'
+#zinit ice as"program" from"gh-r" pick"sk"; zinit light lotabout/skim
 
-zinit ice as"program" from"gh-r" pick"bin/exa"; zinit light ogham/exa 
+zinit ice as"program" from"gh-r" pick"bin/exa" mv"completions/exa.zsh -> completions/_exa"
+zinit light ogham/exa 
+zinit add-fpath ogham/exa completions/_exa
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
@@ -59,17 +60,32 @@ zinit ice wait"2" lucid; zinit snippet OMZP::git
 zinit ice wait"2" lucid; zinit snippet OMZP::pip
 zinit ice wait"2" lucid; zinit snippet OMZP::python
 zinit ice wait"2" lucid; zinit snippet OMZP::tmux
+
 zinit ice wait"2" lucid; zinit light mfaerevaag/wd 
+zinit add-fpath mfaerevaag/wd 
+
 zinit ice wait"2" lucid; zinit light agkozak/zsh-z
+zinit add-fpath agkozak/zsh-z
+
+zinit ice as"program" from"gh-r" pick"nvim-linux64/bin/nvim"
+zinit light neovim/neovim
+
+zinit ice as"program" from"gh-r" mv"tree-sitter-linux-x64 -> tree-sitter" pick"tree-sitter"
+zinit light tree-sitter/tree-sitter
+
+# Needs to be last for whatever strange reason
+zinit ice as"program" from"gh" atclone"./install" atpull"./install" \
+    pick"bin/sk" multisrc"shell/key-bindings.zsh shell/completion.zsh"
+zinit light lotabout/skim
 
 # Fast Syntax Highlighting has to load last
-#zinit wait lucid for \
- #atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    #zdharma-continuum/fast-syntax-highlighting \
- #blockf \
-    #zsh-users/zsh-completions \
- #atload"!_zsh_autosuggest_start" \
-    #zsh-users/zsh-autosuggestions
+zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
+ blockf \
+    zsh-users/zsh-completions \
+ blockf \
+    lotabout/skim \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
