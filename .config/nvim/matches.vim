@@ -1,7 +1,7 @@
 inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
-inoremap {<CR> {}<LEFT><CR><CR><UP><TAB>
+inoremap {<CR> {<CR>}<ESC>O
 inoremap ' ''<Left>
 
 
@@ -11,11 +11,11 @@ inoremap <leader>( (
 inoremap <leader>{ {
 inoremap <leader>[ [
 
-vnoremap _( <Esc>`>a)<Esc>`<i(<Esc>
-vnoremap _{ <Esc>`>a}<Esc>`<i{<Esc>
-vnoremap _[ <Esc>`>a]<Esc>`<i[<Esc>
+vnoremap ( <Esc>`>a)<Esc>`<i(<Esc>
+vnoremap { <Esc>`>a}<Esc>`<i{<Esc>
+vnoremap [ <Esc>`>a]<Esc>`<i[<Esc>
 vnoremap _" <Esc>`>a"<Esc>`<i"<Esc>
-vnoremap _' <Esc>`>a'<Esc>`<i'<Esc>
+vnoremap ' <Esc>`>a'<Esc>`<i'<Esc>
 
 autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
 inoremap ) <c-r>=ClosePair(')')<CR>
