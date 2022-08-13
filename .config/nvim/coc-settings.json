@@ -22,7 +22,9 @@
         "initializationOptions": {},
         "settings": {}
       }
-    }, "python.linting.mypyEnabled": true,
+    }, 
+    "python.linting.mypyEnabled": true,
+    "python.formatting.autopep8Path": "/home/emdash00/.pyenv/shims/autopep8",
     //"python.linting.flake8Enabled": true,
     "python.linting.pycodestyleEnabled": true,
     "pyright.disableProgressNotifications": true,

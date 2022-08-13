@@ -1,0 +1,7 @@
+configuration {
+ modi: "window,drun,run";
+ kb-cancel: "Escape,Alt+F1";
+ show-icons: true;
+  icon-theme: "Papirus";
+ display-drun: "";
+}

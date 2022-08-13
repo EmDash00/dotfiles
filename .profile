@@ -75,7 +75,6 @@ export ZPLUG_HOME="${XDG_CONFIG_HOME}/zplug"
 export ROS_HOME="$HOME/.config/ros"
 
 export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/SILKOWRM"
-export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/forcedimension-python"
 export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/immutable"
 export VIRTUALENVWRAPPER_PYTHON=`which python3`
 export SUDO_ASKPASS='/usr/lib/ssh/x11-ssh-askpass'
@@ -92,6 +91,7 @@ path_append "$HOME/Apps/source/pplatex-pplatex-1.0-rc2/build/src"
 #path_append "/tools/Xilinx/Vivado/2020.2/bin"
 path_append "$HOME/Apps/source/clion-2021.1.2/bin"
 path_append "$HOME/Apps/source/arduino-cli_0.18.3_Linux_64bit"
+#path_append "$XDG_CONFIG_HOME/skim/bin"
 
 
 path_append "$DUB_HOME/dcd-0.12.0/dcd/bin"

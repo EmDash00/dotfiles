@@ -8,7 +8,6 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -37,7 +36,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show drun -theme "~/.config/rofi/themes/dmenu.rasi"
+#bindsym Mod4 exec rofi -show drun -theme "~/.config/rofi/themes/dmenu.rasi"
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -55,6 +56,11 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume $sink
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink toggle # mute sound
 bindsym XF86Sleep exec i3lock-fancy && standby
 bindsym Mod4+l exec i3lock-fancy
+
+bindsym --release Mod4+Shift+s exec gnome-screenshot -i -a
+bindsym Mod4+n exec networkmanager_dmenu
+bindsym Mod4+b exec rofi-bluetooth
+bindsym Mod4+p exec $XDG_CONFIG_HOME/rofi/scripts/powermenu.sh
 
 # change focus
 bindsym $mod+h focus right
@@ -182,13 +188,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # exec powerline-globmenu
-exec --no-startup-id feh --bg-fill ~/Pictures/Wallpaper.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/Wallpaper\ -\ Carina.jpg
 exec xinput -set-prop $(cut -d  "=" -f2 <<< "$(xinput list | grep "MX Ergo Mouse" | grep id=\\d+ -o)") 321 1
 exec xinput -set-prop $(cut -d  "=" -f2 <<< "$(xinput list | grep "SYNA2B31:00 06CB:CD3E Touchpad" | grep id=\\d+ -o)") 321 0.5
 exec ~/Apps/git-apps/i3-natural-scrolling-and-tap/tap-to-click.sh
 
-# exec "powerline-lemonbar --height 16 -- -b -f 'DejaVu Sans Mono-11' -f 'PowerlineSymbols-12' -f 'FontAwesome-11'"
-
 # start flux when I login
-exec --no-startup-id $HOME/.config/polybar/startup.sh
 exec fluxgui  
+
+# start udiskie when I login
+exec udiskie
+exec compton
+exec autorandr -c
+exec polybar-msg cmd restart

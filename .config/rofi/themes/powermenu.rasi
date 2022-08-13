@@ -1,0 +1,11 @@
+@import "rounded-gray-dark.rasi"
+
+
+* {
+    font:   "Ubuntu Nerd Font 12";
+}
+
+
+prompt {
+  enabled: 						true;
+}

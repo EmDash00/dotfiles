@@ -1,0 +1,5 @@
+@import "rounded-gray-dark.rasi"
+
+listview {
+    lines:    15;
+}

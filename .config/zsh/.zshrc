@@ -92,7 +92,9 @@ autoload -Uz _zinit
 
 ### End of Zinit's installer chunk
 
-source $APPS/git-apps/todo.txt-cli/todo_completion
+if [[ "$USER" != "root" ]]; then
+    source $APPS/git-apps/todo.txt-cli/todo_completion
+fi
 
 ## To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

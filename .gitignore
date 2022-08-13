@@ -127,3 +127,5 @@
 .config/torbrowser
 .config/coc
 .config/arduino-cli
+
+*tags*

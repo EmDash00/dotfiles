@@ -1,0 +1,20 @@
+configuration {
+	show-icons:		false;
+	sidebar-mode: 	false;
+}
+
+@import "rounded-gray-dark.rasi"
+
+* {
+    font:   "DejaVu Sans Mono 12";
+}
+
+window{
+    width:          480;
+}
+
+listview {
+    location:       center;
+    lines:    15;
+}
+
