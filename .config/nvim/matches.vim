@@ -4,7 +4,6 @@ inoremap { {}<Left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap ' ''<Left>
 
-
 inoremap <leader>' '
 inoremap <leader>" "
 inoremap <leader>( (

@@ -1,7 +1,7 @@
 export VIMINIT='if !has("nvim") 
    let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC 
 else
-   let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim" | source $MYVIMRC
+   let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim" | source $MYVIMRC 
 endif'
 
 export TERM="xterm-256color"
@@ -29,8 +29,6 @@ export EIGEN3_ROOT_DIR="/usr/local/include/eigen3/"
 export SOFA_INSTALL_DIR="/home/emdash00/Apps/git-apps/sofa/src/"
 
 #---------------------------------------------------
-
-export PROBUDS='D0:FB:E1:F6:A5:12'
 
 export REF="~/Documents/Notes"
 export LIB="~/Documents/Library"
