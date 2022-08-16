@@ -2,6 +2,7 @@ local opt = vim.opt
 local cmd = vim.cmd
 
 require('plugins')
+require('colors')
 
 opt.expandtab = true
 opt.showmode = false

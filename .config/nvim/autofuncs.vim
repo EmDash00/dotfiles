@@ -20,6 +20,5 @@ fun! <SID>StripTrailingWhitespaces()
    call cursor(l, c)
 endfun
 
-"call togglebg#map("<F5>")
 
 autocmd FileType c,cpp,d,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()

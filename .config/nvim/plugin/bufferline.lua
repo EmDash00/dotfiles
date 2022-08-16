@@ -1,6 +1,25 @@
-local api = vim.api
+local vimp = require('vimp')
+local nnoremap = vimp.nnoremap
 
-api.nvim_command('source $XDG_CONFIG_HOME/nvim/plugin/bufferline.vim')
+local opts = {'silent'}
+
+nnoremap(opts, '<leader>1', ':BufferLineGoToBuffer 1<CR>')
+nnoremap(opts, '<leader>2', ':BufferLineGoToBuffer 2<CR>')
+nnoremap(opts, '<leader>3', ':BufferLineGoToBuffer 3<CR>')
+nnoremap(opts, '<leader>4', ':BufferLineGoToBuffer 4<CR>')
+nnoremap(opts, '<leader>5', ':BufferLineGoToBuffer 5<CR>')
+nnoremap(opts, '<leader>6', ':BufferLineGoToBuffer 6<CR>')
+nnoremap(opts, '<leader>7', ':BufferLineGoToBuffer 7<CR>')
+nnoremap(opts, '<leader>8', ':BufferLineGoToBuffer 8<CR>')
+nnoremap(opts, '<leader>9', ':BufferLineGoToBuffer 9<CR>')
+nnoremap(opts, '<leader>0', ':BufferLineGoToBuffer 10<CR>')
+
+nnoremap(opts, '<leader>bp', ':BufferLinePick<CR>')
+nnoremap(opts, '<leader>bq', ':BufferLinePickClose<CR>')
+--nnoremap(opts, '<leader>bhq', ':BufferLineCloseLeft<CR>')
+--nnoremap(opts, '<leader>blq', ':BufferLineCloseRight<CR>')
+nnoremap(opts, '<leader>bh', ':BufferLineMovePrev<CR>')
+nnoremap(opts, '<leader>bl', ':BufferLineMoveNext<CR>')
 
 require('bufferline').setup {
   options = {

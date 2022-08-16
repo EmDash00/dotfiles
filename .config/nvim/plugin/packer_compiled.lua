@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/chadtree",
     url = "https://github.com/ms-jpq/chadtree"
   },
-  ["coc.nvim"] = {
-    loaded = true,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/coc.nvim",
-    url = "https://github.com/neoclide/coc.nvim"
-  },
   ["editorconfig.nvim"] = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/editorconfig.nvim",
@@ -100,8 +95,11 @@ _G.packer_plugins = {
     url = "https://github.com/mattn/emmet-vim"
   },
   ["goyo.vim"] = {
-    loaded = true,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/goyo.vim",
+    config = { "vim.cmd [[Goyo]]" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/opt/goyo.vim",
     url = "https://github.com/junegunn/goyo.vim"
   },
   ["i3-vim-syntax"] = {
@@ -115,13 +113,17 @@ _G.packer_plugins = {
     url = "https://github.com/vim-scripts/indentpython.vim"
   },
   ["limelight.vim"] = {
-    loaded = true,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/limelight.vim",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/opt/limelight.vim",
     url = "https://github.com/junegunn/limelight.vim"
   },
   ["markdown-preview.nvim"] = {
-    loaded = true,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["marks.nvim"] = {
@@ -133,6 +135,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/preservim/nerdcommenter"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-remote-containers"] = {
     loaded = true,
@@ -153,6 +160,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["scope.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/scope.nvim",
+    url = "https://github.com/tiagovla/scope.nvim"
   },
   skim = {
     loaded = true,
@@ -266,6 +278,11 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
   },
+  vimpeccable = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vimpeccable",
+    url = "https://github.com/svermeulen/vimpeccable"
+  },
   vimtex = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vimtex",
@@ -278,6 +295,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'goyo.vim', 'markdown-preview.nvim', 'limelight.vim'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType tex ++once lua require("packer.load")({'vim-latex-live-preview'}, { ft = "tex" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")

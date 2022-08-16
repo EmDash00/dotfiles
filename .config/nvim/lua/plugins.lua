@@ -15,8 +15,12 @@ return require('packer').startup {
 
     use 'gpanders/editorconfig.nvim'
 
+    --Configuration
+    use 'svermeulen/vimpeccable'
+
     -- IDE
-    use {'neoclide/coc.nvim', branch = 'release'}
+    --use {'neoclide/coc.nvim', branch = 'release'}
+    use 'neovim/nvim-lspconfig'
 
     use {'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps'}
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -56,6 +60,7 @@ return require('packer').startup {
     use 'lambdalisue/suda.vim'
     use 'tpope/vim-eunuch'
     use 'smitajit/bufutils.vim'
+    use 'tiagovla/scope.nvim'
 
     -- UI
     use {
@@ -63,18 +68,22 @@ return require('packer').startup {
       tag = 'v2.*', 
       requires = 'kyazdani42/nvim-web-devicons'
     }
+
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
     use {'mhinz/vim-startify', requires = 'ryanoasis/vim-devicons'}
 
     use 'b4b4r07/vim-sunset'
 
-    use 'junegunn/limelight.vim'
-    use 'junegunn/goyo.vim'
+
+    use {'junegunn/goyo.vim', ft = {'markdown'}, config = 'vim.cmd [[Goyo]]'}
+
+    use {'junegunn/limelight.vim', ft = {'markdown'}}
 
     use {
         "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end
+        run = function() vim.fn["mkdp#util#install"]() end,
+        ft = 'markdown'
     }
 
     use {'xuhdev/vim-latex-live-preview', ft = 'tex'}
@@ -87,8 +96,10 @@ return require('packer').startup {
     end
   end,
   config = {
-      display = {
-      open_fn = require('packer.util').float,
+    display = {
+      open_fn = function()
+        return require('packer.util').float({ border = 'rounded'})
+      end
     }
   }
 }
