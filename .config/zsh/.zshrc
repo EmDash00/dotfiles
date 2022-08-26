@@ -12,6 +12,7 @@ setopt extended_history # save timestamp
 setopt inc_append_history # add history immediately after typing a command
 setopt BASH_REMATCH
 
+fpath+=${ZDOTDIR:-~}/.zsh_functions
 # Source SSH settings, if applicable
 if [ -f "${SSH_ENV}" ]; then
     . "${SSH_ENV}" > /dev/null
@@ -23,7 +24,6 @@ else
     start_agent;
 fi
 
-### End of Zinit's installer chunk
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -33,8 +33,10 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{33} %F{34}Installation successful.%f%b" || \
         print -P "%F{160} The clone has failed.%f%b"
 fi
+### End of Zinit's installer chunk
 
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share/zinit}"
+#ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share/zinit}"
+#ZINIT_HOME="$~/.local/share/zinit}"
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 
 zinit snippet OMZL::completion.zsh
@@ -52,7 +54,7 @@ zinit add-fpath ogham/exa completions/_exa
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-zinit ice wait lucid; zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-completions
 zinit ice wait lucid; zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 

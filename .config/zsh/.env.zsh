@@ -4,7 +4,7 @@ else
    let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim" | source $MYVIMRC 
 endif'
 
-export TERM="xterm-256color"
+#export TERM='alacritty'
 
 # Command history config               
 export HISTFILE="$XDG_CACHE_HOME/zsh_history"
