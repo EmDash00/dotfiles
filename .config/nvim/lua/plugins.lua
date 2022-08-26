@@ -11,31 +11,52 @@ end
 
 return require('packer').startup {
   function(use)
+    --Configuration
     use 'wbthomason/packer.nvim'
+    use 'svermeulen/vimpeccable'
 
     use 'gpanders/editorconfig.nvim'
 
-    --Configuration
-    use 'svermeulen/vimpeccable'
-
     -- IDE
     --use {'neoclide/coc.nvim', branch = 'release'}
-    use 'neovim/nvim-lspconfig'
+    use {'neovim/nvim-lspconfig', requires = {'onsails/lspkind.nvim'}}
 
-    use {'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps'}
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-    use 'pseewald/vim-anyfold'
+    use {
+      'hrsh7th/nvim-cmp',
+      requires = {
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'quangnguyen30192/cmp-nvim-ultisnips',
+      }
+    }
+
+    use {
+      'nvim-treesitter/nvim-treesitter', 
+       run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    }
+
     use 'ludovicchabant/vim-gutentags'
 
     use 'godlygeek/tabular'
 
-    use 'SirVer/ultisnips'
-    use 'honza/vim-snippets'
+    use {
+      'SirVer/ultisnips', 
+      requires = {{'honza/vim-snippets', rtp = '.'}}
+    }
 
     use 'preservim/nerdcommenter'
     use 'chentoast/marks.nvim' 
 
+    use "tversteeg/registers.nvim"
+
     use 'jamestthompson3/nvim-remote-containers'
+
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+    }
 
     --Navigation
     use 'easymotion/vim-easymotion'
@@ -44,9 +65,44 @@ return require('packer').startup {
 
     use 'christoomey/vim-tmux-navigator'
 
+    use 'simrat39/symbols-outline.nvim'
+
+    use {
+      'akinsho/bufferline.nvim', 
+      tag = 'v2.*', 
+      requires = 'kyazdani42/nvim-web-devicons'
+    }
+
+    use {
+      'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icons
+      },
+      tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
+
+    use {
+      'sudormrfbin/cheatsheet.nvim',
+
+      requires = {
+        {'nvim-telescope/telescope.nvim'},
+        {'nvim-lua/popup.nvim'},
+        {'nvim-lua/plenary.nvim'},
+      }
+    }
+
+    use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.x',
+      requires = { 
+        {
+          'nvim-lua/plenary.nvim', 
+          'kyazdani42/nvim-web-devicons',
+        } 
+      }
+    }
+
     --Syntax
     use 'PotatoesMaster/i3-vim-syntax'
-    use 'sheerun/vim-polyglot'
     use 'vhda/verilog_systemverilog.vim'
     use 'scarface-one/vim-dlang-phobos-highlighter'
     use 'plasticboy/vim-markdown'
@@ -59,15 +115,12 @@ return require('packer').startup {
     -- Utility
     use 'lambdalisue/suda.vim'
     use 'tpope/vim-eunuch'
-    use 'smitajit/bufutils.vim'
     use 'tiagovla/scope.nvim'
 
     -- UI
-    use {
-      'akinsho/bufferline.nvim', 
-      tag = 'v2.*', 
-      requires = 'kyazdani42/nvim-web-devicons'
-    }
+    use 'ahmedkhalf/project.nvim'
+
+    use "lukas-reineke/indent-blankline.nvim"
 
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
@@ -88,9 +141,12 @@ return require('packer').startup {
 
     use {'xuhdev/vim-latex-live-preview', ft = 'tex'}
 
-    -- Colorschemes
-    use 'rakr/vim-one'
+    use 'karb94/neoscroll.nvim'
 
+    -- Colorschemes
+    use 'navarasu/onedark.nvim'
+    --use 'rakr/vim-one'
+    
     if packer_bootstrap then
       require('packer').sync()
     end

@@ -3,4 +3,4 @@ local nnoremap = vimp.nnoremap
 
 local opts = {'silent'}
 
-nnoremap(opts, '<C-d>', ':CHADopen<CR>')
+--nnoremap(opts, '<C-d>', ':CHADopen<CR>')

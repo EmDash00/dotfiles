@@ -16,9 +16,9 @@ function! Sunset_daytime_callback()
 endfunction
 
 function! Sunset_nighttime_callback()
-   set background=dark
+   "set background=dark
    
-   colorscheme one
+   "colorscheme onedark
    "hi LineNr term=bold cterm=bold ctermfg=2 guifg=#c6c6c6 
 endfunction
 

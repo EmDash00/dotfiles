@@ -32,7 +32,10 @@ require('bufferline').setup {
     -- NOTE: this plugin is designed with this icon in mind,
     -- and so changing this is NOT recommended, this is intended
     -- as an escape hatch for people who cannot bear it for whatever reason
-    indicator_icon = '▎',
+    indicator = {
+      style = 'icon',
+      icon = '▎'
+    },
     buffer_close_icon = '',
     modified_icon = '●',
     close_icon = '',
@@ -41,16 +44,34 @@ require('bufferline').setup {
     max_name_length = 18,
     max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
     tab_size = 18,
-    diagnostics = "coc",
+    diagnostics = "nvim_lsp",
     diagnostics_update_in_insert = true,
 	
 	 	diagnostics_indicator = function(count, level, diagnostics_dict, context)
 		 local s = ""
-		 for e, n in pairs(diagnostics_dict) do
-			 local sym = e == "error" and " "
-				 or (e == "warning" and " " or " " )
-			 s = s .. sym .. n .. " "
-		 end
+     local first = true
+
+     if (diagnostics_dict['error'] ~= nil) then
+       s = s .. " " .. diagnostics_dict['error']
+       first = false
+     end
+
+     if (diagnostics_dict['warning'] ~= nil) then
+       if not first then
+         s = s .. " "
+       end
+
+       s = s .. " " .. diagnostics_dict['warning']
+     end
+
+     if (diagnostics_dict['info'] ~= nil) then
+       if not first then
+         s = s .. " "
+       end
+
+       s = s .. " " .. diagnostics_dict['info']
+     end
+
 		 return s
 	 	end,
     custom_filter = function(buf_number, buf_numbers)
@@ -63,7 +84,7 @@ require('bufferline').setup {
         return true
       end
     end,
-    offsets = {{filetype = "CHADTree", text = "File Explorer"}},
+    offsets = {{filetype = "NvimTree", text = "File Explorer"}},
     color_icons = true, -- whether or not to add the filetype icon highlights
     show_buffer_icons = true, -- disable filetype icons for buffers
     show_buffer_close_icons = false,

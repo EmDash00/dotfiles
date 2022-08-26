@@ -74,15 +74,35 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
-  ["bufutils.vim"] = {
+  ["cheatsheet.nvim"] = {
     loaded = true,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/bufutils.vim",
-    url = "https://github.com/smitajit/bufutils.vim"
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/cheatsheet.nvim",
+    url = "https://github.com/sudormrfbin/cheatsheet.nvim"
   },
-  chadtree = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/chadtree",
-    url = "https://github.com/ms-jpq/chadtree"
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-ultisnips"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips",
+    url = "https://github.com/quangnguyen30192/cmp-nvim-ultisnips"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
   },
   ["editorconfig.nvim"] = {
     loaded = true,
@@ -107,6 +127,11 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/i3-vim-syntax",
     url = "https://github.com/PotatoesMaster/i3-vim-syntax"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["indentpython.vim"] = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/indentpython.vim",
@@ -118,6 +143,11 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/opt/limelight.vim",
     url = "https://github.com/junegunn/limelight.vim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = false,
@@ -131,10 +161,20 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/marks.nvim",
     url = "https://github.com/chentoast/marks.nvim"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   nerdcommenter = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/preservim/nerdcommenter"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -146,6 +186,11 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/nvim-remote-containers",
     url = "https://github.com/jamestthompson3/nvim-remote-containers"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -156,10 +201,35 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["project.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/project.nvim",
+    url = "https://github.com/ahmedkhalf/project.nvim"
+  },
+  ["registers.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/registers.nvim",
+    url = "https://github.com/tversteeg/registers.nvim"
   },
   ["scope.nvim"] = {
     loaded = true,
@@ -181,10 +251,25 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/suda.vim",
     url = "https://github.com/lambdalisue/suda.vim"
   },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
+  },
   tabular = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/tabular",
     url = "https://github.com/godlygeek/tabular"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   ultisnips = {
     loaded = true,
@@ -205,11 +290,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
     url = "https://github.com/vim-airline/vim-airline-themes"
-  },
-  ["vim-anyfold"] = {
-    loaded = true,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-anyfold",
-    url = "https://github.com/pseewald/vim-anyfold"
   },
   ["vim-devicons"] = {
     loaded = true,
@@ -248,19 +328,9 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-markdown",
     url = "https://github.com/plasticboy/vim-markdown"
   },
-  ["vim-one"] = {
-    loaded = true,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-one",
-    url = "https://github.com/rakr/vim-one"
-  },
-  ["vim-polyglot"] = {
-    loaded = true,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-polyglot",
-    url = "https://github.com/sheerun/vim-polyglot"
-  },
   ["vim-snippets"] = {
     loaded = true,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-snippets/.",
     url = "https://github.com/honza/vim-snippets"
   },
   ["vim-startify"] = {
@@ -291,11 +361,15 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Runtimepath customization
+time([[Runtimepath customization]], true)
+vim.o.runtimepath = vim.o.runtimepath .. ",/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-snippets/."
+time([[Runtimepath customization]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'goyo.vim', 'markdown-preview.nvim', 'limelight.vim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'goyo.vim', 'limelight.vim', 'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType tex ++once lua require("packer.load")({'vim-latex-live-preview'}, { ft = "tex" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")

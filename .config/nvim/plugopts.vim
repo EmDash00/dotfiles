@@ -24,10 +24,6 @@ let g:mkdp_theme = 'light'
 let g:tex_flavor = 'latex'
 
 "----------------------------UtiliSnips-------------------------------
-let g:UltiSnipsSnippetsDir = "~/.config/vim/UltiSnips"
-let g:UltiSnipsExpandTrigger="<leader>e"
-let g:UltiSnipsJumpForwardTrigger="<leader>u"
-let g:UltiSnipsJumpBackwardTrigger="<leader>i"
 
 
 "-------------------------------COC-----------------------------------

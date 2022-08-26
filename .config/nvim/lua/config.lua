@@ -24,4 +24,4 @@ opt.guicursor =
   'i-ci:ver30-blinkwait500-blinkon300-blinkoff200'
 
 opt.background = 'dark'
-cmd 'colorscheme one'
+--cmd 'colorscheme one'
