@@ -1,7 +1,6 @@
 local vimp = require('vimp')
 local nnoremap = vimp.nnoremap
-
-local opts = {'silent'}
+local opts = { 'silent' }
 
 nnoremap(opts, '<leader>1', ':BufferLineGoToBuffer 1<CR>')
 nnoremap(opts, '<leader>2', ':BufferLineGoToBuffer 2<CR>')
@@ -25,20 +24,11 @@ require('bufferline').setup {
   options = {
     mode = "buffers", -- set to "tabs" to only show tabpages instead
     numbers = "none",
-    close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
-    right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
-    left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
-    middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
-    -- NOTE: this plugin is designed with this icon in mind,
-    -- and so changing this is NOT recommended, this is intended
-    -- as an escape hatch for people who cannot bear it for whatever reason
     indicator = {
       style = 'icon',
       icon = '▎'
     },
-    buffer_close_icon = '',
     modified_icon = '●',
-    close_icon = '',
     left_trunc_marker = '',
     right_trunc_marker = '',
     max_name_length = 18,
@@ -46,34 +36,34 @@ require('bufferline').setup {
     tab_size = 18,
     diagnostics = "nvim_lsp",
     diagnostics_update_in_insert = true,
-	
-	 	diagnostics_indicator = function(count, level, diagnostics_dict, context)
-		 local s = ""
-     local first = true
 
-     if (diagnostics_dict['error'] ~= nil) then
-       s = s .. " " .. diagnostics_dict['error']
-       first = false
-     end
+    diagnostics_indicator = function(count, level, diagnostics_dict, context)
+      local s = ""
+      local first = true
 
-     if (diagnostics_dict['warning'] ~= nil) then
-       if not first then
-         s = s .. " "
-       end
+      if (diagnostics_dict['error'] ~= nil) then
+        s = s .. " " .. diagnostics_dict['error']
+        first = false
+      end
 
-       s = s .. " " .. diagnostics_dict['warning']
-     end
+      if (diagnostics_dict['warning'] ~= nil) then
+        if not first then
+          s = s .. " "
+        end
 
-     if (diagnostics_dict['info'] ~= nil) then
-       if not first then
-         s = s .. " "
-       end
+        s = s .. " " .. diagnostics_dict['warning']
+      end
 
-       s = s .. " " .. diagnostics_dict['info']
-     end
+      if (diagnostics_dict['info'] ~= nil) then
+        if not first then
+          s = s .. " "
+        end
 
-		 return s
-	 	end,
+        s = s .. " " .. diagnostics_dict['info']
+      end
+
+      return s
+    end,
     custom_filter = function(buf_number, buf_numbers)
       -- filter out filetypes you don't want to see
       -- filter out by buffer name
@@ -84,7 +74,7 @@ require('bufferline').setup {
         return true
       end
     end,
-    offsets = {{filetype = "NvimTree", text = "File Explorer"}},
+    offsets = { { filetype = "NvimTree", text = "File Explorer" } },
     color_icons = true, -- whether or not to add the filetype icon highlights
     show_buffer_icons = true, -- disable filetype icons for buffers
     show_buffer_close_icons = false,
@@ -98,5 +88,57 @@ require('bufferline').setup {
     enforce_regular_tabs = true,
     always_show_bufferline = true,
     sort_by = 'extension'
-  }
+  },
+  highlights = {
+    indicator_selected = {
+      fg = '#61afef'
+    },
+    indicator_visible = {
+      fg = '#24282f'
+    },
+    tab = {
+      fg = '#5c6370'
+    },
+    tab_selected = {
+      fg = '#61afef'
+    },
+    buffer_selected = {
+      italic = false
+    },
+    numbers_selected = {
+      bold = false,
+      italic = false,
+    },
+    diagnostic_selected = {
+      italic = false
+    },
+    hint_selected = {
+      italic = false
+    },
+    info_selected = {
+      italic = false
+    },
+    warning_selected = {
+      italic = false
+    },
+    error_selected = {
+      italic = false
+    },
+    hint_diagnostic_selected = {
+      bold = false,
+      italic = false
+    },
+    info_diagnostic_selected = {
+      bold = false,
+      italic = false
+    },
+    warning_diagnostic_selected = {
+      bold = false,
+      italic = false
+    },
+    error_diagnostic_selected = {
+      bold = false,
+      italic = false
+    }
+  },
 }

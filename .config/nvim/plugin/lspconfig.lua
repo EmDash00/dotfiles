@@ -3,7 +3,6 @@ local lspconfig = require('lspconfig')
 local nnoremap = vimp.nnoremap
 
 local api = vim.api
-local cmd = vim.cmd
 local diagnostic, lsp = vim.diagnostic, vim.lsp
 
 vim.o.updatetime = 250
@@ -25,10 +24,8 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-local opts = {'silent'}
+local opts = { 'silent' }
 
---nnoremap(opts, '<space>e', diagnostic.open_float)
---nnoremap(opts, '<space>q', diagnostic.setloclist)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -37,7 +34,7 @@ local on_attach = function(client, bufnr)
   api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.lsp.omnifunc')
 
   vimp.add_buffer_maps(
-    buffnr,
+    bufnr,
     function()
       -- Mappings.
       -- See `:help lsp.*` for documentation on any of the below functions
@@ -47,8 +44,8 @@ local on_attach = function(client, bufnr)
       nnoremap(opts, 'gD', lsp.buf.declaration)
       nnoremap(opts, 'gd', lsp.buf.definition)
       nnoremap(
-        opts, 'L', 
-        function() 
+        opts, 'L',
+        function()
           api.nvim_command('set eventignore=CursorHold')
           lsp.buf.hover()
           api.nvim_command('autocmd CursorMoved <buffer> ++once set eventignore=""')
@@ -61,16 +58,16 @@ local on_attach = function(client, bufnr)
       nnoremap(opts, '<leader>wr', lsp.buf.remove_workspace_folder)
       nnoremap(
         opts,
-        '<leader>wl', 
+        '<leader>wl',
         function()
           print(vim.inspect(lsp.buf.list_workspace_folders()))
-        end 
+        end
       )
       nnoremap(opts, 'td', lsp.buf.type_definition)
       nnoremap(opts, '<leader>rn', lsp.buf.rename)
       --nnoremap(opts, '<leader>ac', lsp.buf.code_action)
       nnoremap(opts, 'gr', lsp.buf.references)
-      nnoremap(opts, '<leader>f', lsp.buf.format {async = true})
+      --nnoremap(opts, '<leader>f', lsp.buf.format { async = true })
     end
   )
 
@@ -90,19 +87,19 @@ local on_attach = function(client, bufnr)
 
   -- Diagnostic hold
   vim.api.nvim_create_autocmd(
-    "CursorHold", 
+    "CursorHold",
     {
       buffer = bufnr,
       callback = function()
         diagnostic.open_float(
-          nil, 
+          nil,
           {
             focusable = false,
             close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
             source = 'always',
             prefix = ' ',
             scope = 'cursor',
-          }   
+          }
         )
       end
     }
@@ -120,41 +117,38 @@ end
 
 --LSP Kinds
 require('lspkind').init({
-    mode = 'symbol_text',
-    preset = 'codicons',
-    -- default: {}
-    symbol_map = {
-      Text = '',
-      Method = '',
-      Function = '',
-      Constructor = '',
-      Field = '',
-      Variable = 'ﳛ',
-      --Variable = "",
-      Class = 'ﰩ',
-      Interface = '﫻',
-      Module = '',
-      Property = 'ﴯ',
-      Unit = '塞',
-      Value = '',
-      Enum = '',
-      Keyword = '',
-      Snippet = '螺',
-      Color = '',
-      File = '',
-      Reference = 'ﬂ',
-      Folder = '',
-      EnumMember = '',
-      Constant = '●',
-      Struct = '',
-      Event = '',
-      Operator = '+',
-      TypeParameter = 'ﭨ',
-    },
+  mode = 'symbol_text',
+  preset = 'codicons',
+  -- default: {}
+  symbol_map = {
+    Text = '',
+    Method = '',
+    Function = '',
+    Constructor = '',
+    Field = '',
+    Variable = 'ﳛ',
+    --Variable = "",
+    Class = 'ﰩ',
+    Interface = '﫻',
+    Module = '',
+    Property = 'ﴯ',
+    Unit = '塞',
+    Value = '',
+    Enum = '',
+    Keyword = '',
+    Snippet = '螺',
+    Color = '',
+    File = '',
+    Reference = 'ﬂ',
+    Folder = '',
+    EnumMember = '',
+    Constant = '●',
+    Struct = '',
+    Event = '',
+    Operator = '+',
+    TypeParameter = 'ﭨ',
+  },
 })
-
--- Language Servers --
-
 
 local lsp_flags = {
   debounce_text_changes = 150,
@@ -167,25 +161,25 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
 lspconfig.pyright.setup {
   on_attach = on_attach,
   flags = lsp_flags,
-  capabilities = capabilities 
+  capabilities = capabilities
 }
 
 lspconfig.serve_d.setup {
   on_attach = on_attach,
   flags = lsp_flags,
-  capabilities = capabilities 
+  capabilities = capabilities
 }
 
 lspconfig.clangd.setup {
   on_attach = on_attach,
   flags = lsp_flags,
-  capabilities = capabilities 
+  capabilities = capabilities
 }
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,
   flags = lsp_flags,
-  capabilities = capabilities 
+  capabilities = capabilities
 }
 
 lspconfig.rust_analyzer.setup {
@@ -194,5 +188,37 @@ lspconfig.rust_analyzer.setup {
   settings = {
     ["rust-analyzer"] = {}
   },
-  capabilities = capabilities 
+  capabilities = capabilities
+}
+
+require 'lspconfig'.sumneko_lua.setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+  --capabilities = capabilities
+}
+
+require 'lspconfig'.vimls.setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
 }

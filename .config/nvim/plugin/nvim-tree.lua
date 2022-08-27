@@ -1,9 +1,9 @@
 local vimp = require('vimp')
-nnoremap = vimp.nnoremap
+local nnoremap = vimp.nnoremap
 
 local api = require('nvim-tree.api')
-local opts = {'silent'}
-local inject_node =  require("nvim-tree.utils").inject_node
+local opts = { 'silent' }
+--local inject_node = require("nvim-tree.utils").inject_node
 
 -- OR setup with some options
 require("nvim-tree").setup {
@@ -16,7 +16,7 @@ require("nvim-tree").setup {
   view = {
     adaptive_size = false,
     centralize_selection = false,
-    width = 30,
+    width = 25,
     height = 30,
     hide_root_folder = false,
     side = "left",
@@ -59,4 +59,4 @@ require("nvim-tree").setup {
   end
 }
 
-nnoremap({'silent'}, '<C-d>', api.tree.toggle)
+nnoremap({ 'silent' }, '<C-d>', api.tree.toggle)

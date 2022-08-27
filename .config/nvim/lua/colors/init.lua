@@ -1,10 +1,11 @@
-colors = {}
+local colors = {}
 
-local cmd = vim.cmd
 local api = vim.api
 
-function colors.set_hls(highlights) 
-  for hl, params in pairs(highlights) do 
+colors.bgcolor = '#242b38'
+
+function colors.set_hls(highlights)
+  for hl, params in pairs(highlights) do
     local ns_id = 0
 
     if params.ns_id ~= nil then
@@ -16,14 +17,13 @@ function colors.set_hls(highlights)
 end
 
 api.nvim_create_autocmd(
-  'ColorScheme', 
+  'ColorScheme',
   {
     pattern = '*',
     callback = function()
       require('colors.nvim')
       require('colors.lspkinds')
       require('colors.diagnostic')
-      require('colors.bufferline')
       require('colors.nvim_tree')
     end
   }

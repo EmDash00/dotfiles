@@ -16,6 +16,12 @@ function! s:goyo_leave()
     else
       qa
     endif
+  else
+    if b:quitting_bang
+      bd!
+    else
+      bd
+    endif
   endif
 endfunction
 

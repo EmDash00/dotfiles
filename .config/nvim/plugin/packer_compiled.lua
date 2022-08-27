@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-zsh"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/cmp-zsh",
+    url = "https://github.com/tamago324/cmp-zsh"
+  },
   ["editorconfig.nvim"] = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/editorconfig.nvim",
@@ -148,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
     url = "https://github.com/onsails/lspkind.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = false,
@@ -281,16 +291,6 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/verilog_systemverilog.vim",
     url = "https://github.com/vhda/verilog_systemverilog.vim"
   },
-  ["vim-airline"] = {
-    loaded = true,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-airline",
-    url = "https://github.com/vim-airline/vim-airline"
-  },
-  ["vim-airline-themes"] = {
-    loaded = true,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
-    url = "https://github.com/vim-airline/vim-airline-themes"
-  },
   ["vim-devicons"] = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-devicons",
@@ -327,6 +327,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-markdown",
     url = "https://github.com/plasticboy/vim-markdown"
+  },
+  ["vim-one"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-one",
+    url = "https://github.com/rakr/vim-one"
   },
   ["vim-snippets"] = {
     loaded = true,
@@ -369,7 +374,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'goyo.vim', 'limelight.vim', 'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim', 'goyo.vim', 'limelight.vim'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType tex ++once lua require("packer.load")({'vim-latex-live-preview'}, { ft = "tex" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")

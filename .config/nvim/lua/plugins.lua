@@ -1,10 +1,10 @@
 -- Bootstrap packer
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system(
-    {'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path}
+  PackerBoostrap = fn.system(
+    { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
   )
   vim.cmd [[packadd packer.nvim]]
 end
@@ -19,7 +19,7 @@ return require('packer').startup {
 
     -- IDE
     --use {'neoclide/coc.nvim', branch = 'release'}
-    use {'neovim/nvim-lspconfig', requires = {'onsails/lspkind.nvim'}}
+    use { 'neovim/nvim-lspconfig', requires = { 'onsails/lspkind.nvim' } }
 
     use {
       'hrsh7th/nvim-cmp',
@@ -28,13 +28,14 @@ return require('packer').startup {
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
+        'tamago324/cmp-zsh',
         'quangnguyen30192/cmp-nvim-ultisnips',
       }
     }
 
     use {
-      'nvim-treesitter/nvim-treesitter', 
-       run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+      'nvim-treesitter/nvim-treesitter',
+      run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
     }
 
     use 'ludovicchabant/vim-gutentags'
@@ -42,12 +43,12 @@ return require('packer').startup {
     use 'godlygeek/tabular'
 
     use {
-      'SirVer/ultisnips', 
-      requires = {{'honza/vim-snippets', rtp = '.'}}
+      'SirVer/ultisnips',
+      requires = { { 'honza/vim-snippets', rtp = '.' } }
     }
 
     use 'preservim/nerdcommenter'
-    use 'chentoast/marks.nvim' 
+    use 'chentoast/marks.nvim'
 
     use "tversteeg/registers.nvim"
 
@@ -68,8 +69,8 @@ return require('packer').startup {
     use 'simrat39/symbols-outline.nvim'
 
     use {
-      'akinsho/bufferline.nvim', 
-      tag = 'v2.*', 
+      'akinsho/bufferline.nvim',
+      tag = 'v2.*',
       requires = 'kyazdani42/nvim-web-devicons'
     }
 
@@ -85,19 +86,19 @@ return require('packer').startup {
       'sudormrfbin/cheatsheet.nvim',
 
       requires = {
-        {'nvim-telescope/telescope.nvim'},
-        {'nvim-lua/popup.nvim'},
-        {'nvim-lua/plenary.nvim'},
+        { 'nvim-telescope/telescope.nvim' },
+        { 'nvim-lua/popup.nvim' },
+        { 'nvim-lua/plenary.nvim' },
       }
     }
 
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.x',
-      requires = { 
+      requires = {
         {
-          'nvim-lua/plenary.nvim', 
+          'nvim-lua/plenary.nvim',
           'kyazdani42/nvim-web-devicons',
-        } 
+        }
       }
     }
 
@@ -122,39 +123,44 @@ return require('packer').startup {
 
     use "lukas-reineke/indent-blankline.nvim"
 
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
-    use {'mhinz/vim-startify', requires = 'ryanoasis/vim-devicons'}
+    --use 'vim-airline/vim-airline'
+    --use 'vim-airline/vim-airline-themes'
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons' }
+    }
+
+    use { 'mhinz/vim-startify', requires = 'ryanoasis/vim-devicons' }
 
     use 'b4b4r07/vim-sunset'
 
 
-    use {'junegunn/goyo.vim', ft = {'markdown'}, config = 'vim.cmd [[Goyo]]'}
+    use { 'junegunn/goyo.vim', ft = { 'markdown' }, config = 'vim.cmd [[Goyo]]' }
 
-    use {'junegunn/limelight.vim', ft = {'markdown'}}
+    use { 'junegunn/limelight.vim', ft = { 'markdown' } }
 
     use {
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-        ft = 'markdown'
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+      ft = 'markdown'
     }
 
-    use {'xuhdev/vim-latex-live-preview', ft = 'tex'}
+    use { 'xuhdev/vim-latex-live-preview', ft = 'tex' }
 
     use 'karb94/neoscroll.nvim'
 
     -- Colorschemes
     use 'navarasu/onedark.nvim'
-    --use 'rakr/vim-one'
-    
-    if packer_bootstrap then
+    use 'rakr/vim-one'
+
+    if PackerBoostrap then
       require('packer').sync()
     end
   end,
   config = {
     display = {
       open_fn = function()
-        return require('packer.util').float({ border = 'rounded'})
+        return require('packer.util').float({ border = 'rounded' })
       end
     }
   }

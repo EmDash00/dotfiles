@@ -1,14 +1,15 @@
-vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
-  group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
-  callback = function()
-    vim.opt.foldmethod     = 'expr'
-    vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
-  end
-})
+--vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
+  --group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
+  --callback = function()
+    --vim.opt.foldmethod     = 'expr'
+    --vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
+  --end
+--})
+--
 
 require('nvim-treesitter.configs').setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "cpp", "d", "lua", "rust", "python" },
+  ensure_installed = { "c", "cpp", "d", "lua", "rust", "python", "vim"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -40,5 +41,3 @@ require('nvim-treesitter.configs').setup {
     enable = true
   }
 }
-
-print('asdfasdfsdaf')
