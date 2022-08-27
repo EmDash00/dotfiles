@@ -26,6 +26,7 @@ opt.shiftwidth = 2
 
 opt.foldmethod = 'expr'
 opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldlevel = 10
 
 opt.clipboard = 'unnamedplus'
 

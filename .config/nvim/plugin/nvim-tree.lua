@@ -13,6 +13,10 @@ require("nvim-tree").setup {
     enable = true,
     update_root = true
   },
+  trash = {
+    cmd = "trash-put",
+    require_confirm = false
+  },
   view = {
     adaptive_size = false,
     centralize_selection = false,
@@ -42,7 +46,7 @@ require("nvim-tree").setup {
         nnoremap(opts, '_', api.node.open.horizontal)
         nnoremap(opts, 'T', api.node.open.tab)
 
-        nnoremap(opts, 'n', api.node.show_info_popup)
+        nnoremap(opts, 'N', api.node.show_info_popup)
 
         nnoremap(opts, '<leader>j', api.node.navigate.diagnostics.next)
         nnoremap(opts, '<leader>k', api.node.navigate.diagnostics.prev)

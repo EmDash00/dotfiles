@@ -63,4 +63,4 @@ symbols_outline.setup{
   }
 }
 
-nnoremap({'silent'}, '<C-o>', symbols_outline.toggle_outline)
+nnoremap({'silent'}, '<C-s>', symbols_outline.toggle_outline)

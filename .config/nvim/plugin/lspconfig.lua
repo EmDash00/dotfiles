@@ -67,9 +67,9 @@ local on_attach = function(client, bufnr)
       nnoremap(opts, '<leader>rn', lsp.buf.rename)
       --nnoremap(opts, '<leader>ac', lsp.buf.code_action)
       nnoremap(opts, 'gr', lsp.buf.references)
-      --nnoremap(opts, '<leader>f', lsp.buf.format { async = true })
+      nnoremap(opts, '<leader>f', lsp.buf.format)
     end
-  )
+)
 
   if client.server_capabilities.documentHighlightProvider then
     vim.cmd [[

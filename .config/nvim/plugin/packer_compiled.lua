@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/cmp-zsh",
     url = "https://github.com/tamago324/cmp-zsh"
   },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
+  },
   ["editorconfig.nvim"] = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/editorconfig.nvim",
@@ -176,10 +181,20 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
     url = "https://github.com/karb94/neoscroll.nvim"
   },
+  ["neovim-session-manager"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/neovim-session-manager",
+    url = "https://github.com/Shatur/neovim-session-manager"
+  },
   nerdcommenter = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/preservim/nerdcommenter"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -374,8 +389,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim', 'goyo.vim', 'limelight.vim'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType tex ++once lua require("packer.load")({'vim-latex-live-preview'}, { ft = "tex" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'goyo.vim', 'limelight.vim', 'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

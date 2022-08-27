@@ -19,6 +19,8 @@ return require('packer').startup {
 
     -- IDE
     --use {'neoclide/coc.nvim', branch = 'release'}
+    --
+    use {'jose-elias-alvarez/null-ls.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use { 'neovim/nvim-lspconfig', requires = { 'onsails/lspkind.nvim' } }
 
     use {
@@ -91,7 +93,7 @@ return require('packer').startup {
         { 'nvim-lua/plenary.nvim' },
       }
     }
-
+    use {'stevearc/dressing.nvim'}
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.x',
       requires = {
@@ -119,6 +121,7 @@ return require('packer').startup {
     use 'tiagovla/scope.nvim'
 
     -- UI
+    use {'Shatur/neovim-session-manager', requires = {'nvim-lua/plenary.nvim'}}
     use 'ahmedkhalf/project.nvim'
 
     use "lukas-reineke/indent-blankline.nvim"
