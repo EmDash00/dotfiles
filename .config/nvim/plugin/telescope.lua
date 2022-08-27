@@ -42,7 +42,7 @@ nnoremap(opts, '<leader>h', builtin.highlights)
 
 nnoremap(opts, '<leader>sf', builtin.find_files)
 nnoremap(opts, '<leader>sg', builtin.git_files)
-nnoremap(opts, '<leader>ss', builtin.grep_string)
+nnoremap(opts, '<leader>ss', builtin.live_grep)
 nnoremap(opts, '<leader>sk', builtin.current_buffer_fuzzy_find)
 
 nnoremap(opts, '<leader>sb', builtin.buffers)

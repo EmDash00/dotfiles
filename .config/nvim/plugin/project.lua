@@ -3,7 +3,6 @@ local nnoremap = vimp.nnoremap
 
 local opts = {'silent'}
 
-local telescope = require('telescope')
 local project_nvim = require('project_nvim')
 
 project_nvim.setup {
@@ -15,19 +14,15 @@ project_nvim.setup {
   -- lsp, while **"pattern"** uses vim-rooter like glob pattern matching. Here
   -- order matters: if one is not detected, the other is used as fallback. You
   -- can also delete or rearangne the detection methods.
-  detection_methods = { "lsp", "pattern" },
+  detection_methods = { "pattern", "lsp" },
 
   -- All the patterns used to detect root dir, when **"pattern"** is in
   -- detection_methods
-  patterns = { 
-    "Pipfile", 
-    ".git", 
-    "_darcs", 
-    ".hg", 
-    ".bzr", 
-    ".svn", 
-    "Makefile", 
-    "package.json" 
+  patterns = {
+    --".git",
+    --"Makefile",
+    --"Pipfile",
+    ".nvimproj",
   },
 
   -- Table of lsp clients to ignore by name
@@ -38,7 +33,7 @@ project_nvim.setup {
   -- Ex: { "~/.cargo/*", ... }
   exclude_dirs = {
     "/home/emdash00",
-    "~/dotfiles/*"
+    "~/dotfiles"
   },
 
   -- Show hidden files in telescope

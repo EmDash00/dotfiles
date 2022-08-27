@@ -1,33 +1,37 @@
 local opt = vim.opt
 
-require('plugins')
 require('colors')
+require('autofuncs')
+require('plugins')
+
+opt.termguicolors = true
 
 opt.expandtab = true
 opt.showmode = false
 opt.hidden = true
 
+opt.cursorline = true
+opt.number = true
+opt.signcolumn = 'number'
+
+opt.backspace = { 'indent', 'eol', 'start' }
+opt.laststatus = 2
+
 opt.enc = 'utf-8'
 opt.fenc = 'utf-8'
 opt.termencoding = 'utf-8'
 
-opt.number = true
-opt.backspace = { 'indent', 'eol', 'start' }
-opt.laststatus = 2
 opt.tabstop = 2
 opt.shiftwidth = 2
-opt.signcolumn = 'number'
-opt.termguicolors = true
-opt.cursorline = true
 
---opt.foldmethod = 'expr'
---opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldmethod = 'expr'
+opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 opt.clipboard = 'unnamedplus'
 
 opt.guicursor =
-'a:blinkwait500-blinkon300-blinkoff200,' ..
-    'i-ci:ver30-blinkwait500-blinkon300-blinkoff200'
+  'a:blinkwait500-blinkon300-blinkoff200,' ..
+  'i-ci:ver30-blinkwait500-blinkon300-blinkoff200'
 
 local onedark = require('onedark')
 
