@@ -19,9 +19,9 @@ project_nvim.setup {
   -- All the patterns used to detect root dir, when **"pattern"** is in
   -- detection_methods
   patterns = {
-    --".git",
-    --"Makefile",
-    --"Pipfile",
+    ".git",
+    "Makefile",
+    "Pipfile",
     ".nvimproj",
   },
 

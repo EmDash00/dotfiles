@@ -11,5 +11,3 @@ null_ls.setup {
     builtins.formatting.prettierd,
   }
 }
-
-print('done')
