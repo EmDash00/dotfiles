@@ -24,7 +24,7 @@
 # Test
 *test*
 
-# resources 
+# resources
 .tmux/plugins/
 *.so*
 
@@ -130,3 +130,4 @@
 
 *tags*
 *.nvimproj*
+.warprc

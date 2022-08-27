@@ -26,7 +26,7 @@ path_append()
       for arg in "$@"; do
          if [ -d "${arg:+$arg/}" ] ; then
             if [[ ! ${PATH} =~ ${arg} ]] ; then
-               PATH="${PATH}:${arg}" 
+               PATH="${PATH}:${arg}"
             fi
          else
             echo "Path $arg does not exist. Skipping..."
@@ -44,7 +44,7 @@ path_prepend()
       for arg in "$@"; do
          if [ -d "${arg:+$arg/}" ] ; then
             if [[ ! ${PATH} =~ ${arg} ]] ; then
-               PATH="${arg}:${PATH}" 
+               PATH="${arg}:${PATH}"
             fi
          else
             echo "Path $arg does not exist. Skipping..."
