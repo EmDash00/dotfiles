@@ -8,7 +8,7 @@
   if [[ -z $PRESENTATION ]] ; then
       for m in $outputs; do
         if [[ $m == "DP1" || $m == "DP2" ]] ; then
-            tray_output=$m
+          tray_output=$m
         fi
       done
   fi
@@ -17,9 +17,9 @@
     export MONITOR_TOP=$m
     export MONITOR_BOTTOM=$m
 
-    export TRAY_POSITION=none
+    export TRAY_POSITION="none"
     if [[ $m == $tray_output ]]; then
-      TRAY_POSITION=left
+      TRAY_POSITION="left"
     fi
 
     polybar --reload "top" </dev/null >/var/tmp/polybar-$m.log 2>&1 200>&- & disown

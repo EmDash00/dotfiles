@@ -19,7 +19,8 @@ return require('packer').startup {
 
     -- IDE
     --use {'neoclide/coc.nvim', branch = 'release'}
-    --
+
+    use {'windwp/nvim-autopairs'}
     use {'jose-elias-alvarez/null-ls.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use { 'neovim/nvim-lspconfig', requires = { 'onsails/lspkind.nvim' } }
 
@@ -52,7 +53,7 @@ return require('packer').startup {
     use 'preservim/nerdcommenter'
     use 'chentoast/marks.nvim'
 
-    use "tversteeg/registers.nvim"
+    --use "tversteeg/registers.nvim"
 
     use 'jamestthompson3/nvim-remote-containers'
 

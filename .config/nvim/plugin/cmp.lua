@@ -167,9 +167,9 @@ cmp.setup {
     }
   },
   enabled = function()
-    -- disable completion in comments
+     --disable completion in comments
     local context = require 'cmp.config.context'
-    -- keep command mode completion enabled when cursor is in a comment
+     --keep command mode completion enabled when cursor is in a comment
     if vim.api.nvim_get_mode().mode == 'c' then
       return true
     else
@@ -196,6 +196,13 @@ cmp.setup {
   },
 }
 
+-- Integration with nvim-autopairs
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
+
 --cmp.setup.cmdline('/', {
 --mapping = cmp.mapping.preset.cmdline(),
 --sources = {
@@ -216,4 +223,5 @@ cmp.setup {
 --}, {
 --{ name = 'cmdline' }
 --})
+--
 --})
