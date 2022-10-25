@@ -3,6 +3,7 @@ local opt = vim.opt
 require('colors')
 require('autofuncs')
 require('plugins')
+require('surround')
 
 opt.termguicolors = true
 

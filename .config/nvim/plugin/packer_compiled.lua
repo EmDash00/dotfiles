@@ -196,6 +196,16 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/preservim/nerdcommenter"
   },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -326,13 +336,6 @@ _G.packer_plugins = {
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-gutentags",
     url = "https://github.com/ludovicchabant/vim-gutentags"
   },
-  ["vim-latex-live-preview"] = {
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/emdash00/.local/share/nvim/site/pack/packer/opt/vim-latex-live-preview",
-    url = "https://github.com/xuhdev/vim-latex-live-preview"
-  },
   ["vim-markdown"] = {
     loaded = true,
     path = "/home/emdash00/.local/share/nvim/site/pack/packer/start/vim-markdown",
@@ -384,8 +387,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType tex ++once lua require("packer.load")({'vim-latex-live-preview'}, { ft = "tex" }, _G.packer_plugins)]]
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'limelight.vim', 'goyo.vim', 'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType tex ++once lua require("packer.load")({'limelight.vim'}, { ft = "tex" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim', 'goyo.vim', 'limelight.vim'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 

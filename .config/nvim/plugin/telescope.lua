@@ -40,7 +40,7 @@ telescope.setup{
 nnoremap(opts, '<leader>S', builtin.builtin)
 nnoremap(opts, '<C-h>', builtin.help_tags)
 
-nnoremap(opts, '<leader>h', builtin.highlights)
+nnoremap(opts, '<leader>sh', builtin.highlights)
 
 nnoremap(opts, '<leader>sf', builtin.find_files)
 nnoremap(opts, '<leader>sg', builtin.git_files)

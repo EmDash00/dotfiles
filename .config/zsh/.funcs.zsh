@@ -7,14 +7,14 @@ alias clip='xclip -selection clipboard'
 alias reload='source $XDG_CONFIG_HOME/zsh/.zshrc'
 alias tconf='nvim /home/emdash00/.config/termite/config'
 alias zconf='nvim /home/emdash00/.config/zsh/.zshrc'
-alias nconf='nvim /home/emdash00/.config/nvim/' 
+alias nconf='nvim /home/emdash00/.config/nvim/'
 alias iconf='nvim /home/emdash00/.config/i3/config'
 alias standby='i3lock-fancy && systemctl suspend'
 alias lock='i3lock-fancy'
 alias hibernate='i3lock-fancy && systemctl hibernate'
 alias rm='rm --preserve-root -I'
 alias s='exa --icons -s extension'
-alias feed='flatpak run org.gnome.FeedReader' 
+alias feed='flatpak run org.gnome.FeedReader'
 alias feedstop='flatpak kill org.gnome.FeedReader'
 
 git() {
@@ -39,7 +39,7 @@ start_agent() {
     /usr/bin/ssh-add;
 }
 
-declare -f path_append > /dev/null 
+declare -f path_append > /dev/null
 if [ $? -eq 1 ] ; then
    path_append()
    {
@@ -50,7 +50,7 @@ if [ $? -eq 1 ] ; then
          for arg in "$@"; do
             if [ -d "${arg:+$arg/}" ] ; then
                if [[ ! ${PATH} =~ ${arg} ]] ; then
-                  PATH="${PATH}:${arg}" 
+                  PATH="${PATH}:${arg}"
                fi
             else
                echo "Path $arg does not exist. Skipping..."
@@ -60,8 +60,8 @@ if [ $? -eq 1 ] ; then
    }
 fi
 
-#if command -v pyenv 1>/dev/null 2>&1; then  
-   #eval "$(pyenv init -)" 
+#if command -v pyenv 1>/dev/null 2>&1; then
+   #eval "$(pyenv init -)"
 #fi
 #
 #
@@ -107,6 +107,11 @@ mk_sympytex() {
    `cp $HOME/Apps/git-apps/SympyTeX/sympytex.py .`
 }
 
+mkhw() {
+   `cp $HOME/Documents/sympytex/templates/hw/hw_template.tex .`
+   `cp $HOME/Documents/sympytex/templates/hw/.gitignore .`
+}
+
 mkhotspot() {
    command nmcli device wifi hotspot con-name hotspot ssid "Emmy's Ubuntu Hotspot" \
       band bg password $@
@@ -118,7 +123,7 @@ sympytex() {
       for i in $@; do :; done
       command python3 "${i/%.tex}.sympy"
       if [ "$?" -eq 0 ]; then
-         command pdflatex $@ 
+         command pdflatex $@
       fi
    fi
 }

@@ -141,15 +141,13 @@ return require('packer').startup {
 
     use { 'junegunn/goyo.vim', ft = { 'markdown' }, config = 'vim.cmd [[Goyo]]' }
 
-    use { 'junegunn/limelight.vim', ft = { 'markdown' } }
+    use { 'junegunn/limelight.vim', ft = { 'markdown', 'tex' } }
 
     use {
       "iamcco/markdown-preview.nvim",
       run = function() vim.fn["mkdp#util#install"]() end,
       ft = 'markdown'
     }
-
-    use { 'xuhdev/vim-latex-live-preview', ft = 'tex' }
 
     use 'karb94/neoscroll.nvim'
 

@@ -25,6 +25,7 @@ api.nvim_create_autocmd(
       require('colors.lspkinds')
       require('colors.diagnostic')
       require('colors.nvim_tree')
+      require('colors.vimtex')
     end
   }
 )
