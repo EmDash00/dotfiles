@@ -4,6 +4,7 @@ require('colors')
 require('autofuncs')
 require('plugins')
 require('surround')
+require('keymaps')
 
 opt.termguicolors = true
 
@@ -29,6 +30,8 @@ opt.foldmethod = 'expr'
 opt.foldexpr = 'nvim_treesitter#foldexpr()'
 opt.foldlevel = 10
 
+opt.signcolumn = 'auto'
+
 opt.clipboard = 'unnamedplus'
 
 opt.guicursor =
@@ -39,7 +42,6 @@ local onedark = require('onedark')
 
 onedark.setup {
   ending_tildes = false,
-  style = 'cool'
 }
 
 onedark.load()

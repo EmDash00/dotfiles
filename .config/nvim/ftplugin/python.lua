@@ -2,7 +2,7 @@ local optl = vim.opt_local
 
 optl.tabstop = 4
 optl.shiftwidth = 4
-optl.smarttab = true
+optl.expandtab = true
 optl.autoindent = true
 
 optl.textwidth = 79

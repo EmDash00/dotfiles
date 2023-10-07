@@ -62,6 +62,10 @@ return require('packer').startup {
       requires = "kyazdani42/nvim-web-devicons",
     }
 
+    use {
+      "lewis6991/gitsigns.nvim"
+    }
+
     --Navigation
     use 'easymotion/vim-easymotion'
     use 'lotabout/skim'
