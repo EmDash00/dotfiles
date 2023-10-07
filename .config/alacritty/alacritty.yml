@@ -50,14 +50,14 @@ colors:
 font:
   size: 9
 
-  normal: 
-    family: DejaVuSansMono Nerd Font
+  normal:
+    family: DejaVuSansM Nerd Font
     style: regular
 
-  #bold: 
+  #bold:
     #family: DejaVuSansMono Nerd Font
     #style: regular
 
-  #italic: 
+  #italic:
     #family: DejaVuSansMono Nerd Font
-    #style: regular 
+    #style: regular

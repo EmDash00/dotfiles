@@ -13,9 +13,46 @@ alias standby='i3lock-fancy && systemctl suspend'
 alias lock='i3lock-fancy'
 alias hibernate='i3lock-fancy && systemctl hibernate'
 alias rm='rm --preserve-root -I'
-alias s='exa --icons -s extension'
+#alias s='exa --icons -s extension'
 alias feed='flatpak run org.gnome.FeedReader'
 alias feedstop='flatpak kill org.gnome.FeedReader'
+
+s() {
+    has_all=false
+
+    for arg in "$@"; do
+      if [[ "$arg" == "-a" || "$arg" == "--all" ]]; then
+        has_all=true
+      elif [[ "$arg" == '--help' || "$arg" == '-h' ]]; then
+        exa --help
+        return
+      elif [[ "$arg" == '-v' || "$arg" == '--version' ]]; then
+        exa --version
+        return
+      fi
+    done
+
+    if [[ $has_all == "true" ]] ; then
+        exa --icons --group-directories-first -s extension "$@"
+        return
+    fi
+
+    exclusion=""
+
+    if [[ -f .hidden ]] ; then
+      while read -r p; do
+        exclusion="$exclusion|$p"
+      done < .hidden
+    fi
+
+    if [[ $exclusion == "" ]]; then
+      exa --icons --group-directories-first -s extension "$@"
+      return
+    fi
+
+    exa --icons --group-directories-first -s extension --ignore-glob="${exclusion:1}"
+}
+
 
 git() {
    if [[ $@ == "ls" ]] ; then

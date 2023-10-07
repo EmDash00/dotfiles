@@ -57,6 +57,7 @@ path_prepend()
 #path_append "$HOME/bin"
 
 export PYENV_ROOT="$HOME/.pyenv"
+export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
 export DUB_HOME="$HOME/.dub/packages"
 export APPS="$HOME/Apps"
 
@@ -89,7 +90,7 @@ path_append "$HOME/.local/bin"
 path_append "$HOME/Apps/AppImage"
 path_append "$HOME/Apps/source/pplatex-pplatex-1.0-rc2/build/src"
 #path_append "/tools/Xilinx/Vivado/2020.2/bin"
-path_append "$HOME/Apps/source/clion-2021.1.2/bin"
+#path_append "$HOME/Apps/source/clion-2021.1.2/bin"
 path_append "$HOME/Apps/source/arduino-cli_0.18.3_Linux_64bit"
 #path_append "$XDG_CONFIG_HOME/skim/bin"
 

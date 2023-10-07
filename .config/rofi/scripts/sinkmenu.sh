@@ -33,6 +33,7 @@ LINENUM=1
 if [[ $chosen != "" ]]; then
   for option in "$options"
   do
+    echo "$option"
     if [[ "$option" == "$chosen" ]]; then
       break
     fi
@@ -40,6 +41,7 @@ if [[ $chosen != "" ]]; then
   done
 
   chosen_sink=$(echo "$sinks" | sed -n "${LINENUM}p")
+  echo $chosen_sink
   pactl set-default-sink "$chosen_sink"
 
   polybar-msg cmd restart > /dev/null 2>&1 & disown
