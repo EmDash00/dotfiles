@@ -51,7 +51,7 @@ require('bufferline').setup {
           s = s .. " "
         end
 
-        s = s .. " " .. diagnostics_dict['warning']
+        s = s .. " " .. diagnostics_dict['warning']
       end
 
       if (diagnostics_dict['info'] ~= nil) then
@@ -59,7 +59,7 @@ require('bufferline').setup {
           s = s .. " "
         end
 
-        s = s .. " " .. diagnostics_dict['info']
+        s = s .. "󰋽 " .. diagnostics_dict['info']
       end
 
       return s

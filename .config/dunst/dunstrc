@@ -1,5 +1,5 @@
 [global]
-font = Ubuntu 9
+font = Ubuntu 10
 
 # Allow a small subset of html markup:
 #   <b>bold</b>
@@ -73,7 +73,8 @@ hide_duplicates_count = yes
 # screen width minus the width defined in within the geometry option.
 #geometry = "250x50-40+40"
 
-geometry = "350x40-775+27"
+#geometry = "350x40-775+27"
+geometry = "350x40-0+27"
 
 # Shrink window if it's smaller than the width.  Will be ignored if
 # width is 0.
@@ -154,7 +155,7 @@ browser = /usr/bin/firefox -new-tab
 
 # Align icons left/right/off
 icon_position = left
-max_icon_size = 30
+max_icon_size = 40
 icon_path = /usr/share/icons/Papirus-Dark/16x16/mimetypes/:/usr/share/icons/Papirus-Dark/48x48/status/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/48x48/notifications/:/usr/share/icons/Papirus-Dark/48x48/emblems/:/.local/share/icons
 
 frame_width = 1
@@ -169,13 +170,13 @@ context = ctrl+shift+period
 
 [urgency_low]
 frame_color = "#1F222D"
-foreground = "#D8DEE9"
+foreground = "#7D8188"
 background = "#1F222D"
 timeout = 4
 
 [urgency_normal]
 frame_color = "#1F222D"
-foreground = "#30A2DA"
+foreground = "#D8DEE9"
 background = "#1F222D"
 timeout = 6
 #A3BE8C

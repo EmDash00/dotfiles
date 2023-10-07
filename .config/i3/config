@@ -163,6 +163,7 @@ assign [class="discord"] 4
 exec --no-startup-id feh --bg-fill ~/Pictures/Wallpaper\ -\ Carina.jpg
 exec --no-startup-id ~/.config/i3/startup_scripts/mouse.sh
 exec --no-startup-id ~/.config/i3/startup_scripts/touchpad.sh
+exec --no-startup-id ~/.config/dunst/scripts/battery.sh
 exec ~/Apps/git-apps/i3-natural-scrolling-and-tap/tap-to-click.sh
 
 exec fluxgui

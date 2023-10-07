@@ -11,34 +11,6 @@ local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
-local cmp_kinds = {
-  Text = '',
-  Method = '()',
-  Function = '()',
-  Constructor = '',
-  Field = '',
-  Variable = 'ﳛ',
-  Class = 'ﰩ',
-  Interface = 'ﯲ',
-  Module = '',
-  Property = 'ﴯ',
-  Unit = '塞',
-  Value = '',
-  Enum = '',
-  Keyword = '',
-  Snippet = '螺',
-  Color = '',
-  File = '',
-  Reference = '',
-  Folder = '',
-  EnumMember = '',
-  Constant = '●',
-  Struct = '',
-  Event = '',
-  Operator = '',
-  TypeParameter = 'ﭨ',
-}
-
 cmp.setup {
   snippet = {
     expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end
@@ -48,7 +20,7 @@ cmp.setup {
     documentation = cmp.config.window.bordered(),
     completion = {
       winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-      col_offset = -3,
+      col_ofset = -3,
       side_padding = 0,
     },
   },
@@ -177,9 +149,18 @@ cmp.setup {
     end
   end,
   formatting = {
+    fields = { "kind", "abbr" },
+    format = function(_, vim_item)
+      vim_item.kind = cmp_kinds[vim_item.kind] or ""
+      return vim_item
+    end,
+  },
+  formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
-      local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+      local kind = require("lspkind").cmp_format(
+        { mode = "symbol_text", maxwidth = 50 }
+      )(entry, vim_item)
       local strings = vim.split(kind.kind, "%s", { trimempty = true })
       kind.kind = " " .. strings[1] .. " "
       --kind.menu = "    (" .. strings[2] .. ")"

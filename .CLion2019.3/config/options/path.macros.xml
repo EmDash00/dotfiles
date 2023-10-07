@@ -1,9 +1,0 @@
-<application>
-  <component name="PathMacrosImpl">
-    <macro name="FILE_PATH" value="/home/emdash00/CLionProjects/Pendulum" />
-    <ignoredMacro name="MESSAGE" />
-    <ignoredMacro name="FILE_PATH" />
-    <ignoredMacro name="LINE" />
-    <ignoredMacro name="COLUMN" />
-  </component>
-</application>

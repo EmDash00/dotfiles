@@ -18,7 +18,7 @@ diagnostic.config {
   severity_sort = true
 }
 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -40,6 +40,8 @@ local on_attach = function(client, bufnr)
       -- See `:help lsp.*` for documentation on any of the below functions
       nnoremap(opts, '<leader>j', diagnostic.goto_next)
       nnoremap(opts, '<leader>k', diagnostic.goto_prev)
+      nnoremap(opts, '<leader>J', function() diagnostic.goto_next({ severity = { min = vim.diagnostic.severity.WARN } }) end)
+      nnoremap(opts, '<leader>K', function() diagnostic.goto_prev({ severity = { min = vim.diagnostic.severity.WARN } }) end)
 
       nnoremap(opts, 'gD', lsp.buf.declaration)
       nnoremap(opts, 'gd', lsp.buf.definition)
@@ -98,6 +100,7 @@ local on_attach = function(client, bufnr)
             close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
             source = 'always',
             prefix = ' ',
+            suffix = '',
             scope = 'cursor',
           }
         )
@@ -121,32 +124,31 @@ require('lspkind').init({
   preset = 'codicons',
   -- default: {}
   symbol_map = {
-    Text = '',
-    Method = '',
-    Function = '',
-    Constructor = '',
-    Field = '',
-    Variable = 'ﳛ',
-    --Variable = "",
-    Class = 'ﰩ',
-    Interface = '﫻',
-    Module = '',
-    Property = 'ﴯ',
-    Unit = '塞',
-    Value = '',
-    Enum = '',
-    Keyword = '',
-    Snippet = '螺',
-    Color = '',
-    File = '',
-    Reference = 'ﬂ',
-    Folder = '',
-    EnumMember = '',
-    Constant = '●',
-    Struct = '',
-    Event = '',
-    Operator = '+',
-    TypeParameter = 'ﭨ',
+    Text = '',         -- nf-fa-font
+    Method = '󰡱',       -- nf-md-function-variant
+    Function = '󰡱',
+    Constructor = '',  -- nf-fae-tools
+    Field = '󰊾',        -- nf-md-order_bool_ascending
+    Variable = '󰆦',     -- nf-md-cube
+    Class = '',        -- nf-md-webpack
+    Interface = '󰋺',    -- nf-md-import
+    Module = '󰃖',       -- nf-md-briefcase
+    Property = '󰠱',     -- nf-md-shape
+    Unit = '󰑭',         -- nf-md-ruler
+    Value = '󰎠',        -- nf-md-numeric
+    Enum = '',         -- nf-fa-sort_alpha_asc
+    Keyword = '󰪛',      -- nf-md-key
+    Snippet = '󰐒',      -- nf-playlist_plus
+    Color = '',        -- nf-cod-paintcan
+    File = '',         -- nf-fa-file-text
+    Reference = '',    -- nf-cod-go_to_file
+    Folder = '',       -- nf-fa-folder
+    EnumMember = '󰀬',   -- nf-md-alphabetical
+    Constant = '●',     -- nf-fa-circle
+    Struct = '󰆧',       -- nf-md-cube_outline
+    Event = '',        -- nf-oct-clock
+    Operator = '' ,    -- nf-cod-symbol_operator
+    TypeParameter = '',  -- nf-code-symbol-paramter
   },
 })
 
@@ -159,6 +161,7 @@ local lsp_flags = {
 --)
 --
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+capabilities.offsetEncoding = { 'utf-16' }
 
 lspconfig.pyright.setup {
   on_attach = on_attach,
@@ -199,7 +202,7 @@ require'lspconfig'.texlab.setup{
   capabilities=capabilities,
 }
 
-require 'lspconfig'.sumneko_lua.setup {
+require 'lspconfig'.lua_ls.setup {
   on_attach = on_attach,
   flags = lsp_flags,
   settings = {
