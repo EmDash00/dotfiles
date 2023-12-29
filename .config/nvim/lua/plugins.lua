@@ -1,32 +1,35 @@
 -- Bootstrap packer
-local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-
-if fn.empty(fn.glob(install_path)) > 0 then
-  PackerBoostrap = fn.system(
-    { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
-  )
-  vim.cmd [[packadd packer.nvim]]
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup {
-  function(use)
+return require('lazy').setup(
+  {
     --Configuration
-    use 'wbthomason/packer.nvim'
-    use 'svermeulen/vimpeccable'
+    'wbthomason/packer.nvim',
+    'svermeulen/vimpeccable',
 
-    use 'gpanders/editorconfig.nvim'
+    'gpanders/editorconfig.nvim',
 
     -- IDE
-    --use {'neoclide/coc.nvim', branch = 'release'}
+    --{'neoclide/coc.nvim', branch = 'release'}
 
-    use {'windwp/nvim-autopairs'}
-    use {'jose-elias-alvarez/null-ls.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-    use { 'neovim/nvim-lspconfig', requires = { 'onsails/lspkind.nvim' } }
+    'windwp/nvim-autopairs',
+    {'jose-elias-alvarez/null-ls.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
+    { 'neovim/nvim-lspconfig', dependencies = { 'onsails/lspkind.nvim' } },
 
-    use {
+    {
       'hrsh7th/nvim-cmp',
-      requires = {
+      dependencies = {
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
@@ -34,140 +37,144 @@ return require('packer').startup {
         'tamago324/cmp-zsh',
         'quangnguyen30192/cmp-nvim-ultisnips',
       }
-    }
+    },
 
-    use {
+    {
       'nvim-treesitter/nvim-treesitter',
-      run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-    }
+      build = ":TSUpdate",
+    },
 
-    use 'ludovicchabant/vim-gutentags'
+    -- 'ludovicchabant/vim-gutenversions',
 
-    use 'godlygeek/tabular'
+    'godlygeek/tabular',
 
-    use {
+    {
       'SirVer/ultisnips',
-      requires = { { 'honza/vim-snippets', rtp = '.' } }
-    }
+      dependencies = { { 'honza/vim-snippets', rtp = '.' } }
+    },
 
-    use 'preservim/nerdcommenter'
-    use 'chentoast/marks.nvim'
+    'preservim/nerdcommenter',
+    'chentoast/marks.nvim',
 
-    --use "tversteeg/registers.nvim"
+    --"tversteeg/registers.nvim"
 
-    use 'jamestthompson3/nvim-remote-containers'
+    'jamestthompson3/nvim-remote-containers',
 
-    use {
+    {
       "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
-    }
+      dependencies = "nvim-tree/nvim-web-devicons",
+    },
 
-    use {
+    {
       "lewis6991/gitsigns.nvim"
-    }
+    },
 
     --Navigation
-    use 'easymotion/vim-easymotion'
-    use 'lotabout/skim'
-    use 'lotabout/skim.vim'
+    'easymotion/vim-easymotion',
+    'lotabout/skim',
+    'lotabout/skim.vim',
 
-    use 'christoomey/vim-tmux-navigator'
+    'christoomey/vim-tmux-navigator',
 
-    use 'simrat39/symbols-outline.nvim'
+    'simrat39/symbols-outline.nvim',
 
-    use {
+    {
       'akinsho/bufferline.nvim',
-      tag = 'v2.*',
-      requires = 'kyazdani42/nvim-web-devicons'
-    }
+      version = '*',
+      dependencies = 'nvim-tree/nvim-web-devicons'
+    },
 
-    use {
-      'kyazdani42/nvim-tree.lua',
-      requires = {
-        'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    {
+      "nvim-tree/nvim-tree.lua",
+      version = "*",
+      lazy = false,
+      dependencies = {
+        "nvim-tree/nvim-web-devicons",
       },
-      tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    }
+      config = function()
+        require("nvim-tree").setup {}
+      end,
+    },
 
-    use {
+    {
       'sudormrfbin/cheatsheet.nvim',
 
-      requires = {
+      dependencies = {
         { 'nvim-telescope/telescope.nvim' },
         { 'nvim-lua/popup.nvim' },
         { 'nvim-lua/plenary.nvim' },
       }
-    }
-    use {'stevearc/dressing.nvim'}
-    use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.x',
-      requires = {
+    },
+    'stevearc/dressing.nvim',
+    {
+      'nvim-telescope/telescope.nvim', version = '0.1.x',
+      dependencies = {
         {
           'nvim-lua/plenary.nvim',
-          'kyazdani42/nvim-web-devicons',
+          'nvim-tree/nvim-web-devicons',
         }
       }
-    }
-
+    },
     --Syntax
-    use 'PotatoesMaster/i3-vim-syntax'
-    use 'vhda/verilog_systemverilog.vim'
-    use 'scarface-one/vim-dlang-phobos-highlighter'
-    use 'plasticboy/vim-markdown'
-    use 'lervag/vimtex'
+    'PotatoesMaster/i3-vim-syntax',
+    'vhda/verilog_systemverilog.vim',
+    'scarface-one/vim-dlang-phobos-highlighter',
+    'plasticboy/vim-markdown',
+    'lervag/vimtex',
 
     -- Language Specific
-    use 'mattn/emmet-vim'
-    use 'vim-scripts/indentpython.vim'
+    'mattn/emmet-vim',
+    'vim-scripts/indentpython.vim',
 
     -- Utility
-    use 'lambdalisue/suda.vim'
-    use 'tpope/vim-eunuch'
-    use 'tiagovla/scope.nvim'
+    'lambdalisue/suda.vim',
+    'tpope/vim-eunuch',
+    'tiagovla/scope.nvim',
 
     -- UI
-    use {'Shatur/neovim-session-manager', requires = {'nvim-lua/plenary.nvim'}}
-    use 'ahmedkhalf/project.nvim'
+    { 'Shatur/neovim-session-manager', dependencies = {'nvim-lua/plenary.nvim'} },
+    'ahmedkhalf/project.nvim',
 
-    use "lukas-reineke/indent-blankline.nvim"
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts={} },
+    { 'HiPhish/rainbow-delimiters.nvim' },
 
-    --use 'vim-airline/vim-airline'
-    --use 'vim-airline/vim-airline-themes'
-    use {
+    --'vim-airline/vim-airline'
+    --'vim-airline/vim-airline-themes'
+    {
       'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons' }
-    }
+      dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+    {
+      'antosha417/nvim-lsp-file-operations',
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-tree.lua",
+      },
+    },
 
-    use { 'mhinz/vim-startify', requires = 'ryanoasis/vim-devicons' }
+    { 'mhinz/vim-startify', dependencies = 'ryanoasis/vim-devicons' },
 
-    use 'b4b4r07/vim-sunset'
+    -- 'b4b4r07/vim-sunset',
 
 
-    use { 'junegunn/goyo.vim', ft = { 'markdown' }, config = 'vim.cmd [[Goyo]]' }
+    { 'junegunn/goyo.vim', ft = { 'markdown' }, config = 'vim.cmd [[Goyo]]' },
 
-    use { 'junegunn/limelight.vim', ft = { 'markdown', 'tex' } }
+    { 'junegunn/limelight.vim', ft = { 'markdown', 'tex' } },
 
-    use {
-      "iamcco/markdown-preview.nvim",
-      run = function() vim.fn["mkdp#util#install"]() end,
-      ft = 'markdown'
-    }
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
+    },
 
-    use 'karb94/neoscroll.nvim'
+    'karb94/neoscroll.nvim',
 
     -- Colorschemes
-    use 'navarasu/onedark.nvim'
-    use 'rakr/vim-one'
-
-    if PackerBoostrap then
-      require('packer').sync()
-    end
-  end,
-  config = {
-    display = {
-      open_fn = function()
-        return require('packer.util').float({ border = 'rounded' })
-      end
-    }
+    'navarasu/onedark.nvim',
+    'rakr/vim-one',
+  },
+  {
+    border = "rounded"
   }
-}
+)

@@ -1,10 +1,13 @@
 local opt = vim.opt
 
+vim.g.loaded_netrw = false
+
 require('colors')
 require('autofuncs')
 require('plugins')
 require('surround')
 require('keymaps')
+
 
 opt.termguicolors = true
 
@@ -39,6 +42,7 @@ opt.guicursor =
   'i-ci:ver30-blinkwait500-blinkon300-blinkoff200'
 
 local onedark = require('onedark')
+
 
 onedark.setup {
   ending_tildes = false,

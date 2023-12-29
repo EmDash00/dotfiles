@@ -14,14 +14,14 @@ telescope.setup{
     -- config_key = value,
     prompt_prefix = '❯ ',
     selection_caret = ' ',
-    mappings = {
-      i = {
+  --   mappings = {
+--       i = {
         -- map actions.which_key to <C-h> (default: <C-/>)
         -- actions.which_key shows the mappings for your picker,
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        ["<C-h>"] = "which_key"
-      }
-    }
+        -- ["<C-h>"] = "which_key"
+      -- }
+    -- }
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:
@@ -38,7 +38,7 @@ telescope.setup{
 }
 
 nnoremap(opts, '<leader>S', builtin.builtin)
-nnoremap(opts, '<C-h>', builtin.help_tags)
+-- nnoremap(opts, '<C-h>', builtin.help_tags)
 
 nnoremap(opts, '<leader>sh', builtin.highlights)
 

@@ -17,12 +17,14 @@ require("nvim-tree").setup {
     cmd = "trash-put",
     require_confirm = false
   },
+  renderer = {
+    root_folder_label = false
+  },
   view = {
     adaptive_size = false,
     centralize_selection = false,
     width = 25,
-    height = 30,
-    hide_root_folder = false,
+    --height = 30,
     side = "left",
     preserve_window_proportions = true,
     number = false,

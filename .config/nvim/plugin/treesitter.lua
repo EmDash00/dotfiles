@@ -38,4 +38,4 @@ require('nvim-treesitter.configs').setup {
   }
 }
 
-nmap({'silent'}, '<space>', 'za')
+-- nmap({'silent'}, '<space>', 'za')

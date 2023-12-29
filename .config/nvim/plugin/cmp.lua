@@ -10,7 +10,6 @@ require("cmp_nvim_ultisnips").setup {
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
-
 cmp.setup {
   snippet = {
     expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end
@@ -148,13 +147,6 @@ cmp.setup {
       return not context.in_treesitter_capture("comment")
     end
   end,
-  formatting = {
-    fields = { "kind", "abbr" },
-    format = function(_, vim_item)
-      vim_item.kind = cmp_kinds[vim_item.kind] or ""
-      return vim_item
-    end,
-  },
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
