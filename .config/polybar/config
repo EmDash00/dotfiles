@@ -27,9 +27,9 @@ disabled = #707880
 
 [bar/bottom]
 monitor = ${env:MONITOR_BOTTOM:}
+dpi=180
 width = 100%
 height = 2.5%
-radius = 6
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -44,13 +44,14 @@ padding-right = 1
 
 module-margin = 1
 
-separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 = Ubuntu NF;2
-font-1 = bootstrap\\-icons;2
+font-0 = Ubuntu;2
+font-1 = Symbols Nerd Font Mono;2
+font-2 = Symbols Nerd FontMono:pixelsize=0;2
 
 modules-left = xworkspaces
+modules-center = spotify spotify-prev spotify-play-pause spotify-next
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -59,21 +60,22 @@ enable-ipc = true
 
 bottom = true
 tray-position = ${env:TRAY_POSITION:left}
+tray-maxsize = 30%
 
 wm-restack = i3
 
 [bar/top]
 monitor = ${env:MONITOR_TOP:}
+dpi=200
 width = 100%
 height = 2.5%
-radius = 6
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
 
-padding-left = 0
+padding-left = 1
 padding-right = 1
 
 module-margin = 1
@@ -81,10 +83,11 @@ module-margin = 1
 separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 = Ubuntu Nerd Font;2
-font-1 = bootstrap\\-icons;2
-font-2 = Font Awesome 5 Free Solid;2
+font-0 = Ubuntu;2
+font-1 = Symbols Nerd Font Mono;2
+font-2 = Ubuntu Mono;2
 
+modules-left = backlight
 modules-center = date
 modules-right = bluetooth eth wlan pulseaudio battery
 
@@ -113,41 +116,40 @@ label-empty-foreground = ${colors.disabled}
 label-empty-padding = 1
 
 [module/backlight]
-type = internal/xbacklight
+type = internal/backlight
 card = intel_backlight
-format-prefix = " "
-format = <label>
+use-actual-brightness = true
+poll-interval = 0
+enable-scroll = true
+scroll-interval=true
+
+format = %{T1} 󰃠 <label> %{T2} <bar>
+
 label = %percentage%%
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
 
 [module/battery]
 type = internal/battery
 
-battery = BAT1
-adapter = ADP1
+battery = BAT0
+adapter = AC1
 
-format-discharging= <ramp-capacity>  <label-discharging>
-format-charging= <animation-charging>  <label-charging>
+format-discharging= <ramp-capacity> <label-discharging>
+format-charging= %{T1}󰢝 %{T0}<label-charging>
 
 label-discharging= %percentage%%
 label-charging= %percentage%%
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = %{T1}󰂎
+ramp-capacity-1 = %{T1}󰁻
+ramp-capacity-2 = %{T1}󰁼
+ramp-capacity-3 = %{T1}󰁿
+ramp-capacity-4 = %{T1}󰂁
 
-label-full =   %percentage%%
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-
-; Framerate in milliseconds
-animation-charging-framerate = 500
-
+label-full = %{T1}󰂅 %percentage%%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -155,15 +157,15 @@ sink = @DEFAULT_SINK@
 click-right = pavucontrol
 
 format-volume-prefix-foreground = ${colors.primary}
-format-volume = <ramp-volume>  <label-volume>
+format-volume = <ramp-volume> <label-volume>
 
 label-volume = %percentage%%
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = %{T1}󰕿
+ramp-volume-1 = %{T1}󰖀
+ramp-volume-2 = %{T1}󰕾
 
-label-muted = 
+label-muted = %{T1}󰸈
 label-muted-foreground = ${colors.disabled}
 
 [network-base]
@@ -174,26 +176,30 @@ format-disconnected = <label-disconnected>
 
 [module/wlan]
 inherit = network-base
+interface = wlp0s20f3
 interface-type = wireless
 format-connected = <ramp-signal>  <label-connected>
 format-disconnected=<label-disconnected>
-label-disconnected=%{T2}
+label-disconnected=%{T1}󰤭
 label-connected = %essid%
-ramp-signal-0 = %{T2}
-ramp-signal-1 = %{T2}
-ramp-signal-2 = %{T2}
+ramp-signal-0 = %{T1}󰤯
+ramp-signal-1 = %{T1}󰤟
+ramp-signal-2 = %{T1}󰤢
+ramp-signal-3 = %{T1}󰤥
+ramp-signal-4 = %{T1}󰤨
 
 [module/eth]
 inherit = network-base
+interface = eth0
 interface-type = wired
-label-connected = %{T2}  %ifname%
+label-connected = %{T1}󰌗  %ifname%
 
 [module/date]
 type = internal/date
 interval = 60
 
-date = %I:%M %p
-date-alt = %a %b %d
+date = %{T1}󰃭 %{T0}%b %d   %{T1}󱑍 %{T0}%I:%M %p
+date-alt =
 
 label = %date%
 
@@ -202,12 +208,39 @@ screenchange-reload = true
 pseudo-transparency = true
 
 
-
 [module/bluetooth]
 type = custom/script
 exec = rofi-bluetooth --status | sed "s/MX Ergo, //"
 interval = 1
-click-left = rofi-bluetooth &
+click-left = rofi-bluetooth &``
 
+[module/spotify]
+type = custom/script
+tail = true
+interval = 1
+; prefix symbol is shown before the text
+format-prefix = "%{T1}󰓇  "
+format = <label>
+exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+click-left = i3-msg '[class="Spotify"] focus'
+
+[module/spotify-prev]
+type = custom/script
+exec = echo "%{T2}󰒮"
+format = <label>
+click-left = playerctl previous -p spotify
+
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo "%{T1}󰐎"
+hook-1 = echo "%{T1}󰏥"
+initial = 1
+click-left = playerctl play-pause -p spotify
+
+[module/spotify-next]
+type = custom/script
+exec = echo "%{T1}󰒭"
+format = <label>
+click-left = playerctl next -p spotify
 
 ; vim:ft=dosini

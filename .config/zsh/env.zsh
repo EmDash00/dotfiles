@@ -1,12 +1,6 @@
-export VIMINIT='if !has("nvim") 
-   let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC 
-else
-   let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim" | source $MYVIMRC 
-endif'
-
 #export TERM='alacritty'
 
-# Command history config               
+# Command history config
 export HISTFILE="$XDG_CACHE_HOME/zsh_history"
 export HISTSIZE=1000
 export SAVEHIST=10000

@@ -17,9 +17,9 @@ then
 	export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
 fi
 
-export XDG_CONFIG_HOME="/home/emdash00/.config"
-export XDG_DATA_HOME="/usr/local/share"
-export XDG_CACHE_HOME="/home/emdash00/.cache/zsh"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache/zsh"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 alias vi=vim

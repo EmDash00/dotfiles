@@ -1,0 +1,1 @@
+/home/ember/Apps/git/polybar-spotify/get_spotify_status.sh

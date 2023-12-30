@@ -8,7 +8,7 @@
 dir="~/.config/rofi/themes"
 uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_command="rofi -theme $dir/powermenu.rasi"
+rofi_command="rofi -dpi 200 -theme $dir/powermenu.rasi"
 
 # Options
 shutdown=" Shutdown"

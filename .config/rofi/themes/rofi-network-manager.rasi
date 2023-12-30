@@ -6,12 +6,9 @@ configuration {
 @import "rounded-gray-dark.rasi"
 
 * {
-    font:   "DejaVu Sans Mono 12";
+    font:   "DejaVuSansM Nerd Font 12";
 }
 
-window{
-    width:          480;
-}
 
 listview {
     location:       center;

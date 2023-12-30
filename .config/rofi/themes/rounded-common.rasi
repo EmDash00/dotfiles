@@ -1,6 +1,6 @@
 /*******************************************************************************
- * ROUNDED THEME FOR ROFI 
- * User                 : LR-Tech               
+ * ROUNDED THEME FOR ROFI
+ * User                 : LR-Tech
  * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
  *******************************************************************************/
 
@@ -17,15 +17,15 @@
 
 window {
     location:       center;
-    width:          480;
-    y-offset:       -200;
-    border-radius:  24px;
-    
+    width:          1000;
+    y-offset:       -400;
+    border-radius:  40px;
+
     background-color:   @bg0;
 }
 
 mainbox {
-    padding:    12px;
+    padding:    20px;
 }
 
 inputbar {
@@ -33,10 +33,10 @@ inputbar {
     border-color:       @bg3;
 
     border:         2px;
-    border-radius:  16px;
+    border-radius:  35px;
 
-    padding:    8px 16px;
-    spacing:    8px;
+    padding:    13px 26px;
+    spacing:    13px;
     children:   [ prompt, entry ];
 }
 
@@ -63,16 +63,16 @@ textbox {
 listview {
     background-color:   transparent;
 
-    margin:     12px 0 0;
+    margin:     20px 0 0;
     columns:    1;
 
     fixed-height: false;
 }
 
 element {
-    padding:        8px 16px;
-    spacing:        8px;
-    border-radius:  16px;
+    padding:        16px 40px;
+    spacing:        26px;
+    border-radius:  40px;
 }
 
 element normal active {

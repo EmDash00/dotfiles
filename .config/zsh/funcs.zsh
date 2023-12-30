@@ -13,7 +13,7 @@ alias standby='i3lock-fancy && systemctl suspend'
 alias lock='i3lock-fancy'
 alias hibernate='i3lock-fancy && systemctl hibernate'
 alias rm='rm --preserve-root -I'
-#alias s='exa --icons -s extension'
+#alias s='eza --icons -s extension'
 alias feed='flatpak run org.gnome.FeedReader'
 alias feedstop='flatpak kill org.gnome.FeedReader'
 
@@ -24,16 +24,16 @@ s() {
       if [[ "$arg" == "-a" || "$arg" == "--all" ]]; then
         has_all=true
       elif [[ "$arg" == '--help' || "$arg" == '-h' ]]; then
-        exa --help
+        lsd --help
         return
       elif [[ "$arg" == '-v' || "$arg" == '--version' ]]; then
-        exa --version
+        lsd --version
         return
       fi
     done
 
     if [[ $has_all == "true" ]] ; then
-        exa --icons --group-directories-first -s extension "$@"
+        lsd --group-directories-first -s extension "$@"
         return
     fi
 
@@ -46,11 +46,11 @@ s() {
     fi
 
     if [[ $exclusion == "" ]]; then
-      exa --icons --group-directories-first -s extension "$@"
+      eza --icons --group-directories-first -s extension "$@"
       return
     fi
 
-    exa --icons --group-directories-first -s extension --ignore-glob="${exclusion:1}"
+    lsd --group-directories-first -s extension --ignore-glob="${exclusion:1}"
 }
 
 
@@ -96,12 +96,6 @@ if [ $? -eq 1 ] ; then
       fi
    }
 fi
-
-#if command -v pyenv 1>/dev/null 2>&1; then
-   #eval "$(pyenv init -)"
-#fi
-#
-#
 
 # performs a patched eval so that PATH exports become path_appends.
 patched_eval() {

@@ -7,7 +7,7 @@
 
 dir="~/.config/rofi/themes"
 
-rofi_command="rofi -theme $dir/powermenu.rasi"
+rofi_command="rofi -dpi 200 -theme $dir/powermenu.rasi"
 
 options=$(pactl list sinks | grep Description | sed 's/[[:space:]]\+Description: //')
 sinks=$(pactl list short sinks | sed 's/[[:digit:]][[:space:]]\+//' | sed 's/[[:space:]]\+/ /g' | cut -d ' ' -f1)

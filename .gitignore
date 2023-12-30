@@ -131,3 +131,16 @@
 *tags*
 *.nvimproj*
 .warprc
+
+.config/BraveSoftware/
+.config/autostart/
+.config/chromium/
+.config/google-chrome-beta/
+.config/google-chrome-unstable/
+.config/google-chrome/
+.config/gsconnect/
+.config/inkscape/
+.config/microsoft-edge-beta/
+.config/microsoft-edge-dev/
+.config/polybar.old/
+.config/mimeapps.list

@@ -45,6 +45,11 @@ video/flv=vlc.desktop
 video/x-flc=vlc.desktop
 video/x-fli=vlc.desktop
 video/x-flv=vlc.desktop
+text/html=firefox_firefox.desktop
+x-scheme-handler/http=firefox_firefox.desktop
+x-scheme-handler/https=firefox_firefox.desktop
+x-scheme-handler/about=firefox_firefox.desktop
+x-scheme-handler/unknown=firefox_firefox.desktop
 
 [Added Associations]
 application/x-shellscript=vim.desktop;
@@ -98,3 +103,5 @@ video/flv=vlc.desktop;
 video/x-flc=vlc.desktop;
 video/x-fli=vlc.desktop;
 video/x-flv=vlc.desktop;
+x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
+x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;

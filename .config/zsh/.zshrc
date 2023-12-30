@@ -1,12 +1,12 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+ #Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source $XDG_CONFIG_HOME/zsh/.env.zsh
-source $XDG_CONFIG_HOME/zsh/.funcs.zsh
+source $XDG_CONFIG_HOME/zsh/env.zsh
+source $XDG_CONFIG_HOME/zsh/funcs.zsh
 
 if [ $USER != "root" ] ; then
    if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
@@ -21,15 +21,15 @@ setopt BASH_REMATCH
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 # Source SSH settings, if applicable
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
+#if [ -f "${SSH_ENV}" ]; then
+    #. "${SSH_ENV}" > /dev/null
     #ps ${SSH_AGENT_PID} doesn't work under cywgin
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
+    #ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        #start_agent;
+    #}
+#else
+    #start_agent;
+#fi
 
 
 ### Added by Zinit's installer
@@ -42,22 +42,18 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
 fi
 ### End of Zinit's installer chunk
 
-#ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share/zinit}"
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share/zinit}"
 #ZINIT_HOME="$~/.local/share/zinit}"
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 
 zinit snippet OMZL::completion.zsh
 zinit snippet OMZL::theme-and-appearance.zsh
 zinit snippet OMZL::directories.zsh
-zinit snippet OMZL::history.zsh 
+zinit snippet OMZL::history.zsh
 zinit snippet OMZL::prompt_info_functions.zsh
 zinit snippet OMZP::vi-mode
 
-#zinit ice as"program" from"gh-r" pick"sk"; zinit light lotabout/skim
-
-zinit ice as"program" from"gh-r" pick"bin/exa" mv"completions/exa.zsh -> completions/_exa"
-zinit light ogham/exa 
-zinit add-fpath ogham/exa completions/_exa
+zinit ice as"program" from"gh-r" pick"sk"; zinit light lotabout/skim
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
@@ -68,16 +64,16 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice wait"2" lucid; zinit snippet OMZP::git
 zinit ice wait"2" lucid; zinit snippet OMZP::pip
 zinit ice wait"2" lucid; zinit snippet OMZP::python
-zinit ice wait"2" lucid; zinit snippet OMZP::tmux
+#zinit ice wait"2" lucid; zinit snippet OMZP::tmux
 
-zinit ice wait"2" lucid; zinit light mfaerevaag/wd 
-zinit add-fpath mfaerevaag/wd 
+zinit ice wait"2" lucid; zinit light mfaerevaag/wd
+zinit add-fpath mfaerevaag/wd
 
 zinit ice wait"2" lucid; zinit light agkozak/zsh-z
 zinit add-fpath agkozak/zsh-z
 
-zinit ice as"program" from"gh-r" pick"nvim-linux64/bin/nvim"
-zinit light neovim/neovim
+#zinit ice as"program" from"gh-r" pick"nvim-linux64/bin/nvim"
+#zinit light neovim/neovim
 
 zinit ice as"program" from"gh-r" mv"tree-sitter-linux-x64 -> tree-sitter" pick"tree-sitter"
 zinit light tree-sitter/tree-sitter
@@ -101,9 +97,13 @@ autoload -Uz _zinit
 
 ### End of Zinit's installer chunk
 
-if [[ "$USER" != "root" ]]; then
-    source $APPS/git-apps/todo.txt-cli/todo_completion
-fi
-
 ## To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# pnpm
+export PNPM_HOME="/home/ember/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

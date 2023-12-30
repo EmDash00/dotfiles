@@ -12,7 +12,7 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+     	. "$HOME/.bashrc"
     fi
 fi
 
@@ -53,20 +53,15 @@ path_prepend()
    fi
 }
 
-
-#path_append "$HOME/bin"
-
 export PYENV_ROOT="$HOME/.pyenv"
 export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
 export DUB_HOME="$HOME/.dub/packages"
 export APPS="$HOME/Apps"
 
-export H3D_ROOT="/usr/local/share/h3dapi"
-
 export LD_LIBRARY_PATH='/usr/local/lib'
 
-export XDG_CONFIG_HOME='/home/emdash00/.config'
-export XDG_DATA_HOME='/home/emdash00/.local/share'
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
 
 export NVIM_CONF="${XDG_CONFIG_HOME}/nvim"
 export ZSH_CONF="${XDG_CONFIG_HOME}/zsh"
@@ -75,10 +70,7 @@ export ZPLUG_HOME="${XDG_CONFIG_HOME}/zplug"
 
 export ROS_HOME="$HOME/.config/ros"
 
-export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/SILKOWRM"
-export PYTHONPATH="${PYTHONPATH}:/home/emdash00/Documents/Work/Rothlab/lib/immutable"
 export VIRTUALENVWRAPPER_PYTHON=`which python3`
-export SUDO_ASKPASS='/usr/lib/ssh/x11-ssh-askpass'
 
 #path_append "$HOME/.platformio/penv/bin"
 path_prepend "$PYENV_ROOT/bin"
@@ -88,18 +80,4 @@ path_prepend "$PYENV_ROOT/shims"
 path_append "/usr/local/bin"
 path_append "$HOME/.local/bin"
 path_append "$HOME/Apps/AppImage"
-path_append "$HOME/Apps/source/pplatex-pplatex-1.0-rc2/build/src"
-#path_append "/tools/Xilinx/Vivado/2020.2/bin"
-#path_append "$HOME/Apps/source/clion-2021.1.2/bin"
-path_append "$HOME/Apps/source/arduino-cli_0.18.3_Linux_64bit"
-#path_append "$XDG_CONFIG_HOME/skim/bin"
-
-
-path_append "$DUB_HOME/dcd-0.12.0/dcd/bin"
-path_append "$DUB_HOME/dfix-0.3.5/dfix"
-path_append "$DUB_HOME/dfmt-0.11.0/dfmt/bin"
-path_append "$DUB_HOME/dscanner-0.8.0/dscanner/bin"
-
-
-export PATH="$PATH"
 . "$HOME/.cargo/env"
