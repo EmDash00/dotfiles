@@ -21,19 +21,19 @@ s() {
     has_all=false
 
     for arg in "$@"; do
-      if [[ "$arg" == "-a" || "$arg" == "--all" ]]; then
+      if [[ "$arg" == "-a" || "$arg" == "--all" || "$arg" == "-A" || "$arg" == "--almost-all" ]]; then
         has_all=true
       elif [[ "$arg" == '--help' || "$arg" == '-h' ]]; then
-        lsd --help
+        eza --help
         return
       elif [[ "$arg" == '-v' || "$arg" == '--version' ]]; then
-        lsd --version
+        eza --version
         return
       fi
     done
 
     if [[ $has_all == "true" ]] ; then
-        lsd --group-directories-first -s extension "$@"
+        eza --group-directories-first "$@"
         return
     fi
 
@@ -46,11 +46,11 @@ s() {
     fi
 
     if [[ $exclusion == "" ]]; then
-      eza --icons --group-directories-first -s extension "$@"
+      eza --icons --group-directories-first "$@"
       return
     fi
 
-    lsd --group-directories-first -s extension --ignore-glob="${exclusion:1}"
+    eza --icons --group-directories-first -s extension --ignore-glob="${exclusion:1}"
 }
 
 
