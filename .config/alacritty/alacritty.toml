@@ -53,6 +53,10 @@ foreground = "0x93a1a1"
 [env]
 TERM = "alacritty"
 
+[window.dimensions]
+columns = 120
+lines = 36
+
 [font]
 size = 9
 
