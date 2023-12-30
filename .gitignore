@@ -144,3 +144,10 @@
 .config/microsoft-edge-dev/
 .config/polybar.old/
 .config/mimeapps.list
+.config/Autodesk/
+.config/Qt/
+.config/QtProject/
+.config/htop/
+.config/nautilus/
+.config/transmission/
+.config/vlc/
