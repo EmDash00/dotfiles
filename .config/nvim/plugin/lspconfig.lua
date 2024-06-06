@@ -202,6 +202,12 @@ require'lspconfig'.texlab.setup{
   capabilities=capabilities,
 }
 
+require'lspconfig'.jdtls.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
+
 require 'lspconfig'.lua_ls.setup {
   on_attach = on_attach,
   flags = lsp_flags,

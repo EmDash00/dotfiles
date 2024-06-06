@@ -1,15 +1,14 @@
 local opt = vim.opt
 
-vim.g.loaded_netrw = false
+vim.cmd([[au BufRead,BufNewFile *.jq setfiletype jq]])
+vim.g.python3_host_prog=vim.fn.expand("~/.config/virtualenvs/neovim/bin/python3")
+opt.termguicolors = true
 
 require('colors')
 require('autofuncs')
-require('plugins')
-require('surround')
-require('keymaps')
-
-
-opt.termguicolors = true
+--require('plugins')
+--require('surround')
+--require('keymaps')
 
 opt.expandtab = true
 opt.showmode = false
@@ -24,7 +23,7 @@ opt.laststatus = 2
 
 opt.enc = 'utf-8'
 opt.fenc = 'utf-8'
-opt.termencoding = 'utf-8'
+-- opt.termencoding = 'utf-8'
 
 opt.tabstop = 2
 opt.shiftwidth = 2
@@ -49,3 +48,4 @@ onedark.setup {
 }
 
 onedark.load()
+--vim.cmd("colorscheme onedark")

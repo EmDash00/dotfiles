@@ -1,7 +1,7 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = 'onedark',
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
@@ -27,7 +27,10 @@ require('lualine').setup {
         sources = { 'nvim_workspace_diagnostic' }
       }
     },
-    lualine_c = {},
+    lualine_c = {
+      require('molten.status').initialized,
+      require('molten.status').kernels
+    },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }

@@ -7,3 +7,5 @@ optl.autoindent = true
 
 optl.textwidth = 79
 optl.colorcolumn = '80'
+
+vim.treesitter.start()

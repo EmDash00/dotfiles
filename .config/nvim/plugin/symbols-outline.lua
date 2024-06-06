@@ -8,15 +8,16 @@ symbols_outline.setup{
   auto_preview = false,
   position = 'right',
   relative_width = true,
-  width = 25,
+  width = 30,
   auto_close = false,
   show_numbers = false,
   show_relative_numbers = false,
   show_symbol_details = true,
   preview_bg_highlight = 'Pmenu',
-  autofold_depth = nil,
+  autofold_depth = 2,
   auto_unfold_hover = true,
   fold_markers = { '', '' },
+  wrap = true,
   keymaps = { -- These keymaps can be a string or a table for multiple keys
     close = {"<Esc>", "q"},
     goto_location = "<Cr>",
@@ -59,7 +60,7 @@ symbols_outline.setup{
     Struct = {icon = "󰆧", hl = "@type"},
     Event = {icon = "", hl = "@type"},
     Operator = {icon = "", hl = "@operator"},
-    TypeParameter = {icon = "ﭨ", hl = "@parameter"}
+    TypeParameter = {icon = "", hl = "@parameter"}
   }
 }
 

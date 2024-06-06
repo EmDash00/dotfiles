@@ -12,6 +12,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+package.path = package.path .. ";" .. vim.fn.expand("$HOME") ..
+  "/.luarocks/share/lua/5.1/?.lua;"
+
+package.path = package.path .. ";" .. vim.fn.expand("$HOME") ..
+  "/.luarocks/share/lua/5.1/?/init.lua;"
+
 return require('lazy').setup(
   {
     --Configuration
@@ -115,9 +121,70 @@ return require('lazy').setup(
         }
       }
     },
+    {
+        "benlubas/molten-nvim",
+        version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
+        dependencies = { "3rd/image.nvim" },
+        build = ":UpdateRemotePlugins",
+        init = function()
+            -- these are examples, not defaults. Please see the readme
+            vim.g.molten_image_provider = "image.nvim"
+            vim.g.molten_output_win_max_height = 20
+        end,
+    },
+    {
+      "3rd/image.nvim",
+      event = "VeryLazy",
+      version = "1.1.0",
+      dependencies = {
+        {
+          "nvim-treesitter/nvim-treesitter",
+          build = ":TSUpdate",
+          config = function()
+            require("nvim-treesitter.configs").setup({
+              ensure_installed = { "markdown" },
+              modules = { },
+              ignore_install = { },
+              sync_install = false,
+              auto_install = true,
+              highlight = { enable = true },
+            })
+          end,
+        },
+      },
+      opts = {
+        backend = "kitty",
+        integrations = {
+          markdown = {
+            enabled = true,
+            clear_in_insert_mode = false,
+            download_remote_images = true,
+            only_render_image_at_cursor = false,
+            filetypes = { "markdown", "vimwiki" }, -- markdown extensions (ie. quarto) can go here
+          },
+          neorg = {
+            enabled = true,
+            clear_in_insert_mode = false,
+            download_remote_images = true,
+            only_render_image_at_cursor = false,
+            filetypes = { "norg" },
+          },
+        },
+        max_width = 100,
+        max_height = 12,
+        max_width_window_percentage = math.huge,
+        max_height_window_percentage = math.huge,
+        window_overlap_clear_enabled = true,
+        window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+        --kitty_method = "normal",
+      },
+    },
+
     --Syntax
     'PotatoesMaster/i3-vim-syntax',
+
     'vhda/verilog_systemverilog.vim',
+    'uiiaoo/java-syntax.vim',
     'scarface-one/vim-dlang-phobos-highlighter',
     'plasticboy/vim-markdown',
     'lervag/vimtex',

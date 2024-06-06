@@ -1,41 +1,61 @@
-local vimp = require('vimp')
+local vimp = require("vimp")
 local nmap = vimp.nmap
 
-require('nvim-treesitter.configs').setup {
-  -- A list of parser names, or "all"
-  ensure_installed = { "c", "cpp", "d", "lua", "rust", "python", "vim"},
-
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
-
-  -- Automatically install missing parsers when entering buffer
-  auto_install = true,
-
-  -- List of parsers to ignore installing (for "all")
-  --ignore_install = { "javascript" },
-
-  highlight = {
-    -- `false` will disable the whole extension
-    enable = true,
-    disable = {'latex'},
-
-    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
-    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
-    -- the name of the parser)
-    -- list of language that will be disabled
-    --disable = { "c", "rust" },
-
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
+require("nvim-treesitter.configs").setup({
+	ensure_installed = {
+    'bash',
+    'c',
+    'cpp',
+    'json',
+    'lua',
+    'python',
+    'markdown',
+    'latex',
+    'markdown_inline',
   },
-
-  indent = {
-    enable = true,
-    disable = { 'python' }
-  }
-}
+	auto_install = true,
+	ignore_install = {},
+	sync_install = false,
+	modules = {},
+  highlight = {
+      disable = { "latex" },
+    enable = true
+  },
+	textobjects = {
+		move = {
+			enable = true,
+			set_jumps = false, -- you can change this if you want.
+			goto_next_start = {
+				--- ... other keymaps
+				["]b"] = { query = "@code_cell.inner", desc = "next code block" },
+			},
+			goto_previous_start = {
+				--- ... other keymaps
+				["[b"] = { query = "@code_cell.inner", desc = "previous code block" },
+			},
+		},
+		select = {
+			enable = true,
+			lookahead = true, -- you can change this if you want
+			keymaps = {
+				--- ... other keymaps
+				["ib"] = { query = "@code_cell.inner", desc = "in block" },
+				["ab"] = { query = "@code_cell.outer", desc = "around block" },
+			},
+		},
+		swap = { -- Swap only works with code blocks that are under the same
+			-- markdown header
+			enable = true,
+			swap_next = {
+				--- ... other keymap
+				["<leader>sbl"] = "@code_cell.outer",
+			},
+			swap_previous = {
+				--- ... other keymap
+				["<leader>sbh"] = "@code_cell.outer",
+			},
+		},
+	},
+})
 
 -- nmap({'silent'}, '<space>', 'za')
