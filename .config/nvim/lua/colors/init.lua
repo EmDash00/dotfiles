@@ -2,7 +2,7 @@ local colors = {}
 
 local api = vim.api
 
-colors.bgcolor = '#242b38'
+colors.bgcolor = '#282c34'
 
 function colors.set_hls(highlights)
   for hl, params in pairs(highlights) do

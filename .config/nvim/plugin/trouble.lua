@@ -1,45 +1,112 @@
-local vimp = require('vimp')
+local vimp = require("vimp")
 local nnoremap = vimp.nnoremap
 
-require('trouble').setup {
-  position = "bottom", -- position of the list can be: bottom, top, left, right
-  height = 10, -- height of the trouble list when position is top or bottom
-  width = 50, -- width of the list when position is left or right
-  icons = true, -- use devicons for filenames
-  mode = "workspace_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
-  fold_open = "",
-  fold_closed = "",
-  group = true,
-  padding = true,
-  action_keys = {
-    -- map to {} to remove a mapping, for example:
-    -- close = {},
-    close = "<leader>dq",
-    cancel = "<esc>",
-    refresh = "<leader>dr",
-    jump = { "<cr>" },
-    open_split = { "_" }, -- open buffer in new split
-    open_vsplit = { "|" }, -- open buffer in new vsplit
-    open_tab = { "t" }, -- open buffer in new tab
-    jump_close = { "o" }, -- jump to the diagnostic and close the list
-    toggle_mode = "<leader>dm", -- toggle between "workspace" and "document" diagnostics mode
-    switch_severity = "s",
-    toggle_preview = "P", -- toggle auto_preview
-    hover = "K", -- opens a small popup with the full multiline message
-    preview = "p", -- preview the diagnostic location
-    close_folds = { "<space>c" }, -- close all folds
-    open_folds = { "<space>o" }, -- open all folds
-    toggle_fold = { "zA", "za" }, -- toggle fold of current file
-    previous = "k", -- preview item
-    next = "j" -- next item
-  },
-  indent_lines = true, -- add an indent guide below the fold icons
-  auto_open = false, -- automatically open the list when you have diagnostics
-  auto_close = true, -- automatically close the list when you have no diagnostics
+local trouble = require("trouble")
+trouble.setup({
   auto_preview = false,
-  auto_fold = false,
-  auto_jump = { "lsp_definitions" },
-  use_diagnostic_signs = true
- }
+  follow = true,
+  keys = {
+    ["<leader>dq"] = "close",
+    ["<esc>"] = "cancel",
+    r = "refresh",
+    R = "toggle_refresh",
+    ["<cr>"] = "jump",
+    ["_"] = "jump_split",
+    ["|"] = "jump_vsplit",
+    l = "fold_open",
+    L = "fold_open_recursive",
+    h = "fold_close",
+    H = "fold_close_recursive",
+    j = "next",
+    k = "prev",
+  },
+  modes = {
+    diagnostics = {
+      height = 10,
+      width = 50,
+      auto_open = true, -- automatically close the list when you have no diagnostics
+      auto_close = true, -- automatically close the list when you have no diagnostics
+    },
+    symbols = {
+      win = { position = "right" },
+      filter = {
+        --remove Package since luals uses it for control flow structures
+        ["not"] = { ft = "lua", kind = "Package" },
+        any = {
+          --all symbol kinds for help / markdown files
+          ft = { "help", "markdown" },
+          --default set of symbol kinds
+          kind = {
+            "Class",
+            "Constructor",
+            "Enum",
+            "Field",
+            "Function",
+            "Interface",
+            "Method",
+            "Module",
+            "Namespace",
+            "Package",
+            "Property",
+            "Struct",
+            "Trait",
+          },
+        },
+      },
+    },
+  },
+  icons = {
+    indent = {
+      fold_open = "",
+      fold_closed = "",
+    },
+    kinds = {
+      Array = " ",
+      Boolean = "󰄴 ", -- nf-md-checkbox_marked_circle_outline
+      Namespace = " ", -- nf-cod-symbol_namespace
+      Null = " ",
+      Number = "󰎠 ",
+      Object = "󰆦 ",
+      Package = "󰃖 ", -- nf-md-briefcase
+      String = " ",
+      Text = " ", -- nf-fa-font
+      Method = "󰡱 ", -- nf-md-function-variant
+      Function = "󰡱 ",
+      Constructor = " ", -- nf-fae-tools
+      Field = "󰊾 ", -- nf-md-order_bool_ascending
+      Variable = "󰫧 ", -- nf-md-cube
+      Class = " ", -- nf-md-webpack
+      Interface = "󰋺 ", -- nf-md-import
+      Module = "󰃖 ", -- nf-md-briefcase
+      Property = "󰠱 ", -- nf-md-shape
+      Unit = "󰑭 ", -- nf-md-ruler
+      Value = "󰎠 ", -- nf-md-numeric
+      Enum = " ", -- nf-fa-sort_alpha_asc
+      EnumMember = "󰀬 ", -- nf-md-alphabetical
+      Keyword = "󰪛 ", -- nf-md-key
+      Color = " ", -- nf-cod-paintcan
+      File = " ", -- nf-fa-file-text
+      Reference = " ", -- nf-cod-go_to_file
+      Folder = " ", -- nf-fa-folder
+      Constant = "● ", -- nf-fa-circle
+      Struct = "󰆧 ", -- nf-md-cube_outline
+      Event = " ", -- nf-oct-clock
+      Operator = " ", -- nf-cod-symbol_operator
+      TypeParameter = " ", -- nf-code-symbol-paramter
+    },
+  },
+})
 
-nnoremap({ 'silent' }, '<leader>a', ':TroubleToggle<CR>')
+nnoremap({ "silent" }, "<C-d>", function()
+  trouble.toggle("diagnostics")
+end)
+nnoremap({ "silent" }, "<C-s>", function()
+  trouble.toggle("symbols")
+end)
+
+vim.api.nvim_create_autocmd({ "QuitPre" }, {
+  callback = function()
+    trouble.close("diagnostics")
+    trouble.close("symbols")
+  end,
+})

@@ -10,6 +10,11 @@ require('autofuncs')
 --require('surround')
 --require('keymaps')
 
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  command = "set formatoptions+=t"
+})
 opt.expandtab = true
 opt.showmode = false
 opt.hidden = true

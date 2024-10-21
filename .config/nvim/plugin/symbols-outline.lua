@@ -28,8 +28,8 @@ symbols_outline.setup{
     code_actions = "a",
     fold = "h",
     unfold = "l",
-    fold_all = "W",
-    unfold_all = "E",
+    fold_all = "ha",
+    unfold_all = "la",
     fold_reset = "R",
   },
   lsp_blacklist = {},
@@ -64,4 +64,4 @@ symbols_outline.setup{
   }
 }
 
-nnoremap({'silent'}, '<C-s>', symbols_outline.toggle_outline)
+--nnoremap({'silent'}, '<C-s>', symbols_outline.toggle_outline)

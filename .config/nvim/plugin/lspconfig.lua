@@ -1,5 +1,5 @@
-local vimp = require('vimp')
-local lspconfig = require('lspconfig')
+local vimp = require("vimp")
+local lspconfig = require("lspconfig")
 local nnoremap = vimp.nnoremap
 
 local api = vim.api
@@ -7,16 +7,16 @@ local diagnostic, lsp = vim.diagnostic, vim.lsp
 
 vim.o.updatetime = 250
 
-diagnostic.config {
+diagnostic.config({
   virtual_text = false,
   signs = true,
   underline = true,
   float = {
-    border = 'rounded'
+    border = "rounded",
   },
-  update_in_insert = false,
-  severity_sort = true
-}
+  update_in_insert = true,
+  severity_sort = true,
+})
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
@@ -24,57 +24,54 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-local opts = { 'silent' }
-
+local opts = { "silent" }
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
-  api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.lsp.omnifunc')
+  --api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.lsp.omnifunc')
+  api.nvim_set_option_value("omnifunc", "v:lua.lsp.omnifunc", { buf = bufnr })
 
-  vimp.add_buffer_maps(
-    bufnr,
-    function()
-      -- Mappings.
-      -- See `:help lsp.*` for documentation on any of the below functions
-      nnoremap(opts, '<leader>j', diagnostic.goto_next)
-      nnoremap(opts, '<leader>k', diagnostic.goto_prev)
-      nnoremap(opts, '<leader>J', function() diagnostic.goto_next({ severity = { min = vim.diagnostic.severity.WARN } }) end)
-      nnoremap(opts, '<leader>K', function() diagnostic.goto_prev({ severity = { min = vim.diagnostic.severity.WARN } }) end)
+  vimp.add_buffer_maps(bufnr, function()
+    -- Mappings.
+    -- See `:help lsp.*` for documentation on any of the below functions
+    nnoremap(opts, "<leader>j", diagnostic.goto_next)
+    nnoremap(opts, "<leader>k", diagnostic.goto_prev)
+    nnoremap(opts, "<leader>J", function()
+      diagnostic.goto_next({ severity = { min = vim.diagnostic.severity.WARN } })
+    end)
+    nnoremap(opts, "<leader>K", function()
+      diagnostic.goto_prev({ severity = { min = vim.diagnostic.severity.WARN } })
+    end)
 
-      nnoremap(opts, 'gD', lsp.buf.declaration)
-      nnoremap(opts, 'gd', lsp.buf.definition)
-      nnoremap(
-        opts, 'L',
-        function()
-          api.nvim_command('set eventignore=CursorHold')
-          lsp.buf.hover()
-          api.nvim_command('autocmd CursorMoved <buffer> ++once set eventignore=""')
-        end
-      )
-      nnoremap(opts, 'gi', lsp.buf.implementation)
+    nnoremap(opts, "gD", lsp.buf.declaration)
+    nnoremap(opts, "gd", lsp.buf.definition)
+    nnoremap(opts, "L", function()
+      api.nvim_command("set eventignore=CursorHold")
+      lsp.buf.hover()
+      api.nvim_command('autocmd CursorMoved <buffer> ++once set eventignore=""')
+    end)
+    nnoremap(opts, "gi", lsp.buf.implementation)
 
-      nnoremap(opts, '<leader>h', lsp.buf.signature_help)
-      nnoremap(opts, '<leader>wa', lsp.buf.add_workspace_folder)
-      nnoremap(opts, '<leader>wr', lsp.buf.remove_workspace_folder)
-      nnoremap(
-        opts,
-        '<leader>wl',
-        function()
-          print(vim.inspect(lsp.buf.list_workspace_folders()))
-        end
-      )
-      nnoremap(opts, 'td', lsp.buf.type_definition)
-      nnoremap(opts, '<leader>rn', lsp.buf.rename)
-      --nnoremap(opts, '<leader>ac', lsp.buf.code_action)
-      nnoremap(opts, 'gr', lsp.buf.references)
-      nnoremap(opts, '<leader>f', lsp.buf.format)
-    end
-)
+    nnoremap(opts, "<leader>h", lsp.buf.signature_help)
+    nnoremap(opts, "<leader>wa", lsp.buf.add_workspace_folder)
+    nnoremap(opts, "<leader>wr", lsp.buf.remove_workspace_folder)
+    nnoremap(opts, "<leader>wl", function()
+      print(vim.inspect(lsp.buf.list_workspace_folders()))
+    end)
+    nnoremap(opts, "td", lsp.buf.type_definition)
+    nnoremap(opts, "<leader>rn", lsp.buf.rename)
+    nnoremap(opts, "<leader>c", lsp.buf.code_action)
+    nnoremap(opts, "<leader>r", lsp.buf.references)
+  end)
+
+  if client.name == "ruff" then
+    client.server_capabilities.hoverProvider = false
+  end
 
   if client.server_capabilities.documentHighlightProvider then
-    vim.cmd [[
+    vim.cmd([[
       hi link LspReferenceRead Visual
       hi link LspReferenceText Visual
       hi link LspReferenceWrite Visual
@@ -84,29 +81,8 @@ local on_attach = function(client, bufnr)
         autocmd! CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
         autocmd! CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]]
+    ]])
   end
-
-  -- Diagnostic hold
-  vim.api.nvim_create_autocmd(
-    "CursorHold",
-    {
-      buffer = bufnr,
-      callback = function()
-        diagnostic.open_float(
-          nil,
-          {
-            focusable = false,
-            close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-            source = 'always',
-            prefix = ' ',
-            suffix = '',
-            scope = 'cursor',
-          }
-        )
-      end
-    }
-  )
 end
 
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
@@ -114,41 +90,41 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts = opts or {}
   opts.max_height = 30
   opts.max_width = 80
-  opts.border = opts.border or 'rounded'
+  opts.border = opts.border or "rounded"
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
 --LSP Kinds
-require('lspkind').init({
-  mode = 'symbol_text',
-  preset = 'codicons',
+require("lspkind").init({
+  mode = "symbol_text",
+  preset = "codicons",
   -- default: {}
   symbol_map = {
-    Text = '',         -- nf-fa-font
-    Method = '󰡱',       -- nf-md-function-variant
-    Function = '󰡱',
-    Constructor = '',  -- nf-fae-tools
-    Field = '󰊾',        -- nf-md-order_bool_ascending
-    Variable = '󰆦',     -- nf-md-cube
-    Class = '',        -- nf-md-webpack
-    Interface = '󰋺',    -- nf-md-import
-    Module = '󰃖',       -- nf-md-briefcase
-    Property = '󰠱',     -- nf-md-shape
-    Unit = '󰑭',         -- nf-md-ruler
-    Value = '󰎠',        -- nf-md-numeric
-    Enum = '',         -- nf-fa-sort_alpha_asc
-    Keyword = '󰪛',      -- nf-md-key
-    Snippet = '󰐒',      -- nf-playlist_plus
-    Color = '',        -- nf-cod-paintcan
-    File = '',         -- nf-fa-file-text
-    Reference = '',    -- nf-cod-go_to_file
-    Folder = '',       -- nf-fa-folder
-    EnumMember = '󰀬',   -- nf-md-alphabetical
-    Constant = '●',     -- nf-fa-circle
-    Struct = '󰆧',       -- nf-md-cube_outline
-    Event = '',        -- nf-oct-clock
-    Operator = '' ,    -- nf-cod-symbol_operator
-    TypeParameter = '',  -- nf-code-symbol-paramter
+    Text = "", -- nf-fa-font
+    Method = "󰡱", -- nf-md-function-variant
+    Function = "󰡱",
+    Constructor = "", -- nf-fae-tools
+    Field = "󰊾", -- nf-md-order_bool_ascending
+    Variable = "󰆦", -- nf-md-cube
+    Class = "", -- nf-md-webpack
+    Interface = "󰋺", -- nf-md-import
+    Module = "󰃖", -- nf-md-briefcase
+    Property = "󰠱", -- nf-md-shape
+    Unit = "󰑭", -- nf-md-ruler
+    Value = "󰎠", -- nf-md-numeric
+    Enum = "", -- nf-fa-sort_alpha_asc
+    Keyword = "󰪛", -- nf-md-key
+    Snippet = "󰐒", -- nf-playlist_plus
+    Color = "", -- nf-cod-paintcan
+    File = "", -- nf-fa-file-text
+    Reference = "", -- nf-cod-go_to_file
+    Folder = "", -- nf-fa-folder
+    EnumMember = "󰀬", -- nf-md-alphabetical
+    Constant = "●", -- nf-fa-circle
+    Struct = "󰆧", -- nf-md-cube_outline
+    Event = "", -- nf-oct-clock
+    Operator = "", -- nf-cod-symbol_operator
+    TypeParameter = "", -- nf-code-symbol-paramter
   },
 })
 
@@ -157,73 +133,138 @@ local lsp_flags = {
 }
 
 --local capabilities = require('cmp_nvim_lsp').update_capabilities(
-  --lsp.protocol.make_client_capabilities()
+--lsp.protocol.make_client_capabilities()
 --)
 --
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-capabilities.offsetEncoding = { 'utf-16' }
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
+--capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-lspconfig.pyright.setup {
+--lspconfig.pyright.setup {
+--on_attach = on_attach,
+--flags = lsp_flags,
+--capabilities = capabilities
+--}
+
+lspconfig.basedpyright.setup({
   on_attach = on_attach,
   flags = lsp_flags,
-  capabilities = capabilities
-}
+  capabilities = capabilities,
+  settings = {
+    basedpyright = {
+      disableOrganizeImports = true
+    }
+  }
+})
 
-lspconfig.serve_d.setup {
+lspconfig.ruff.setup({
   on_attach = on_attach,
   flags = lsp_flags,
-  capabilities = capabilities
-}
+  capabilities = capabilities,
+})
 
-lspconfig.clangd.setup {
+lspconfig.jsonls.setup({
+  capabilities = capabilities,
+})
+
+lspconfig.yamlls.setup({
+  settings = {
+    yaml = {
+      schemas = {
+        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+      },
+    },
+  },
+})
+
+lspconfig.cssls.setup({
   on_attach = on_attach,
   flags = lsp_flags,
-  capabilities = capabilities
-}
+  capabilities = capabilities,
+})
 
-lspconfig.tsserver.setup {
+lspconfig.cssmodules_ls.setup({
   on_attach = on_attach,
   flags = lsp_flags,
-  capabilities = capabilities
-}
+  capabilities = capabilities,
+})
 
-lspconfig.rust_analyzer.setup {
+lspconfig.ts_ls.setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+})
+
+lspconfig.html.setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+})
+
+lspconfig.superhtml.setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+})
+
+lspconfig.serve_d.setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+})
+
+lspconfig.clangd.setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+})
+
+lspconfig.ts_ls.setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+})
+
+lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
   flags = lsp_flags,
   settings = {
-    ["rust-analyzer"] = {}
+    ["rust-analyzer"] = {},
   },
-  capabilities = capabilities
-}
+  capabilities = capabilities,
+})
 
-require'lspconfig'.texlab.setup{
-  on_attach=on_attach,
-  flags=lsp_flags,
-  capabilities=capabilities,
-}
-
-require'lspconfig'.jdtls.setup{
+lspconfig.texlab.setup({
   on_attach = on_attach,
   flags = lsp_flags,
-  capabilities = capabilities
-}
+  capabilities = capabilities,
+})
 
-require 'lspconfig'.lua_ls.setup {
+lspconfig.jdtls.setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+})
+
+lspconfig.lua_ls.setup({
   on_attach = on_attach,
   flags = lsp_flags,
   settings = {
     Lua = {
       runtime = {
         -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
+        version = "LuaJIT",
+        path = vim.split(package.path, ';'),
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = { 'vim' },
+        globals = { "vim" },
+        disable = { "missing-fields" },
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false,
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
@@ -232,10 +273,25 @@ require 'lspconfig'.lua_ls.setup {
     },
   },
   --capabilities = capabilities
-}
+})
 
-require 'lspconfig'.vimls.setup {
+-- Diagnostic hold
+vim.api.nvim_create_autocmd("CursorHold", {
+  --buffer = bufnr,
+  callback = function()
+    diagnostic.open_float(nil, {
+      focusable = false,
+      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+      source = "always",
+      prefix = " ",
+      suffix = "",
+      scope = "cursor",
+    })
+  end,
+})
+
+lspconfig.vimls.setup({
   on_attach = on_attach,
   flags = lsp_flags,
-  capabilities = capabilities
-}
+  capabilities = capabilities,
+})

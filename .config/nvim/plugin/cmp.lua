@@ -1,10 +1,10 @@
-local cmp = require('cmp')
+local cmp = require("cmp")
 local mapping = cmp.mapping
 local SelectBehavior = cmp.SelectBehavior
 
 --require("cmp_nvim_ultisnips").setup {
-  --filetype_source = "ultisnips_default",
-  --show_snippets = 'all'
+--filetype_source = "ultisnips_default",
+--show_snippets = 'all'
 --}
 
 --local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
@@ -12,10 +12,16 @@ local SelectBehavior = cmp.SelectBehavior
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
-cmp.setup {
+
+local nvim_hlcolors = require("nvim-highlight-colors")
+local lspkind = require("lspkind")
+
+cmp.setup({
   snippet = {
     --expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end
-    expand = function(args) require('luasnip').lsp_expand(args.body) end
+    expand = function(args)
+      require("luasnip").lsp_expand(args.body)
+    end,
   },
   window = {
     --completion = cmp.config.window.bordered(),
@@ -26,81 +32,77 @@ cmp.setup {
       side_padding = 0,
     },
   },
-  sources = cmp.config.sources(
-    {
-      { name = 'nvim_lsp' },
-      { name = 'otter' },
-      { name = 'luasnip' },
-      --{ name = 'ultisnips' }
-      --{ name = 'neorg' },
-    },
-    { { name = 'buffer' } },
-    { { name = 'path' } }
-  ),
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "otter" },
+    { name = "luasnip" },
+    --{ name = 'ultisnips' }
+    --{ name = 'neorg' },
+  }, { { name = "buffer" } }, { { name = "path" } }),
   mapping = {
     ["<Tab>"] = mapping(
       mapping.select_next_item({ behavior = SelectBehavior.Insert }),
-      {"i", "s"}
+      { "i", "s" }
       --c = function()
-        --if cmp.visible() then
-          --cmp.select_next_item({ behavior = SelectBehavior.Insert })
-        --else
-          --cmp.complete()
-        --end
+      --if cmp.visible() then
+      --cmp.select_next_item({ behavior = SelectBehavior.Insert })
+      --else
+      --cmp.complete()
+      --end
       --end,
       --i = function(fallback)
-        --if cmp.visible() then
-          --cmp.select_next_item({ behavior = SelectBehavior.Insert })
-        --elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-          --vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
-        --else
-          --fallback()
-        --end
+      --if cmp.visible() then
+      --cmp.select_next_item({ behavior = SelectBehavior.Insert })
+      --elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+      --vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
+      --else
+      --fallback()
+      --end
       --end,
       --s = function(fallback)
-        --if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-          --vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
-        --else
-          --fallback()
-        --end
+      --if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+      --vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
+      --else
+      --fallback()
+      --end
       --end
     ),
     ["<S-Tab>"] = mapping(
       mapping.select_prev_item({ behavior = SelectBehavior.Insert }),
-      {"i", "s"}
+      { "i", "s" }
       --c = function()
-        --if cmp.visible() then
-          --cmp.select_prev_item({ behavior = SelectBehavior.Insert })
-        --else
-          --cmp.complete()
-        --end
+      --if cmp.visible() then
+      --cmp.select_prev_item({ behavior = SelectBehavior.Insert })
+      --else
+      --cmp.complete()
+      --end
       --end,
       --i = function(fallback)
-        --if cmp.visible() then
-          --cmp.select_prev_item({ behavior = SelectBehavior.Insert })
-        --elseif vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
-          --return vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_backward)"), 'm', true)
-        --else
-          --fallback()
-        --end
+      --if cmp.visible() then
+      --cmp.select_prev_item({ behavior = SelectBehavior.Insert })
+      --elseif vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
+      --return vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_backward)"), 'm', true)
+      --else
+      --fallback()
+      --end
       --end,
       --s = function(fallback)
-        --if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
-          --return vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_backward)"), 'm', true)
-        --else
-          --fallback()
-        --end
+      --if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
+      --return vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_backward)"), 'm', true)
+      --else
+      --fallback()
+      --end
       --end
     ),
-    ['<Down>'] = mapping(mapping.select_next_item({ behavior = SelectBehavior.Select }), { 'i' }),
-    ['<Up>'] = mapping(mapping.select_prev_item({ behavior = SelectBehavior.Select }), { 'i' }),
+    ["<Down>"] = mapping(mapping.select_next_item({ behavior = SelectBehavior.Select }), { "i" }),
+    ["<Up>"] = mapping(mapping.select_prev_item({ behavior = SelectBehavior.Select }), { "i" }),
 
-    ['<C-n>'] = mapping {
+    ["<C-n>"] = mapping({
       c = function()
         if cmp.visible() then
           cmp.select_next_item({ behavior = SelectBehavior.Select })
         else
-          vim.api.nvim_feedkeys(t('<Down>'), 'n', true)
+          vim.api.nvim_feedkeys(t("<Down>"), "n", true)
         end
       end,
       i = function(fallback)
@@ -109,15 +111,15 @@ cmp.setup {
         else
           fallback()
         end
-      end
-    },
+      end,
+    }),
 
-    ['<C-p>'] = mapping {
+    ["<C-p>"] = mapping({
       c = function()
         if cmp.visible() then
           cmp.select_prev_item({ behavior = SelectBehavior.Select })
         else
-          vim.api.nvim_feedkeys(t('<Up>'), 'n', true)
+          vim.api.nvim_feedkeys(t("<Up>"), "n", true)
         end
       end,
       i = function(fallback)
@@ -126,17 +128,17 @@ cmp.setup {
         else
           fallback()
         end
-      end
-    },
-    ['<C-d>'] = mapping(mapping.scroll_docs(-4), { 'i', 'c' }),
+      end,
+    }),
+    ["<C-d>"] = mapping(mapping.scroll_docs(-4), { "i", "c" }),
 
-    ['<C-f>'] = mapping(mapping.scroll_docs(4), { 'i', 'c' }),
+    ["<C-f>"] = mapping(mapping.scroll_docs(4), { "i", "c" }),
 
-    ['<C-Space>'] = mapping(mapping.complete(), { 'i', 'c' }),
+    ["<C-Space>"] = mapping(mapping.complete(), { "i", "c" }),
 
-    ['<C-e>'] = mapping { i = mapping.close(), c = mapping.close() },
+    ["<C-e>"] = mapping({ i = mapping.close(), c = mapping.close() }),
 
-    ['<CR>'] = mapping {
+    ["<CR>"] = mapping({
       i = mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
       c = function(fallback)
         if cmp.visible() then
@@ -144,14 +146,14 @@ cmp.setup {
         else
           fallback()
         end
-      end
-    }
+      end,
+    }),
   },
   enabled = function()
-     --disable completion in comments
-    local context = require 'cmp.config.context'
-     --keep command mode completion enabled when cursor is in a comment
-    if vim.api.nvim_get_mode().mode == 'c' then
+    --disable completion in comments
+    local context = require("cmp.config.context")
+    --keep command mode completion enabled when cursor is in a comment
+    if vim.api.nvim_get_mode().mode == "c" then
       return true
     else
       return not context.in_treesitter_capture("comment")
@@ -159,14 +161,20 @@ cmp.setup {
   end,
   formatting = {
     fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
-      local kind = require("lspkind").cmp_format(
+    format = function(entry, item)
+      local fmt_item = lspkind.cmp_format(
         { mode = "symbol_text", maxwidth = 50 }
-      )(entry, vim_item)
-      local strings = vim.split(kind.kind, "%s", { trimempty = true })
-      kind.kind = " " .. strings[1] .. " "
-      --kind.menu = "    (" .. strings[2] .. ")"
-      kind.menu = ({
+      )(entry, item)
+      local strings = vim.split(fmt_item.kind, "%s", { trimempty = true })
+      fmt_item.kind = " " .. strings[1] .. " "
+
+      local color_item = nvim_hlcolors.format(entry, { kind = item.kind })
+      if color_item.abbr_hl_group then
+        fmt_item.kind_hl_group = color_item.abbr_hl_group
+        fmt_item.kind = color_item.abbr
+      end
+
+      fmt_item.menu = ({
         buffer = "[Buffer]",
         nvim_lsp = "[LSP]",
         luasnip = "[LuaSnip]",
@@ -175,17 +183,14 @@ cmp.setup {
         latex_symbols = "[LaTeX]",
       })[entry.source.name]
 
-      return kind
+      return fmt_item
     end,
   },
-}
+})
 
 -- Integration with nvim-autopairs
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-cmp.event:on(
-  'confirm_done',
-  cmp_autopairs.on_confirm_done()
-)
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 --cmp.setup.cmdline('/', {
 --mapping = cmp.mapping.preset.cmdline(),
