@@ -389,7 +389,7 @@
   typeset -g POWERLEVEL9K_DIR_BOOT_ANCHOR_FOREGROUND=18
 
   # Styling for DOTFILES.
-  typeset -g POWERLEVEL9K_DIR_DOTFILES_VISUAL_IDENTIFIER_EXPANSION=' ' # \uF044
+  typeset -g POWERLEVEL9K_DIR_DOTFILES_VISUAL_IDENTIFIER_EXPANSION=' ' # \uF044
   typeset -g POWERLEVEL9K_DIR_DOTFILES_BACKGROUND=25
   typeset -g POWERLEVEL9K_DIR_DOTFILES_FOREGROUND=18
   typeset -g POWERLEVEL9K_DIR_DOTFILES_SHORTENED_FOREGROUND=31
@@ -421,21 +421,21 @@
   # typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
 
   # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
-  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
+  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=' '
 
   # Untracked files icon. It's really a question mark, your font isn't broken.
   # Change the value of this parameter to show a different icon.
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='\uF059 ' # question mark circle
-  typeset -g POWERLEVEL9K_VCS_AHEAD_ICON='\uF35B ' # arrow alt circle up
-  typeset -g POWERLEVEL9K_VCS_BEHIND_ICON='\uF35A '  # arrow alt circle down
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON=' ' # question mark circle
+  typeset -g POWERLEVEL9K_VCS_AHEAD_ICON=' ' # arrow alt circle up
+  typeset -g POWERLEVEL9K_VCS_BEHIND_ICON=' '  # arrow alt circle down
 
-  typeset -g POWERLEVEL9K_VCS_PUSH_AHEAD_ICON='\uF382 '  # cloud upload alt
-  typeset -g POWERLEVEL9K_VCS_PUSH_BEHIND_ICON='\uF381 ' # cloud download alt
+  typeset -g POWERLEVEL9K_VCS_PUSH_AHEAD_ICON=' '  # cloud upload alt
+  typeset -g POWERLEVEL9K_VCS_PUSH_BEHIND_ICON=' ' # cloud download alt
 
-  typeset -g POWERLEVEL9K_VCS_STASHES_ICON='\uF01C '  # inbox
-  typeset -g POWERLEVEL9K_VCS_CONFLICTS_ICON='\uF071 ' # exclaimation triangle
-  typeset -g POWERLEVEL9K_VCS_STAGED_ICON='\uF055 '  # plus circle
-  typeset -g POWERLEVEL9K_VCS_UNSTAGED_ICON='\uF06A ' # exclaimation circle
+  typeset -g POWERLEVEL9K_VCS_STASHES_ICON=' '  # inbox
+  typeset -g POWERLEVEL9K_VCS_CONFLICTS_ICON=' ' # exclaimation triangle
+  typeset -g POWERLEVEL9K_VCS_STAGED_ICON=' '  # plus circle
+  typeset -g POWERLEVEL9K_VCS_UNSTAGED_ICON=' ' # exclaimation circle
 
 
 
@@ -998,7 +998,7 @@
   # Don't show Python version next to the virtual environment name.
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   # Don't show virtualenv if pyenv is already shown.
-  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=false
+  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=true
   # Separate environment name from Python version only with a space.
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
   # Custom icon.
@@ -1046,9 +1046,9 @@
   typeset -g POWERLEVEL9K_PYENV_SOURCES=(shell local global)
   # If set to false, hide python version if it's the same as global:
   # $(pyenv version-name) == $(pyenv global).
-  typeset -g POWERLEVEL9K_PYENV_PROMPT_ALWAYS_SHOW=false
+  typeset -g POWERLEVEL9K_PYENV_PROMPT_ALWAYS_SHOW=true
   # If set to false, hide python version if it's equal to "system".
-  typeset -g POWERLEVEL9K_PYENV_SHOW_SYSTEM=true
+  typeset -g POWERLEVEL9K_PYENV_SHOW_SYSTEM=false
 
   # Pyenv segment format. The following parameters are available within the expansion.
   #
@@ -1237,15 +1237,15 @@
 
   ###############[ jenv: java version from jenv (https://github.com/jenv/jenv) ]################
   # Java color.
-  # typeset -g POWERLEVEL9K_JENV_FOREGROUND=1
-  # typeset -g POWERLEVEL9K_JENV_BACKGROUND=7
+   typeset -g POWERLEVEL9K_JENV_FOREGROUND=1
+   typeset -g POWERLEVEL9K_JENV_BACKGROUND=7
   # Hide java version if it doesn't come from one of these sources.
   typeset -g POWERLEVEL9K_JENV_SOURCES=(shell local global)
   # If set to false, hide java version if it's the same as global:
   # $(jenv version-name) == $(jenv global).
-  typeset -g POWERLEVEL9K_JENV_PROMPT_ALWAYS_SHOW=false
+  typeset -g POWERLEVEL9K_JENV_PROMPT_ALWAYS_SHOW=true
   # If set to false, hide java version if it's equal to "system".
-  typeset -g POWERLEVEL9K_JENV_SHOW_SYSTEM=true
+  typeset -g POWERLEVEL9K_JENV_SHOW_SYSTEM=false
   # Custom icon.
   # typeset -g POWERLEVEL9K_JENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
 

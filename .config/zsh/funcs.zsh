@@ -68,9 +68,12 @@ git() {
 
 SSH_ENV="$HOME/.ssh/environment"
 start_agent() {
-    echo "Initialising new SSH agent..."
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
+    #echo "Initialising new SSH agent..."
+    if ! /usr/bin/ssh-agent -t 300 | sed 's/^echo/#echo/' > "${SSH_ENV}"; then
+      echo "Failed to initialize ssh-agent. Command exited with error code $?."
+      return 1
+    fi
+    #echo succeeded
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
     /usr/bin/ssh-add;
@@ -152,7 +155,12 @@ sympytex() {
    command pplatex $@
    if [ "$?" -eq 0 ]; then
       for i in $@; do :; done
-      command python3 "${i/%.tex}.sympy"
+      if [ -f ".venv/bin/python3" ]; then
+        command .venv/bin/python3 "${i/%.tex}.sympy"
+      else
+        echo "Hi"
+        command python3 "${i/%.tex}.sympy"
+      fi
       if [ "$?" -eq 0 ]; then
          command pdflatex $@
       fi
@@ -160,6 +168,7 @@ sympytex() {
 }
 
 if [ $USER != "root" ]; then
+   patched_eval "$(jenv init -)"
    patched_eval "$(pyenv init -)"
    patched_eval "$(pyenv virtualenv-init -)"
    patched_eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

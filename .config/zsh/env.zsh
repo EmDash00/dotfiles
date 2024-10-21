@@ -24,11 +24,11 @@ export SOFA_INSTALL_DIR="/home/emdash00/Apps/git-apps/sofa/src/"
 
 #---------------------------------------------------
 
-export REF="~/Documents/Notes"
-export LIB="~/Documents/Library"
-export RL="~/Documents/Work/Rothlab"
+#export REF="~/Documents/Notes"
+#export LIB="~/Documents/Library"
+#export RL="~/Documents/Work/Rothlab"
 
 export REG_LOC="^(\~|(?:\$\w+)?\.{0,2}\/)([\.\/\w]+)?"
 
-export WORKON_HOME="~/.virtualenvs"   # Optional
-export PROJECT_HOME="~/projects"      # Optional
+#export WORKON_HOME="~/.virtualenvs"   # Optional
+#export PROJECT_HOME="~/projects"      # Optional
