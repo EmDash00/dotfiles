@@ -39,6 +39,8 @@ magick = "1.6.0"
 "rainbow-delimiters.nvim" = "0.6.2"
 "tree-sitter-toml" = { version = "scm", opt = true }
 nvim-lint = "scm"
+magick = "1.6.0"
+"hydra.nvim" = "1.0.2"
 
 [plugins.vim-arduino]
 git = "stevearc/vim-arduino"
@@ -120,6 +122,10 @@ rev = "v0.2.6"
 
 [plugins.nvim-treesitter]
 git = "nvim-treesitter/nvim-treesitter"
+rev = "master"
+
+[plugins.nvim-treesitter-textobjects]
+git = "nvim-treesitter/nvim-treesitter-textobjects"
 rev = "master"
 
 [plugins.friendly-snippets]

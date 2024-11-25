@@ -9,6 +9,20 @@
 .config/TabNine/defaults
 .config/TabNine/last_heartbeat
 .config/ros
+.config/rclone
+.config/Signal
+.config/Proton
+.config/Proton Mail
+.config/VeraCrypt
+.config/uv
+.config/zoom.conf
+.config/Unknown Organization
+.config/Element
+.config/balena-etcher
+.config/balenaEtcher
+.config/deluge
+.config/PrusaSlicer
+.config/ImageMagick
 
 # Lockfiles
 *lock*

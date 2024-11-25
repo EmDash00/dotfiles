@@ -53,12 +53,14 @@ path_prepend()
    fi
 }
 
+export PKG_CONFIG_PATH="/home/linuxbrew/.linuxbrew/Cellar/imagemagick/7.1.1-28/lib/pkgconfig:$PKG_CONFIG_PATH"
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
 export DUB_HOME="$HOME/.dub/packages"
 export APPS="$HOME/Apps"
 
-export LD_LIBRARY_PATH='/usr/local/lib'
+#export LD_LIBRARY_PATH='/usr/local/lib'
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -71,13 +73,20 @@ export ZPLUG_HOME="${XDG_CONFIG_HOME}/zplug"
 export ROS_HOME="$HOME/.config/ros"
 
 export VIRTUALENVWRAPPER_PYTHON=`which python3`
+export POETRY_VIRTUALENVS_IN_PROJECT="true"
+export POETRY_VIRTUALENVS_PATH=".venv"
+
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=/opt/devkitpro/devkitARM
+export DEVKITPPC=/opt/devkitpro/devkitPPC
 
 #path_append "$HOME/.platformio/penv/bin"
 path_prepend "$PYENV_ROOT/bin"
 path_prepend "$PYENV_ROOT/shims"
+path_prepend "$HOME/.jenv/bin"
+path_prepend "$HOME/.local/bin"
 
 
 path_append "/usr/local/bin"
-path_append "$HOME/.local/bin"
 path_append "$HOME/Apps/AppImage"
 . "$HOME/.cargo/env"

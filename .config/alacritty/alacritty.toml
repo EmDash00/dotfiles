@@ -54,11 +54,11 @@ foreground = "0x93a1a1"
 TERM = "alacritty"
 
 [window.dimensions]
-columns = 120
-lines = 36
+columns = 100
+lines = 30
 
 [font]
-size = 9
+size = 12
 
 [font.normal]
 family = "DejaVuSansM Nerd Font"

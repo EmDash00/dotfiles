@@ -66,10 +66,14 @@ git() {
    fi
 }
 
+proton_sync() {
+  rclone bisync "$HOME/Documents/Proton\ Drive/" "protondrive:/" --verbose --check-access
+}
+
 SSH_ENV="$HOME/.ssh/environment"
 start_agent() {
     #echo "Initialising new SSH agent..."
-    if ! /usr/bin/ssh-agent -t 300 | sed 's/^echo/#echo/' > "${SSH_ENV}"; then
+    if ! /usr/bin/ssh-agent -t 1800 | sed 's/^echo/#echo/' > "${SSH_ENV}"; then
       echo "Failed to initialize ssh-agent. Command exited with error code $?."
       return 1
     fi
