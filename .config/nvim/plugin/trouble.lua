@@ -1,6 +1,18 @@
 local vimp = require("vimp")
 local nnoremap = vimp.nnoremap
 
+require("colors").set_hls{
+  --DiagnosticError = { ctermfg = 1, fg = 'Red' },
+  DiagnosticWarn = { ctermfg = 3, fg = 'Orange' },
+  DiagnosticInfo = { ctermfg = 4, fg = 'LightBlue' },
+  DiagnosticHint = { ctermfg = 7, fg = 'LightGrey' },
+
+  --DiagnosticUnderlineError = { cterm = { underline = true }, undercurl = true, sp = 'Red' },
+  DiagnosticUnderlineWarn = { cterm = { underline = true }, undercurl = true, sp = 'Orange' },
+  DiagnosticUnderlineInfo = { cterm = { underline = true }, undercurl = true, sp = 'LightBlue' },
+  DiagnosticUnderlineHint = { cterm = { underline = true }, undercurl = true, sp = 'LightGrey' },
+}
+
 local trouble = require("trouble")
 trouble.setup({
   auto_preview = false,
@@ -24,7 +36,7 @@ trouble.setup({
     diagnostics = {
       height = 10,
       width = 50,
-      auto_open = true, -- automatically close the list when you have no diagnostics
+      --auto_open = true, -- automatically close the list when you have no diagnostics
       auto_close = true, -- automatically close the list when you have no diagnostics
     },
     symbols = {

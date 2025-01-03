@@ -1,6 +1,14 @@
 local conform = require("conform")
 
 conform.setup({
+  formatters = {
+    ruff_organize_imports = {
+      command = "uv run ruff"
+    },
+    ruff_format = {
+      command = "uv run ruff"
+    }
+  },
   formatters_by_ft = {
     python = { "ruff_organize_imports", "ruff_format" },
     lua = { "stylua" },

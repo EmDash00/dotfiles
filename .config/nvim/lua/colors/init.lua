@@ -22,9 +22,8 @@ api.nvim_create_autocmd(
     pattern = '*',
     callback = function()
       require('colors.nvim')
-      require('colors.lspkinds')
+      require('colors.blink-cmp')
       require('colors.diagnostic')
-      require('colors.nvim_tree')
       require('colors.vimtex')
     end
   }

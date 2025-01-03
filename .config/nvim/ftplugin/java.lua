@@ -9,4 +9,3 @@ optl.textwidth = 80
 optl.colorcolumn = '81'
 optl.comments = 'sl:/*,mb: *,elx: */'
 vim.treesitter.start()
-

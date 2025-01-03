@@ -1,12 +1,15 @@
 local vimp = require("vimp")
-local lspconfig = require("lspconfig")
 local nnoremap = vimp.nnoremap
+
+local lspconfig = require("lspconfig")
 
 local api = vim.api
 local diagnostic, lsp = vim.diagnostic, vim.lsp
 
 vim.o.updatetime = 250
 
+
+-- Diagnostics
 diagnostic.config({
   virtual_text = false,
   signs = true,
@@ -24,11 +27,28 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-local opts = { "silent" }
+-- Diagnostic hold
+vim.api.nvim_create_autocmd("CursorHold", {
+  --buffer = bufnr,
+  callback = function()
+    diagnostic.open_float(nil, {
+      focusable = false,
+      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+      source = "always",
+      prefix = " ",
+      suffix = "",
+      scope = "cursor",
+    })
+  end,
+})
 
+
+-- Defaults
+
+local lsp_keymap_opts = { "silent" }
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local default_on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   --api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.lsp.omnifunc')
   api.nvim_set_option_value("omnifunc", "v:lua.lsp.omnifunc", { buf = bufnr })
@@ -36,34 +56,35 @@ local on_attach = function(client, bufnr)
   vimp.add_buffer_maps(bufnr, function()
     -- Mappings.
     -- See `:help lsp.*` for documentation on any of the below functions
-    nnoremap(opts, "<leader>j", diagnostic.goto_next)
-    nnoremap(opts, "<leader>k", diagnostic.goto_prev)
-    nnoremap(opts, "<leader>J", function()
+    nnoremap(lsp_keymap_opts, "<leader>j", diagnostic.goto_next)
+    nnoremap(lsp_keymap_opts, "<leader>k", diagnostic.goto_prev)
+    nnoremap(lsp_keymap_opts, "<leader>J", function()
       diagnostic.goto_next({ severity = { min = vim.diagnostic.severity.WARN } })
     end)
-    nnoremap(opts, "<leader>K", function()
+    nnoremap(lsp_keymap_opts, "<leader>K", function()
       diagnostic.goto_prev({ severity = { min = vim.diagnostic.severity.WARN } })
     end)
 
-    nnoremap(opts, "gD", lsp.buf.declaration)
-    nnoremap(opts, "gd", lsp.buf.definition)
-    nnoremap(opts, "L", function()
+    nnoremap(lsp_keymap_opts, "gD", lsp.buf.declaration)
+    nnoremap(lsp_keymap_opts, "gd", lsp.buf.definition)
+    nnoremap(lsp_keymap_opts, "L", function()
       api.nvim_command("set eventignore=CursorHold")
       lsp.buf.hover()
       api.nvim_command('autocmd CursorMoved <buffer> ++once set eventignore=""')
     end)
-    nnoremap(opts, "gi", lsp.buf.implementation)
+    nnoremap(lsp_keymap_opts, "gi", lsp.buf.implementation)
 
-    nnoremap(opts, "<leader>h", lsp.buf.signature_help)
-    nnoremap(opts, "<leader>wa", lsp.buf.add_workspace_folder)
-    nnoremap(opts, "<leader>wr", lsp.buf.remove_workspace_folder)
-    nnoremap(opts, "<leader>wl", function()
+    nnoremap(lsp_keymap_opts, "<leader>h", lsp.buf.signature_help)
+    nnoremap(lsp_keymap_opts, "<leader>wa", lsp.buf.add_workspace_folder)
+    nnoremap(lsp_keymap_opts, "<leader>wr", lsp.buf.remove_workspace_folder)
+    nnoremap(lsp_keymap_opts, "<leader>wl", function()
       print(vim.inspect(lsp.buf.list_workspace_folders()))
     end)
-    nnoremap(opts, "td", lsp.buf.type_definition)
-    nnoremap(opts, "<leader>rn", lsp.buf.rename)
-    nnoremap(opts, "<leader>c", lsp.buf.code_action)
-    nnoremap(opts, "<leader>r", lsp.buf.references)
+    nnoremap(lsp_keymap_opts, "td", lsp.buf.type_definition)
+    nnoremap(lsp_keymap_opts, "<leader>rn", lsp.buf.rename)
+    nnoremap(lsp_keymap_opts, "<leader>c", lsp.buf.code_action)
+    nnoremap(lsp_keymap_opts, "<leader>f", lsp.buf.format)
+    nnoremap(lsp_keymap_opts, "<leader>r", lsp.buf.references)
   end)
 
   if client.name == "ruff" then
@@ -85,213 +106,77 @@ local on_attach = function(client, bufnr)
   end
 end
 
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  opts = opts or {}
-  opts.max_height = 30
-  opts.max_width = 80
-  opts.border = opts.border or "rounded"
-  return orig_util_open_floating_preview(contents, syntax, opts, ...)
-end
-
---LSP Kinds
-require("lspkind").init({
-  mode = "symbol_text",
-  preset = "codicons",
-  -- default: {}
-  symbol_map = {
-    Text = "", -- nf-fa-font
-    Method = "󰡱", -- nf-md-function-variant
-    Function = "󰡱",
-    Constructor = "", -- nf-fae-tools
-    Field = "󰊾", -- nf-md-order_bool_ascending
-    Variable = "󰆦", -- nf-md-cube
-    Class = "", -- nf-md-webpack
-    Interface = "󰋺", -- nf-md-import
-    Module = "󰃖", -- nf-md-briefcase
-    Property = "󰠱", -- nf-md-shape
-    Unit = "󰑭", -- nf-md-ruler
-    Value = "󰎠", -- nf-md-numeric
-    Enum = "", -- nf-fa-sort_alpha_asc
-    Keyword = "󰪛", -- nf-md-key
-    Snippet = "󰐒", -- nf-playlist_plus
-    Color = "", -- nf-cod-paintcan
-    File = "", -- nf-fa-file-text
-    Reference = "", -- nf-cod-go_to_file
-    Folder = "", -- nf-fa-folder
-    EnumMember = "󰀬", -- nf-md-alphabetical
-    Constant = "●", -- nf-fa-circle
-    Struct = "󰆧", -- nf-md-cube_outline
-    Event = "", -- nf-oct-clock
-    Operator = "", -- nf-cod-symbol_operator
-    TypeParameter = "", -- nf-code-symbol-paramter
-  },
-})
-
-local lsp_flags = {
+---@type table<string, any>  Default LSP flags
+local default_lsp_flags = {
   debounce_text_changes = 150,
 }
 
---local capabilities = require('cmp_nvim_lsp').update_capabilities(
---lsp.protocol.make_client_capabilities()
---)
---
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-capabilities.offsetEncoding = { "utf-16" }
---capabilities.textDocument.completion.completionItem.snippetSupport = true
+--- Default LSP capabilities
+local default_capabilities = require('blink.cmp').get_lsp_capabilities()
 
---lspconfig.pyright.setup {
---on_attach = on_attach,
---flags = lsp_flags,
---capabilities = capabilities
---}
+--- Set up LSP servers
+--- @param server_specs table<string, vim.lsp.ClientSetupConfig>: A table where keys are server names and values are their configurations
+local function setup(server_specs)
+  for server_name, config in pairs(server_specs) do
+    if config.flags == false then
+      config.flags = nil
+    else
+      config.flags = vim.tbl_extend('keep', config.flags or {}, default_lsp_flags)
+    end
 
-lspconfig.basedpyright.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-  settings = {
-    basedpyright = {
-      disableOrganizeImports = true
+    if config.capabilities == false then
+      config.capabilities = nil
+    else
+      config.capabilities = vim.tbl_extend('keep', config.capabilities or {}, default_capabilities)
+    end
+
+    config.on_attach = config.on_attach or default_on_attach
+
+    lspconfig[server_name].setup(config)
+  end
+end
+
+setup {
+  -- python
+  basedpyright = {
+    cmd = { "uv", "run", "basedpyright-langserver", "--stdio" },
+    settings = {
+      basedpyright = {
+        disableOrganizeImports = true
+      }
     }
-  }
-})
-
-lspconfig.ruff.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-})
-
-lspconfig.jsonls.setup({
-  capabilities = capabilities,
-})
-
-lspconfig.yamlls.setup({
-  settings = {
-    yaml = {
-      schemas = {
-        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+  },
+  ruff = {
+    cmd = { "uv", "run", "ruff", "server" },
+  },
+  rust_analyzer = {
+    settings = {
+      ["rust-analyzer"] = {},
+    },
+  },
+  serve_d = {},
+  clangd = {},
+  jdtls = {},
+  lua_ls = {},
+  vimls = {},
+  texlab = {},
+  jsonls = {
+    on_attach = function() end
+  },
+  yamlls = {
+    settings = {
+      yaml = {
+        schemas = {
+          ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+        },
       },
     },
   },
-})
+  --denols = {},
+  ts_ls = {},
+  cssls = {},
+  cssmodules_ls = {},
+  html = {},
+  superhtml = {}
 
-lspconfig.cssls.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-})
-
-lspconfig.cssmodules_ls.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-})
-
-lspconfig.ts_ls.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-})
-
-lspconfig.html.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-})
-
-lspconfig.superhtml.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-})
-
-lspconfig.serve_d.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-})
-
-lspconfig.clangd.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-})
-
-lspconfig.ts_ls.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-})
-
-lspconfig.rust_analyzer.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  settings = {
-    ["rust-analyzer"] = {},
-  },
-  capabilities = capabilities,
-})
-
-lspconfig.texlab.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-})
-
-lspconfig.jdtls.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-})
-
-lspconfig.lua_ls.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = "LuaJIT",
-        path = vim.split(package.path, ';'),
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { "vim" },
-        disable = { "missing-fields" },
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-        checkThirdParty = false,
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-  --capabilities = capabilities
-})
-
--- Diagnostic hold
-vim.api.nvim_create_autocmd("CursorHold", {
-  --buffer = bufnr,
-  callback = function()
-    diagnostic.open_float(nil, {
-      focusable = false,
-      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-      source = "always",
-      prefix = " ",
-      suffix = "",
-      scope = "cursor",
-    })
-  end,
-})
-
-lspconfig.vimls.setup({
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-})
+}

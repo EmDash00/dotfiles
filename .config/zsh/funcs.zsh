@@ -4,6 +4,11 @@ alias ssh-copy-id="ssh-copy-id $SSH_ID"
 
 alias gwd='pwd | head -c -1 | xclip -selection clipboard'
 alias clip='xclip -selection clipboard'
+alias gt='gtrash'
+alias gtr='gtrash restore'
+alias t='gtrash put'
+alias lg="lazygit"
+alias trash='gtrash put'
 alias reload='source $XDG_CONFIG_HOME/zsh/.zshrc'
 alias tconf='nvim /home/emdash00/.config/termite/config'
 alias zconf='nvim /home/emdash00/.config/zsh/.zshrc'
@@ -13,44 +18,122 @@ alias standby='i3lock-fancy && systemctl suspend'
 alias lock='i3lock-fancy'
 alias hibernate='i3lock-fancy && systemctl hibernate'
 alias rm='rm --preserve-root -I'
-#alias s='eza --icons -s extension'
-alias feed='flatpak run org.gnome.FeedReader'
-alias feedstop='flatpak kill org.gnome.FeedReader'
+
+declare -A eza_kwargs
+eza_kwargs=(
+  ["-t"]="generic"   # --time=WORD
+  ["-I"]="ignore"    # --ignore-glob=GLOBS
+  ["-s"]="generic"   # --sort=SORT_FIELD
+  ["-L"]="generic"   # --level=DEPTH
+  ["-F"]="generic"   # --classify=WHEN
+  ["-w"]="generic"   # -- width=COLS
+)
+
 
 s() {
-    has_all=false
+  local has_all=false
+  local has_help=false
+  local has_version=false
+  local has_dot_hidden=true  # just always hide .hidden
+  local has_recurse=false
+  local args=()
+  local query_dirs=()
+  local has_query_dirs=false
+  local ignore_globs=""
 
-    for arg in "$@"; do
-      if [[ "$arg" == "-a" || "$arg" == "--all" || "$arg" == "-A" || "$arg" == "--almost-all" ]]; then
-        has_all=true
-      elif [[ "$arg" == '--help' || "$arg" == '-h' ]]; then
-        eza --help
-        return
-      elif [[ "$arg" == '-v' || "$arg" == '--version' ]]; then
-        eza --version
-        return
+  local keyword_val="none"
+
+  for arg in "$@"; do
+    if [[ $keyword_val != "none" ]]; then
+      if [[ $keyword_val == "ignore" ]]; then
+        ignore_globs="$arg"
+        keyword_val="none"
+        continue
       fi
-    done
 
-    if [[ $has_all == "true" ]] ; then
-        eza --group-directories-first "$@"
-        return
+      args+=("$arg")
+      keyword_val="none"
+      continue
     fi
 
-    exclusion=""
+    if [[ "$arg" != -* ]]; then
+      has_query_dirs=true
 
-    if [[ -f .hidden ]] ; then
-      while read -r p; do
-        exclusion="$exclusion|$p"
-      done < .hidden
+      if [[ -d "$arg" ]]; then
+        query_dirs+=("$arg")
+      fi
+
+      args+=("$arg")
+      continue
     fi
 
-    if [[ $exclusion == "" ]]; then
-      eza --icons --group-directories-first "$@"
-      return
+    if [[ "$arg" == "-a" || "$arg" == "--all" || "$arg" == "-A" || "$arg" == "--almost-all" ]]; then
+      has_all=true
+    elif [[ "$arg" == '--help' ]]; then
+      has_help=true
+    elif [[ "$arg" == '-v' || "$arg" == '--version' ]]; then
+      has_version=true
+    elif [[ "$arg" == '-R' || "$arg" == '--recurse' ]]; then
+      has_recurse=true
+    elif [[ "$arg" == --ignore-glob=* ]]; then
+      ignore_globs="${arg#--ignore-glob=}"
+      continue  # don't add --ignore-glob to args
+    elif [[ "$arg" == '--dot-hidden' ]]; then
+      has_dot_hidden=true
+      continue  # don't add --dot-hidden to args
     fi
 
-    eza --icons --group-directories-first -s extension --ignore-glob="${exclusion:1}"
+    keyword_val="${eza_kwargs[$arg]:-none}"
+
+    if [[ $keyword_val == "ignore" ]]; then
+      continue
+    fi
+
+    args+=("$arg")
+  done
+
+  if [[ $has_help == true ]] ; then
+    eza --help
+    return
+  fi
+
+  if [[ $has_version == true ]] ; then
+    eza --version
+    return
+  fi
+
+  if [[ $has_all == true ]] ; then
+    has_dot_hidden=false
+  fi
+
+  local exclude_files=()
+  if [[ $has_dot_hidden == true ]]; then
+    if [[ $has_query_dirs == false ]]; then
+      query_dirs+=(".")
+    fi
+
+    if [[ ${#query_dirs[@]} -gt 0 ]]; then
+      local found_files=""
+      if [[ $has_recurse == true ]]; then
+        found_files=$(find "${query_dirs[@]}" -name '.hidden' -size +0)
+      else
+        found_files=$(find "${query_dirs[@]}" -maxdepth 1 -name '.hidden' -size +0)""
+      fi
+
+      local dot_hidden_files=()
+      if [[ -n $found_files ]]; then
+        # Convert the output to an array
+        dot_hidden_files+=("${(@f)found_files}")
+      fi
+
+
+      if [[ ${#dot_hidden_files[@]} -gt 0 ]]; then
+        exclude_files=$(paste -sd '|' "${dot_hidden_files[@]}" | tr '\n' '|' | sed 's/.$/\n/')
+      fi
+    fi
+  fi
+
+  command eza ${args[@]} --icons --group-directories-first -s extension -I "${exclude_files[@]}|$ignore_globs"
 }
 
 
@@ -173,9 +256,6 @@ sympytex() {
 
 if [ $USER != "root" ]; then
    patched_eval "$(jenv init -)"
-   patched_eval "$(pyenv init -)"
-   patched_eval "$(pyenv virtualenv-init -)"
-   patched_eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}

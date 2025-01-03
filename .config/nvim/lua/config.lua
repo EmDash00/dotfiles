@@ -1,14 +1,17 @@
 local opt = vim.opt
 
 vim.cmd([[au BufRead,BufNewFile *.jq setfiletype jq]])
-vim.g.python3_host_prog=vim.fn.expand("~/.config/virtualenvs/neovim/bin/python3")
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
+vim.g.python3_host_prog=vim.fn.expand("$XDG_DATA_HOME/nvim/venv/bin/python3")
 opt.termguicolors = true
 
 require('colors')
 require('autofuncs')
 --require('plugins')
 --require('surround')
---require('keymaps')
+require('keymaps')
 
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -45,12 +48,4 @@ opt.guicursor =
   'a:blinkwait500-blinkon300-blinkoff200,' ..
   'i-ci:ver30-blinkwait500-blinkon300-blinkoff200'
 
-local onedark = require('onedark')
-
-
-onedark.setup {
-  ending_tildes = false,
-}
-
-onedark.load()
---vim.cmd("colorscheme onedark")
+vim.cmd("colorscheme onedark")

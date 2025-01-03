@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
 source $XDG_CONFIG_HOME/zsh/env.zsh
 source $XDG_CONFIG_HOME/zsh/funcs.zsh
 
@@ -19,7 +21,6 @@ setopt extended_history # save timestamp
 setopt inc_append_history # add history immediately after typing a command
 setopt BASH_REMATCH
 
-fpath+=${ZDOTDIR:-~}/.zsh_functions
 # Source SSH settings, if applicable
 if [ -f "${SSH_ENV}" ]; then
     . "${SSH_ENV}" > /dev/null
@@ -70,8 +71,6 @@ zinit add-fpath mfaerevaag/wd
 zinit ice wait"2" lucid; zinit light agkozak/zsh-z
 zinit add-fpath agkozak/zsh-z
 
-#zinit ice as"program" from"gh-r" ver"nightly" pick"nvim-linux64/bin/nvim"
-#zinit light neovim/neovim
 
 zinit ice as"program" from"gh-r" mv"tree-sitter-linux-x64 -> tree-sitter" pick"tree-sitter"
 zinit light tree-sitter/tree-sitter
@@ -90,12 +89,15 @@ zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
  atload"!_zsh_autosuggest_start" \
     zsh-users/zsh-autosuggestions
 
+autoload -Uz compinit
+compinit
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 ### End of Zinit's installer chunk
 
 eval "$(uv generate-shell-completion zsh)"
+eval "$(gtrash completion zsh)"
 
 ## To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
@@ -108,3 +110,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+#. "$HOME/.local/share/../bin/env"
+. "/home/daydream/.deno/env"

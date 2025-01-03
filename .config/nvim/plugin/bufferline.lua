@@ -74,8 +74,14 @@ require('bufferline').setup {
       end
     end,
     offsets = {
-      { filetype = "NvimTree", text = "File Explorer" },
+      --{ filetype = "NvimTree", text = "File Explorer" },
       { filetype = "Outline", text = "Symbols Outline" },
+      {
+        text = "Neotree",
+        filetype = "neo-tree",
+        text_align = "center",
+        separator = true
+      },
     },
     color_icons = true, -- whether or not to add the filetype icon highlights
     show_buffer_icons = true, -- disable filetype icons for buffers

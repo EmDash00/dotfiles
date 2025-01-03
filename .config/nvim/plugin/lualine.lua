@@ -28,8 +28,8 @@ require('lualine').setup {
       }
     },
     lualine_c = {
-      require('molten.status').initialized,
-      require('molten.status').kernels
+      --require('molten.status').initialized,
+      --require('molten.status').kernels
     },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },

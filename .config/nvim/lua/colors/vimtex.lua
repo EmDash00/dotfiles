@@ -1,4 +1,4 @@
-local highlights = {
+require('colors').set_hls{
   texMathZone = {link = 'Number'},
   texMathEnv = {link = 'texMathZone'},
   texMathEnvStarred = {link = 'texMathZone'},
@@ -10,5 +10,3 @@ local highlights = {
   Conceal = {link = 'texMathZone'},
   texSymbol = {link = 'texCmd'},
 }
-
-require('colors').set_hls(highlights)

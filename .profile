@@ -81,12 +81,10 @@ export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 
 #path_append "$HOME/.platformio/penv/bin"
-path_prepend "$PYENV_ROOT/bin"
-path_prepend "$PYENV_ROOT/shims"
-path_prepend "$HOME/.jenv/bin"
 path_prepend "$HOME/.local/bin"
+path_append /opt/cuda/bin
 
-
-path_append "/usr/local/bin"
-path_append "$HOME/Apps/AppImage"
 . "$HOME/.cargo/env"
+
+. "$HOME/.local/share/../bin/env"
+. "/home/daydream/.deno/env"
