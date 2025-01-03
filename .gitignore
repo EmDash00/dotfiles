@@ -1,28 +1,32 @@
-.config/eog/
-.config/oh-my-zsh/
-.config/ibus
-.config/gtk*
-.config/neofetch
-.config/transmission/torrents
-.config/transmission/resume
-.config/TabNine/monitoring
-.config/TabNine/defaults
-.config/TabNine/last_heartbeat
-.config/ros
-.config/rclone
-.config/Signal
-.config/Proton
-.config/Proton Mail
-.config/VeraCrypt
-.config/uv
-.config/zoom.conf
-.config/Unknown Organization
-.config/Element
-.config/balena-etcher
-.config/balenaEtcher
-.config/deluge
-.config/PrusaSlicer
-.config/ImageMagick
+.config/*
+
+!.config/zsh
+!.config/nvim
+!.config/alacritty
+
+!.config/btop
+!.config/zathura
+
+# I3
+!.config/i3
+!.config/autorandr
+!.config/dunst
+!.config/nitrogen
+!.config/polybar
+!.config/polydock
+!.config/rofi
+!.config/networkmanager-dmenu
+
+
+!.config/libreoffice/4/user/config
+
+# VS Code
+!.config/Code/storage.json
+!.config/Code/languagepacks.json
+
+# Typora
+!.config/Typora/Preferences
+!.config/Typora/conf
 
 # Lockfiles
 *lock*
@@ -43,12 +47,14 @@
 *.so*
 
 # system/session specific
+*tags*
+*.nvimproj*
+
 *Stats*
 *stats*
 *.lock
 *.bak
 .config/libreoffice/4/user/*
-!.config/libreoffice/4/user/config
 .config/dconf
 
 .config/monitors.xml
@@ -99,69 +105,3 @@
 *Recover*
 *license*
 *License*
-
-
-# Application Specific
-
-.config/configstore/update-notifier*
-.config/configstore/update-notifier*
-
-# VS Code
-.config/Code/*
-!.config/Code/storage.json
-!.config/Code/languagepacks.json
-
-
-# JetBrains
-.config/JetBrains/*/options/usage.statistics.xml
-.config/JetBrains/*/workspace
-.config/CLion*/workspace
-.config/CLion*/ssl
-.config/IdeaIC*/workspace
-.config/IdeaIC*/ssl
-
-
-# Typora
-.config/Typora/*
-!.config/Typora/Preferences
-!.config/Typora/conf
-
-.config/Kitware
-.config/balena-etcher-electron
-.config/godot/projects
-.config/yelp
-
-.config/Typora/typora-dictionaries
-
-.tmux/resurrect/
-.config/discord/
-.config/Slack/
-.config/skypeforlinux
-.config/wireshark
-.config/torbrowser
-.config/coc
-.config/arduino-cli
-
-*tags*
-*.nvimproj*
-.warprc
-
-.config/BraveSoftware/
-.config/autostart/
-.config/chromium/
-.config/google-chrome-beta/
-.config/google-chrome-unstable/
-.config/google-chrome/
-.config/gsconnect/
-.config/inkscape/
-.config/microsoft-edge-beta/
-.config/microsoft-edge-dev/
-.config/polybar.old/
-.config/mimeapps.list
-.config/Autodesk/
-.config/Qt/
-.config/QtProject/
-.config/htop/
-.config/nautilus/
-.config/transmission/
-.config/vlc/
